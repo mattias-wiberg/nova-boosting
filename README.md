@@ -2,7 +2,7 @@
 This is a website to make boosting for the "Nova Boosting Community" Easier
 
 ## Data structure
-
+```
 User {
     uid: string,
     characters: [
@@ -63,8 +63,7 @@ MRun {
     paid,
     finished,
 }
-    Key:
-    
+```
 ## Commandos
 
 To build
