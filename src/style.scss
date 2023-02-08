@@ -1,0 +1,128 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content; 
+    }
+}
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content; 
+    }
+}
+
+$dark-theme: false !default;
+
+$b: white;
+$b2: #ddddf7;
+$b3: rgb(175, 175, 175);
+$c: #a7bcff;
+$dc: #5d5b8d;
+
+@if $dark-theme {
+    $b: #f0eeffff;
+    $b2: #e6e4e8ff;
+    $b3: #c8c8ceff;
+    $c: #cde6ffff;
+    $dc: #646d93ff;
+    //$bavender-web: #f0eeffff;
+    //$platinum: #e6e4e8ff;
+    //$french-gray: #c8c8ceff;
+    //$columbia-blue: #cde6ffff;
+    //$ultra-violet: #646d93ff;
+}
+
+
+.formContainer {
+    background-color: $c;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .formWrapper {
+        background-color: $b;
+        padding: 20px 60px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        .logo {
+            color: $dc;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .title {
+            color: $dc;
+            font-size: 12px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            input {
+                padding: 15px;
+                border: none;
+                width: 250px;
+                border-bottom: 1px solid $c;
+                &::placeholder {
+                    color: $b3;
+                }
+            }
+
+            button {
+                background-color: #7b96ec;
+                color: $b;
+                padding: 10px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #8da4f1;
+                font-size: 12px;
+                cursor: pointer;
+
+                img {
+                    width: 32px;
+                }
+            }
+        }
+
+        p {
+            color: $dc;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    }
+}
+
+.home{
+    background-color: $c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+    .container {
+        border: 1px solid $b;
+        border-radius: 10px;
+        display: flex;
+        overflow: hidden;
+        @include tablet {
+            width: 90%;
+        }
+    }
+}
