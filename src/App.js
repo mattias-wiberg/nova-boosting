@@ -26,7 +26,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/">
-          <Home />
+          <Route index element={<Home />} />
           {/*
           <Route index element={
             <ProtectedRoute>

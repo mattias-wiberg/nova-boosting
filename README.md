@@ -1,7 +1,9 @@
 # About
+
 This is a website to make boosting for the "Nova Boosting Community" Easier
 
 ## Data structure
+
 ```
 User {
     uid: string,
@@ -12,7 +14,8 @@ User {
             roles: [
                 ["tank", "dps", "healer"],
             ],
-            armor: ["Leather", "Plate", "Cloth", "Mail"]
+            armor: ["Leather", "Plate", "Cloth", "Mail"],
+            class: ["Death knight", "Demon hunter", "Druid", "Evoker", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"]],
             rating: int,
             main: bool
         }
@@ -29,17 +32,19 @@ MListing {
             need: bool
         },
     ],
+    note: string,
     realm: string,
     faction: ["H", "A"],
     pot: int,
     boosters: [
         Role {
             role: ["tank", "dps", "healer"],
-            armor: ["Leather", "Plate", "Cloth", "Mail"]
+            armor: ["*", "Leather", "Plate", "Cloth", "Mail"],
+            class: ["*", "Death knight", "Demon hunter", "Druid", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior", "Evoker"],
         },
     ],
-    paid,
-    started
+    paid: bool,
+    started: bool
 }
 
 MRun {
@@ -60,10 +65,11 @@ MRun {
             realm: string
         }
     ],
-    paid,
-    finished,
+    paid: bool,
+    finished: bool,
 }
 ```
+
 ## Commandos
 
 To build
