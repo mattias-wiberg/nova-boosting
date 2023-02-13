@@ -1,0 +1,2484 @@
+{
+  "AA": {
+    "name": "Algeth'ar Academy",
+    "items": [
+      {
+        "name": "Algeth'ar Puzzle Box",
+        "image_name": "inv_misc_enggizmos_18.jpg",
+        "classes": {
+          "Paladin": ["Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Platinum Star Band",
+        "image_name": "inv_10_dungeonjewelry_explorer_ring_1_color1.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Final Grade",
+        "image_name": "inv_staff_2h_drakonid_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Potion-Stained Cloak",
+        "image_name": "inv_leather_dragondungeon_c_01_cape.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Algeth'ar Hedgecleaver",
+        "image_name": "inv_axe_2h_drakonoid_c_01.jpg",
+        "classes": {
+          "Paladin": ["Retribution"],
+          "Warrior": ["Arms", "Fury"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Frenzyroot Cuffs",
+        "image_name": "inv_leather_dragondungeon_c_01_bracer.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Dragon Games Equipment",
+        "image_name": "reliquarybag_icon.jpg",
+        "classes": {
+          "Paladin": ["Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Mystakria's Harvester",
+        "image_name": "inv_glaive_1h_drakonid_c_01.jpg",
+        "classes": {
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Spellboon Saber",
+        "image_name": "inv_sword_1h_dragon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Obsidian Goaltending Spire",
+        "image_name": "inv_staff_2h_drakonid_c_02.jpg",
+        "classes": {
+          "Druid": ["Feral", "Guardian"],
+          "Hunter": ["Survival"],
+          "Monk": ["Brewmaster", "Windwalker"]
+        }
+      },
+      {
+        "name": "Emerald Coach's Whistle",
+        "image_name": "inv_misc_head_dragon_green.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Vexamus' Expulsion Rod",
+        "image_name": "inv_offhand_1h_drakonid_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Spellbane Cutlass",
+        "image_name": "inv_sword_1h_drakonid_c_01.jpg",
+        "classes": {
+          "Paladin": ["Protection"],
+          "Warrior": ["Fury", "Protection"],
+          "Death Knight": ["Frost"]
+        }
+      },
+      {
+        "name": "Scaled Commencement Spaulders",
+        "image_name": "inv_mail_dragondungeon_c_01_shoulder.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Boots of Explosive Growth",
+        "image_name": "inv_mail_dragondungeon_c_01_boot.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Azure Belt of Competition",
+        "image_name": "inv_mail_dragondungeon_c_01_buckle.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Ruby Contestant's Gloves",
+        "image_name": "inv_leather_dragondungeon_c_01_glove.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Organized Pontificator's Mask",
+        "image_name": "inv_helm_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Breastplate of Proven Knowledge",
+        "image_name": "inv_plate_dragondungeon_c_01_chest.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Bronze Challenger's Robe",
+        "image_name": "inv_chest_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Venerated Professor's Greaves",
+        "image_name": "inv_plate_dragondungeon_c_01_pant.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Experimental Safety Gloves",
+        "image_name": "inv_glove_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      }
+    ]
+  },
+  "CoS": {
+    "name": "Court of Stars",
+    "items": [
+      {
+        "name": "Windscar Whetstone",
+        "image_name": "creatureportrait_altarofair_01.jpg",
+        "classes": {
+          "Warrior": ["Fury", "Arms"],
+          "Paladin": ["Retribution"],
+          "Hunter": ["Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Death Knight": ["Frost", "Unholy"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Windwalker"],
+          "Druid": ["Feral"],
+          "Demon Hunter": ["Havoc"]
+        }
+      },
+      {
+        "name": "Jeweled Signet of Melandrus",
+        "image_name": "inv_70_dungeon_ring7d.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Infernal Writ",
+        "image_name": "inv_scroll_09.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Cape of the Duskwatch",
+        "image_name": "inv_cape_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Flask of the Solemn Night",
+        "image_name": "inv_alchemy_crystalvial.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Footpads of the Swift Balestra",
+        "image_name": "inv_boot_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Roaring Breeze Waistguard",
+        "image_name": "inv_belt_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Arcane-Bound Gale Chain",
+        "image_name": "inv_belt_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Collar of Fiery Allegiance",
+        "image_name": "inv_helm_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Chain of Scorched Bones",
+        "image_name": "inv_7_0raid_necklace_13d.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Cord of Wicked Pyromania",
+        "image_name": "inv_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Duskwatch Guard's Boots",
+        "image_name": "inv_boot_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Strand of the Stars",
+        "image_name": "inv_7_0raid_necklace_12b.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Helmet of Reverent Loyalty",
+        "image_name": "inv_helm_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Inferno Breastplate",
+        "image_name": "inv_chest_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Amice of the Unfurling Tempest",
+        "image_name": "inv_shoulder_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Epaulets of Deceitful Intent",
+        "image_name": "inv_shoulder_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Guileful Intruder Handguards",
+        "image_name": "inv_glove_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Veil of Unseen Strikes",
+        "image_name": "inv_helm_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Fevermelt Legguards",
+        "image_name": "inv_pant_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Arcanist's Resonant Robes",
+        "image_name": "inv_robe_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Luminous Bladesworn Hauberk",
+        "image_name": "inv_chest_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Suramar Magistrate Leggings",
+        "image_name": "inv_pant_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      }
+    ]
+  },
+  "HoV": {
+    "name": "Halls of Valor",
+    "items": [
+      {
+        "name": "Key to the Halls",
+        "image_name": "inv_knife_1h_felfireraid_d_02.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Fenryr's Bloodstained Fang",
+        "image_name": "inv_knife_1h_felfireraid_d_03",
+        "classes": {
+          "Rogue": ["Assassination", "Subtlety"]
+        }
+      },
+      {
+        "name": "Hunger of the Pack",
+        "image_name": "ability_warrior_bloodnova.jpg",
+        "classes": {
+          "Paladin": ["Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Eye of Skovald",
+        "image_name": "spell_nature_elementalshields.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship"],
+          "Priest": ["Shadow", "Discipline"],
+          "Shaman": ["Elemental"],
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Druid": ["Balance"],
+          "Evoker": ["Devastation"]
+        }
+      },
+      {
+        "name": "Horn of Valor",
+        "image_name": "inv_misc_horn_03.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Gift of Radiance",
+        "image_name": "ability_priest_flashoflight.jpg",
+        "classes": {
+          "Paladin": ["Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Woe-Bearer's Band",
+        "image_name": "inv_70_dungeon_ring5a.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Val'kyr Ascension Signet",
+        "image_name": "inv_70_dungeon_ring8a.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Mote of Sanctification",
+        "image_name": "paladin_holy.jpg",
+        "classes": {
+          "Paladin": ["Holy"],
+          "Priest": ["Holy", "Discipline"],
+          "Shaman": ["Restoration"],
+          "Monk": ["Mistweaver"],
+          "Druid": ["Restoration"],
+          "Evoker": ["Preservation"]
+        }
+      },
+      {
+        "name": "Bjorn's Hunting Strap",
+        "image_name": "inv_belt_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Cape of Valarjar Courage",
+        "image_name": "inv_cape_legiondungeon_c_04.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Goldscar Pelt",
+        "image_name": "inv_cape_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Valkyra Protector Greatboots",
+        "image_name": "inv_boot_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Wolfstride Pendant",
+        "image_name": "inv_7_0raid_necklace_01b.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Cushioned Treads of Glory",
+        "image_name": "inv_boot_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Adorned Guardian's Bracers",
+        "image_name": "inv_bracer_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Leggings of Swirling Runes",
+        "image_name": "inv_pant_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Hide of Fenryr",
+        "image_name": "inv_chest_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Thundercaller's Chain",
+        "image_name": "inv_belt_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Collar of Honorable Exultation",
+        "image_name": "inv_helm_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Amice of the Enlightened",
+        "image_name": "inv_shoulder_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Thunderfused Val'kyr Hauberk",
+        "image_name": "inv_chest_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Greatbelt of Alpha Dominance",
+        "image_name": "inv_belt_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Glory Seeker's Helm",
+        "image_name": "inv_helm_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Solsten's Arcing Runecord",
+        "image_name": "inv_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Cruel Vice Grips",
+        "image_name": "inv_glove_leather_legiondungeon_c_01.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Pendant of the Stormforger",
+        "image_name": "inv_7_0raid_necklace_14a.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Wristbands of Magnificent Splendor",
+        "image_name": "inv_bracer_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Felstep Footguards",
+        "image_name": "inv_boot_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Pauldrons of the All-Father",
+        "image_name": "inv_shoulder_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Infernal Mantle of Conquest",
+        "image_name": "inv_shoulder_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Runebands of the Worthy",
+        "image_name": "inv_bracer_mail_legiondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Greaves of the God-King",
+        "image_name": "inv_pant_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Treads of Light",
+        "image_name": "inv_boot_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Solid Gold Bracelets",
+        "image_name": "inv_bracer_mail_legionquest100_b_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Battleborne Sentinel Gauntlets",
+        "image_name": "inv_glove_plate_legiondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Silken Bloodscent Gloves",
+        "image_name": "inv_glove_cloth_legiondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      }
+    ]
+  },
+  "RLP": {
+    "name": "Ruby Life Pools",
+    "items": [
+      {
+        "name": "Ruby Whelp Shell",
+        "image_name": "inv_item_dragonegg_redbroken01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Blazebinder's Hoof",
+        "image_name": "inv_10_dungeonjewelry_primalist_trinket_2_fire.jpg",
+        "classes": {
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Paladin": ["Protection", "Retribution"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Fireproof Drape",
+        "image_name": "inv_mail_dragondungeon_c_01_cape.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Sky Saddle Cord",
+        "image_name": "inv_belt_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Chillworn's Infusion Staff",
+        "image_name": "inv_staff_2h_dragondungeon_c_02.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Kyrakka's Searing Embers",
+        "image_name": "inv_10_dungeonjewelry_primalist_trinket_4_fire.jpg",
+        "classes": {
+          "Paladin": ["Holy"],
+          "Priest": ["Holy", "Discipline"],
+          "Shaman": ["Restoration"],
+          "Monk": ["Mistweaver"],
+          "Druid": ["Restoration"],
+          "Evoker": ["Preservation"]
+        }
+      },
+      {
+        "name": "Crown of Roaring Storms",
+        "image_name": "inv_leather_dragondungeon_c_01_helm.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Havoc Crusher",
+        "image_name": "inv_mace_1h_dragondungeon_c_02.jpg",
+        "classes": {
+          "Rogue": ["Outlaw"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker"]
+        }
+      },
+      {
+        "name": "Skyferno Rondel",
+        "image_name": "inv_knife_1h_dragondungeon_c_02.jpg",
+        "classes": {
+          "Rogue": ["Assassination", "Subtlety"]
+        }
+      },
+      {
+        "name": "Breastplate of Soaring Terror",
+        "image_name": "inv_plate_dragondungeon_c_01_chest.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Backdraft Cleaver",
+        "image_name": "inv_axe_2h_drakonoid_c_01.jpg",
+        "classes": {
+          "Hunter": ["Survival"]
+        }
+      },
+      {
+        "name": "Scaleguard's Stalwart Greatboots",
+        "image_name": "inv_plate_dragondungeon_c_01_boot.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Subjugator's Chilling Grips",
+        "image_name": "inv_leather_dragondungeon_c_01_glove.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Drake Rider's Stecktarge",
+        "image_name": "inv_shield_1h_drakonid_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection"],
+          "Warrior": ["Protection"],
+          "Shaman": ["Elemental", "Restoration"]
+        }
+      },
+      {
+        "name": "Kokia's Burnout Rod",
+        "image_name": "inv_offhand_1h_drakonid_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Blazebound Lieutenant's Helm",
+        "image_name": "inv_mail_dragondungeon_c_01_helm.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Egg Tender's Leggings",
+        "image_name": "inv_mail_dragondungeon_c_01_pant.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Invader's Firestorm Chestguard",
+        "image_name": "inv_leather_dragondungeon_c_01_chest.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Wind Soarer's Breeches",
+        "image_name": "inv_pant_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Galerattle Gauntlets",
+        "image_name": "inv_mail_dragondungeon_c_01_glove.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      }
+    ]
+  },
+  "SBG": {
+    "name": "Shadowmoon Burial Grounds",
+    "items": [
+      {
+        "name": "Voidmender's Shadowgem",
+        "image_name": "inv_jewelcrafting_shadowsongamethyst_02.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Bonemaw's Big Toe",
+        "image_name": "inv_misc_bone_01.jpg",
+        "classes": {
+          "Paladin": ["Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Belt of Burning Focus",
+        "image_name": "inv_leather_draenordungeon_c_01belt.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Boots of Burning Focus",
+        "image_name": "inv_leather_draenordungeon_c_01boot.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Sadana's Grisly Visage",
+        "image_name": "inv_offhand_1h_draenordungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Goldsteel Bindings",
+        "image_name": "inv_bracer_plate_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Sharpeye Bracers",
+        "image_name": "inv_bracer_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Portal-Ripper's Staff",
+        "image_name": "inv_staff_2h_draenordungeon_c_03.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Nhallish's Bloody Polearm",
+        "image_name": "inv_polearm_2h_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Retribution"],
+          "Warrior": ["Arms", "Fury"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Bracers of Arcane Mystery",
+        "image_name": "inv_cloth_draenordungeon_c_01bracer.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Sharpeye Greaves",
+        "image_name": "inv_boot_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Sandals of Arcane Mystery",
+        "image_name": "inv_cloth_draenordungeon_c_01boot.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Bonetooth Longbow",
+        "image_name": "inv_bow_1h_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship"]
+        }
+      },
+      {
+        "name": "Sharpeye Chestguard",
+        "image_name": "inv_chest_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Ner'zhul's Ritual Blade",
+        "image_name": "inv_knife_1h_draenordungeon_c_02.jpg",
+        "classes": {
+          "Rogue": ["Assassination", "Subtlety"]
+        }
+      },
+      {
+        "name": "Goldsteel Greathelm",
+        "image_name": "inv_helm_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Goldsteel Gloves",
+        "image_name": "inv_glove_plate_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Hood of Arcane Mystery",
+        "image_name": "inv_cloth_draenordungeon_c_01helm.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Robes of Arcane Mystery",
+        "image_name": "inv_cloth_draenordungeon_c_01robe.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Morningscale Waistguard",
+        "image_name": "inv_belt_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Verdant Plate Chest",
+        "image_name": "inv_chest_plate_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Morningscale Cowl",
+        "image_name": "inv_helm_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Lavalink Helm",
+        "image_name": "inv_helm_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Streamslither Helm",
+        "image_name": "inv_helm_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Crystalbinder Helm",
+        "image_name": "inv_leather_draenordungeon_c_01helm.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Rivet-Sealed Breastplate",
+        "image_name": "inv_chest_plate_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Blackwater Helm",
+        "image_name": "inv_leather_draenordungeon_c_01helm.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Gutcrusher Chestplate",
+        "image_name": "inv_chest_plate_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Goldsteel Chestguard",
+        "image_name": "inv_chest_plate_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Bloodfeather Cowl",
+        "image_name": "inv_leather_draenordungeon_c_01helm.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Rockhide Casque",
+        "image_name": "inv_helm_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Leafmender Robes",
+        "image_name": "inv_leather_draenordungeon_c_01chest.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Wavesurge Choker",
+        "image_name": "inv_60dungeon_neck3c.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Morningscale Chestguard",
+        "image_name": "inv_chest_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Hood of Swirling Light",
+        "image_name": "inv_cloth_draenordungeon_c_01helm.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Cord of Arcane Mystery",
+        "image_name": "inv_cloth_draenordungeon_c_01buckle.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Rockhide Ringmail",
+        "image_name": "inv_chest_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Incarnadine Breastplate",
+        "image_name": "inv_chest_plate_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Golem's Gleaming Eye",
+        "image_name": "inv_60dungeon_ring6b.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Band of Growing Leaves",
+        "image_name": "inv_60dungeon_ring1b.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Lavalink Stompers",
+        "image_name": "inv_boot_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Bloodfeather Chestwrap",
+        "image_name": "inv_leather_draenordungeon_c_01chest.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Sharpeye Gleam",
+        "image_name": "inv_helm_mail_draenordungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Cord of Swirling Light",
+        "image_name": "inv_cloth_draenordungeon_c_01buckle.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Crystalbinder Belt",
+        "image_name": "inv_leather_draenordungeon_c_01belt.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Frost-Touched Gloves",
+        "image_name": "inv_cloth_draenordungeon_c_01glove.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Gutcrusher Coronet",
+        "image_name": "inv_helm_draenordungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Mark of Ice",
+        "image_name": "inv_60dungeon_ring4d.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Bloodfeather Girdle",
+        "image_name": "inv_leather_draenordungeon_c_01belt.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Leafmender Girdle",
+        "image_name": "inv_leather_draenordungeon_c_01belt.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      }
+    ]
+  },
+  "TJS": {
+    "name": "Temple of the Jade Serpent",
+    "items": [
+      {
+        "name": "Binding of Broken Dreams",
+        "image_name": "inv_belt_plate_dungeonplate_c_07.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Cape of Entanglement",
+        "image_name": "inv_cape_pandaria_c_02.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Chestguard of Despair",
+        "image_name": "inv_chest_leather_dungeonleather_c_06.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Cloak of Failing Will",
+        "image_name": "inv_cape_pandaria_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Crystallized Droplet",
+        "image_name": "inv_jewelry_ring_131.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Doubtridden Shoulderguards",
+        "image_name": "inv_shoulder_leather_dungeonleather_c_06.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Dubious Handaxe",
+        "image_name": "inv_axe_1h_pandung_c_01.jpg",
+        "classes": {
+          "Paladin": ["Protection"],
+          "Warrior": ["Fury", "Protection"],
+          "Death Knight": ["Frost"]
+        }
+      },
+      {
+        "name": "Firebelcher Hand Cannon",
+        "image_name": "inv_firearm_2h_rifle_pandung_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship"]
+        }
+      },
+      {
+        "name": "Flameheart Sandals",
+        "image_name": "inv_boots_cloth_dungeoncloth_c_06.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Girdle of Endemic Anger",
+        "image_name": "inv_belt_cloth_dungeoncloth_c_06.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Hopecrusher Gauntlets",
+        "image_name": "inv_glove_mail_dungeonmail_c_06.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Leggings of Whispered Dreams",
+        "image_name": "inv_pants_leather_dungeonleather_c_06.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Mindbreaker Pendant",
+        "image_name": "inv_jewelry_necklace_89.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Neverdare Shoulders",
+        "image_name": "inv_shoulder_mail_dungeonmail_c_06.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Paralyzing Gloves",
+        "image_name": "inv_gauntlets_cloth_dungeoncloth_c_06.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Riverbed Chestguard",
+        "image_name": "inv_chest_plate_dungeonplate_c_07.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Serpentstrike Shoulderpads",
+        "image_name": "inv_shoulder_plate_dungeonplate_c_07.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Signet of Dancing Jade",
+        "image_name": "inv_jewelry_ring_154.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Staff of Trembling Will",
+        "image_name": "inv_staff_2h_pandung_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Stonestep Boots",
+        "image_name": "inv_boots_plate_dungeonplate_c_07.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Sunheart Waistband",
+        "image_name": "inv_belt_mail_dungeonmail_c_06.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Treads of Corrupted Water",
+        "image_name": "inv_boots_leather_dungeonleather_c_06.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Waterburst Helm",
+        "image_name": "inv_helm_mail_dungeonmail_c_06.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Wind-Soaked Drape",
+        "image_name": "inv_cape_pandaria_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Windswept Pages",
+        "image_name": "inv_jewelry_trinket_15.jpg",
+        "classes": {
+          "Druid": ["Feral", "Guardian"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      }
+    ]
+  },
+  "AV": {
+    "name": "The Azure Vault",
+    "items": [
+      {
+        "name": "Unstable Arcane Loop",
+        "image_name": "inv_10_dungeonjewelry_tuskarr_ring_2_color4.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Ley-Line Tracer",
+        "image_name": "inv_polearm_2h_drakonid_c_01.jpg",
+        "classes": {
+          "Paladin": ["Retribution"],
+          "Warrior": ["Arms", "Fury"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Refraction's Edge",
+        "image_name": "inv_sword_1h_dragon_c_01.jpg",
+        "classes": {
+          "Rogue": ["Outlaw"],
+          "Monk": ["Brewmaster", "Windwalker"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Cloak of Lost Devotion",
+        "image_name": "inv_cape_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Burgeoning Seed",
+        "image_name": "inv_10_herb_seed_magiccolor5.jpg",
+        "classes": {
+          "Paladin": ["Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Crystalized Bulwark",
+        "image_name": "inv_shield_1h_dragondungeon_c_02.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection"],
+          "Warrior": ["Protection"],
+          "Shaman": ["Elemental", "Restoration"]
+        }
+      },
+      {
+        "name": "Horizon Splitter",
+        "image_name": "inv_axe_1h_dragondungeon_c_01.jpg",
+        "classes": {
+          "Rogue": ["Outlaw"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Tome of Unstable Power",
+        "image_name": "inv_jewelry_trinket_17.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Illusion Breaker's Waistguard",
+        "image_name": "inv_plate_dragondungeon_c_01_belt.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Custodian's Medallion of Delusion",
+        "image_name": "inv_10_dungeonjewelry_titan_necklace_1_color2.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Umbrelskul's Fractured Heart",
+        "image_name": "inv_elemental_eternal_air.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Mirage Bindings",
+        "image_name": "inv_leather_dragondungeon_c_01_bracer.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Cuirass of Irreparable Madness",
+        "image_name": "inv_plate_dragondungeon_c_01_chest.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Stasis-Freed Leggings",
+        "image_name": "inv_mail_dragondungeon_c_01_pant.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Tz'onna, Fear-Striker",
+        "image_name": "inv_sword_1h_drakonid_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Cinch of Forgotten Duty",
+        "image_name": "inv_leather_dragondungeon_c_01_belt.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Golden-Winged Rod",
+        "image_name": "inv_staff_2h_drakonid_c_01.jpg",
+        "classes": {
+          "Druid": ["Feral", "Guardian"],
+          "Hunter": ["Survival"],
+          "Monk": ["Brewmaster", "Windwalker"]
+        }
+      },
+      {
+        "name": "Mantle of Yearned Freedom",
+        "image_name": "inv_leather_dragondungeon_c_01_shoulder.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Azureblade's Work Gloves",
+        "image_name": "inv_glove_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Spaulders of Wild Growth",
+        "image_name": "inv_mail_dragondungeon_c_01_shoulder.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Twenty-Two-League Striders",
+        "image_name": "inv_plate_dragondungeon_c_01_boot.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Infused Elemental Bands",
+        "image_name": "inv_bracer_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Headwrap of the Abandoned",
+        "image_name": "inv_helm_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      }
+    ]
+  },
+  "NO": {
+    "name": "The Nokhud Offensive",
+    "items": [
+      {
+        "name": "Furious Ragefeather",
+        "image_name": "inv_icon_feather03d.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Thunderous Downburst Ring",
+        "image_name": "inv_10_dungeonjewelry_primalist_ring_1_earth.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Stormslash",
+        "image_name": "inv_glaive_1h_dragondungeon_c_01.jpg",
+        "classes": {
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Idol of Trampling Hooves",
+        "image_name": "inv_10_dungeonjewelry_centaur_trinket_2_color5.jpg",
+        "classes": {
+          "Paladin": ["Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Granyth's Enduring Scale",
+        "image_name": "inv_skinning_80_shimmerscale.jpg",
+        "classes": {
+          "Paladin": ["Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Strike Twice",
+        "image_name": "inv_sword_1h_dragondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Protection"],
+          "Warrior": ["Fury", "Protection"],
+          "Death Knight": ["Frost"]
+        }
+      },
+      {
+        "name": "Bottle of Spiraling Winds",
+        "image_name": "inv_10_alchemy_bottle_shape1_white.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Enhancement"],
+          "Monk": ["Windwalker", "Brewmaster"],
+          "Druid": ["Feral"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Ukhel Ancestry Beads",
+        "image_name": "inv_10_dungeonjewelry_centaur_necklace_1_color3.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"],
+          "Paladin": ["Protection", "Retribution", "Holy"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Druid": ["Balance", "Restoration", "Feral", "Guardian"],
+          "Death Knight": ["Blood", "Frost", "Unholy"],
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Shaman": ["Elemental", "Restoration", "Enhancement"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Miniature Singing Stone",
+        "image_name": "inv_10_dungeonjewelry_centaur_trinket_1_color1.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Paladin": ["Holy"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Bow of the First Khanam",
+        "image_name": "inv_bow_1h_dragondungeon_c_01.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship"]
+        }
+      },
+      {
+        "name": "Koroleth's Crackling Dagger",
+        "image_name": "inv_knife_1h_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Staff of Violent Storms",
+        "image_name": "inv_staff_2h_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Druid": ["Balance", "Restoration"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Shaman": ["Elemental", "Restoration"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"],
+          "Monk": ["Mistweaver"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Lightning-Charged Striders",
+        "image_name": "inv_mail_dragondungeon_c_01_boot.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Shikaar Ranger Bracers",
+        "image_name": "inv_mail_dragondungeon_c_01_bracer.jpg",
+        "classes": {
+          "Hunter": ["Beast Mastery", "Marksmanship", "Survival"],
+          "Shaman": ["Elemental", "Enhancement", "Restoration"],
+          "Evoker": ["Devastation", "Preservation"]
+        }
+      },
+      {
+        "name": "Quarryslayer Glaive",
+        "image_name": "inv_polearm_2h_dragondungeon_c_01.jpg",
+        "classes": {
+          "Paladin": ["Retribution"],
+          "Warrior": ["Arms", "Fury"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Thrashing Wind Vambraces",
+        "image_name": "inv_plate_dragondungeon_c_01_bracer.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Stoneroot Headdress",
+        "image_name": "inv_leather_dragondungeon_c_01_helm.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Tunic of the Eternal Hunt",
+        "image_name": "inv_leather_dragondungeon_c_01_chest.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Drake Hunter's Greaves",
+        "image_name": "inv_plate_dragondungeon_c_01_pant.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Legguards of Adamant Rule",
+        "image_name": "inv_leather_dragondungeon_c_01_pant.jpg",
+        "classes": {
+          "Druid": ["Balance", "Feral", "Guardian", "Restoration"],
+          "Rogue": ["Assassination", "Outlaw", "Subtlety"],
+          "Monk": ["Brewmaster", "Windwalker", "Mistweaver"],
+          "Demon Hunter": ["Havoc", "Vengeance"]
+        }
+      },
+      {
+        "name": "Nokhud Traditionalist's Pauldrons",
+        "image_name": "inv_plate_dragondungeon_c_01_shoulder.jpg",
+        "classes": {
+          "Paladin": ["Holy", "Protection", "Retribution"],
+          "Warrior": ["Arms", "Fury", "Protection"],
+          "Death Knight": ["Blood", "Frost", "Unholy"]
+        }
+      },
+      {
+        "name": "Drake Hunter Shoulderpads",
+        "image_name": "inv_shoulder_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      },
+      {
+        "name": "Blessed Ohn'ir Robes",
+        "image_name": "inv_chest_cloth_dragondungeon_c_01.jpg",
+        "classes": {
+          "Mage": ["Arcane", "Fire", "Frost"],
+          "Priest": ["Discipline", "Holy", "Shadow"],
+          "Warlock": ["Affliction", "Demonology", "Destruction"]
+        }
+      }
+    ]
+  }
+}

@@ -10,6 +10,7 @@ import Tank from "../img/roles/tank.webp";
 import Flag from "../img/roles/flag.webp";
 import Navbar from "../components/Navbar";
 import List from "./List";
+import data from "../data/data.json";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
@@ -26,6 +27,12 @@ const Home = () => {
       const data = await res.json();
       setCharInfo(data);
     };
+    Object.values(data).map(
+      (x) =>
+        x.items.map(
+          (y) => Object.keys(y.classes).length === 0 && console.log(y)
+        ) // Check for items without classes
+    );
 
     getScore(region, name, realm);
   }, [region, name, realm]);
@@ -33,8 +40,10 @@ const Home = () => {
   return (
     <div className="home">
       <Navbar />
-      <List />
       <div className="container">
+        <List />
+      </div>
+      {/*
         {false && (
           <>
             Name: {charInfo.name}-{charInfo.realm}{" "}
@@ -51,7 +60,7 @@ const Home = () => {
           </>
         )}
         <button onClick={() => signOut(auth)}>Logout</button>
-      </div>
+        */}
     </div>
   );
 };

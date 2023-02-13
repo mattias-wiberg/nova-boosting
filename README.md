@@ -29,7 +29,7 @@ MListing {
             level: int,
             dungeon: int,
             timed: bool,
-            need: bool
+            need_from: ["tank", "healer", "dps_left", "dps_right"],
         },
     ],
     note: string,

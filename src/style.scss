@@ -22,6 +22,7 @@ $b3: rgb(175, 175, 175);
 $c: #a7bcff;
 $dc: #5d5b8d;
 
+$bg: #121c24;
 $orange-peel: #fe9908ff;
 $gunmetal: #202c39ff;
 $gunmetal-2: #283845ff;
@@ -47,8 +48,61 @@ $red: rgb(255, 66, 66);
   color: $red;
 }
 
+.keyLi {
+  .key {
+    display: flex;
+    font-size: 16px;
+    height: 27px;
+
+    .listing {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+        z-index: 0;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+        position: absolute;
+
+        .name {
+          margin-left: 5px;
+        }
+
+        .level {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: $gunmetal;
+    border: none;
+    color: white;
+    border-radius: 0px 5px 5px 0;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid $gunmetal-2;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $delgreen;
+    }
+  }
+}
+
 .mListFormContainer {
-  background-color: $gunmetal-2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,58 +174,18 @@ $red: rgb(255, 66, 66);
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
 
-    .key {
-      display: flex;
-      font-size: 16px;
-      height: 27px;
+  textarea {
+    background-color: $gunmetal;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    outline: none;
+    resize: none;
 
-      .listing {
-        display: flex;
-        align-items: center;
-        width: 250px;
-        overflow: hidden;
-        border-radius: 5px 0 0 5px;
-
-        img {
-          width: 100%;
-          object-fit: contain;
-          z-index: 0;
-        }
-
-        .info {
-          display: flex;
-          justify-content: space-between;
-          width: 250px;
-          position: absolute;
-
-          .name {
-            margin-left: 5px;
-          }
-
-          .level {
-            margin-right: 5px;
-          }
-        }
-      }
-    }
-
-    button {
-      background-color: $gunmetal;
-      border: none;
-      color: white;
-      border-radius: 0px 5px 5px 0;
-      width: 27px;
-      height: 27px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-left: 1px solid $gunmetal-2;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $delgreen;
-      }
+    &::placeholder {
+      color: $cadet-gray;
     }
   }
 
@@ -179,22 +193,32 @@ $red: rgb(255, 66, 66);
     display: flex;
     align-items: center;
 
+    input {
+      outline: none;
+      height: 27px;
+      border-radius: 5px 0 0 5px;
+      width: 100px;
+      font-size: 17px;
+    }
+
     button {
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: transparent;
       border: none;
-      width: 24px;
-      height: 24px;
+      width: 27px;
+      height: 27px;
 
       img {
         position: absolute;
-        width: 24px;
-        height: 24px;
+        width: 27px;
+        height: 27px;
       }
 
       .mark {
+        width: 27px;
+        height: 27px;
         background-color: rgba(0, 0, 0, 0.5);
         position: absolute;
 
@@ -280,17 +304,20 @@ $red: rgb(255, 66, 66);
 }
 
 .home {
-  background-color: $c;
+  background-color: $gunmetal-2;
   display: flex;
   align-items: center;
-  margin: 20px;
+  height: 100vh;
 
   .container {
-    border: 1px solid $b;
-    border-radius: 10px;
     display: flex;
-    @include tablet {
-      width: 90%;
-    }
+    justify-content: center;
+    align-items: center;
+    width: calc(100vw - 64px);
   }
+}
+
+.navbar {
+  width: 64px;
+  height: 100vh;
 }

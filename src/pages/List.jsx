@@ -3,7 +3,7 @@ import Gold from "../img/gold.jpg";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import AddIcon from "@mui/icons-material/Add";
-import AA_BG from "../img/dungeons/background/AA.jpg";
+import KeyLi from "../components/KeyLi";
 
 const List = () => {
   const shortNames = false;
@@ -23,9 +23,9 @@ const List = () => {
     NO: "The Nokhud Offensive",
   };
 
-  const dungeons = shortNames
-    ? Object.keys(mythicPlusDungeons)
-    : Object.values(mythicPlusDungeons);
+  const removeKey = (e) => {
+    e.preventDefault();
+  };
 
   // TODO: Add way to require possible item drop.
   // gather data from wowhead to know what classes can get what drops
@@ -33,58 +33,27 @@ const List = () => {
   return (
     <div className="mListFormContainer">
       <div className="keyInput">
-        <input type="number" />
+        <input type="number" defaultValue={0} />
         <select defaultValue={"*"}>
           {Object.keys(mythicPlusDungeons).map((key) => (
             <option key={key} value={key}>
               {shortNames ? key : mythicPlusDungeons[key]}
             </option>
           ))}
-          <option value="*">*</option>
+          <option value="ANY">*</option>
         </select>
         <button>
           <AddIcon />
         </button>
       </div>
       <div className="keys">
-        <div className="key">
-          <div className="listing">
-            <img src={AA_BG} alt="BG" />
-            <div className="info">
-              <span className="name">Algeth'ar Academy</span>
-              <span className="level">14</span>
-            </div>
-          </div>
-          <button>
-            <CloseIcon style={{ margin: "0 3px 0 0" }} />
-          </button>
-        </div>
-        <div className="key">
-          <div className="listing">
-            <img src={AA_BG} alt="BG" />
-            <div className="info">
-              <span className="name">Algeth'ar Academy</span>
-              <span className="level">14</span>
-            </div>
-          </div>
-          <button>
-            <CloseIcon style={{ margin: "0 3px 0 0" }} />
-          </button>
-        </div>
-        <div className="key">
-          <div className="listing">
-            <img src={AA_BG} alt="BG" />
-            <div className="info">
-              <span className="name">Algeth'ar Academy</span>
-              <span className="level">14</span>
-            </div>
-          </div>
-          <button>
-            <CloseIcon style={{ margin: "0 3px 0 0" }} />
-          </button>
-        </div>
+        <KeyLi closeHandler={removeKey} />
       </div>
-      <textarea rows="3"></textarea>
+      <textarea
+        cols="40"
+        rows="3"
+        placeholder="Type your note here..."
+      ></textarea>
       <div className="paid">
         <input type="number" />
 
