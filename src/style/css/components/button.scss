@@ -1,0 +1,89 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+
+  cursor: pointer;
+
+  .icon {
+    display: flex;
+    font-size: 14px;
+    //width: 14px;
+    //height: 14px;
+    color: theme.$main-light-1;
+  }
+
+  span {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: theme.$main-light-1;
+  }
+}
+
+.default {
+  background: theme.$main-dark-2;
+}
+
+.default-hover {
+  &:hover {
+    background: theme.$main-dark-2;
+  }
+}
+
+.green {
+  background: colors.$green;
+}
+
+.green-hover {
+  &:hover {
+    background: colors.$green;
+  }
+}
+
+.blue {
+  background: colors.$blue;
+}
+
+.blue-hover {
+  &:hover {
+    background: colors.$blue;
+  }
+}
+
+.red {
+  background: colors.$red;
+}
+
+.red-hover {
+  &:hover {
+    background: colors.$red;
+  }
+}
+
+.gray {
+  background: colors.$gray;
+}
+
+.gray-hover {
+  &:hover {
+    background: colors.$gray;
+  }
+}
+
+.active {
+  background: colors.$active;
+}
+
+.active-hover {
+  &:hover {
+    background: colors.$active;
+  }
+}

@@ -1,0 +1,7 @@
+@use "theme" as theme;
+
+.vl {
+  width: 1px;
+  background: theme.$main-dark-1;
+  height: 24px;
+}

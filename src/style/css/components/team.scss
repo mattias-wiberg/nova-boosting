@@ -1,0 +1,11 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.team-container {
+  display: flex;
+  flex-direction: row;
+
+  width: 310px;
+  border-radius: 5px;
+  background: theme.$main-dark-2;
+}

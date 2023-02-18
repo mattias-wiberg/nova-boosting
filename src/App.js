@@ -1,7 +1,7 @@
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import "./style.scss";
+//import "./style.scss";
 import {
   Route,
   BrowserRouter,
@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
+import Team from './components/Team';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -26,7 +27,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/">
-          <Route index element={<Home />} />
+          <Route index element={
+            <Team />} />
           {/*
           <Route index element={
             <ProtectedRoute>
