@@ -2,7 +2,6 @@ import React from "react";
 import Button from "./Button";
 import RemoveIcon from "@mui/icons-material/Remove";
 import EditIcon from "@mui/icons-material/Edit";
-import CheckIcon from "@mui/icons-material/Check";
 
 import "../style/style.scss";
 import "../style/css/components/team.scss";
@@ -28,7 +27,7 @@ const Team = () => {
         button_icon={<EditIcon fontSize="14px" />}
       />
       <div className="vl" />
-      <Select onClick={expand} />
+      <Select clickHandler={expand} />
     </div>
   );
 };

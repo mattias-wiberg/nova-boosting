@@ -2,16 +2,9 @@ import { signOut } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { auth } from "../firebase";
-import Horde from "../img/horde.jpg";
-import Alliance from "../img/alliance.jpg";
-import Dps from "../img/roles/dps.webp";
-import Healer from "../img/roles/healer.webp";
-import Tank from "../img/roles/tank.webp";
-import Flag from "../img/roles/flag.webp";
 import Navbar from "../components/Navbar";
-import List from "./List";
 import data from "../data/data.json";
-import Select from "../components/Select";
+import Teams from "./Teams";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
@@ -37,31 +30,27 @@ const Home = () => {
 
     getScore(region, name, realm);
   }, [region, name, realm]);
-
+  /*
+  {false && (
+    <>
+      Name: {charInfo.name}-{charInfo.realm}{" "}
+      <img src={charInfo.faction === "horde" ? Horde : Alliance} alt="" />
+      Scores:
+      <img src={Flag} alt="" />{" "}
+      {charInfo?.mythic_plus_scores_by_season[0].scores.all}
+      <img src={Dps} alt="" />{" "}
+      {charInfo?.mythic_plus_scores_by_season[0].scores.dps}
+      <img src={Tank} alt="" />{" "}
+      {charInfo?.mythic_plus_scores_by_season[0].scores.tank}
+      <img src={Healer} alt="" />{" "}
+      {charInfo?.mythic_plus_scores_by_season[0].scores.healer}
+    </>
+  )}
+  <button onClick={() => signOut(auth)}>Logout</button>
+  */
   return (
     <div className="home">
-      <Navbar />
-      <div className="container">
-        <List />
-      </div>
-      {/*
-        {false && (
-          <>
-            Name: {charInfo.name}-{charInfo.realm}{" "}
-            <img src={charInfo.faction === "horde" ? Horde : Alliance} alt="" />
-            Scores:
-            <img src={Flag} alt="" />{" "}
-            {charInfo?.mythic_plus_scores_by_season[0].scores.all}
-            <img src={Dps} alt="" />{" "}
-            {charInfo?.mythic_plus_scores_by_season[0].scores.dps}
-            <img src={Tank} alt="" />{" "}
-            {charInfo?.mythic_plus_scores_by_season[0].scores.tank}
-            <img src={Healer} alt="" />{" "}
-            {charInfo?.mythic_plus_scores_by_season[0].scores.healer}
-          </>
-        )}
-        <button onClick={() => signOut(auth)}>Logout</button>
-        */}
+      <div className="page"></div>
     </div>
   );
 };

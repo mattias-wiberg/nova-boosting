@@ -1,7 +1,7 @@
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-//import "./style.scss";
+import "./style/style.scss";
 import {
   Route,
   BrowserRouter,
@@ -10,7 +10,8 @@ import {
 } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
-import Team from './components/Team';
+import Navbar from './components/Navbar';
+import Teams from './pages/Teams';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -24,22 +25,27 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/">
-          <Route index element={
-            <Team />} />
-          {/*
+    <div className="app">
+      <BrowserRouter>
+        <Navbar />
+        <div className="wrapper">
+          <Routes>
+            <Route path="/">
+              <Route index element={<Home />} />
+              <Route path="teams" element={<Teams />} />
+              {/*
           <Route index element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
-          } />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />*/}
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          } />*/}
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+            </Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </div>
   );
 }
 

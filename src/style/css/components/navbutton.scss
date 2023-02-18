@@ -1,0 +1,18 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.nav-button {
+  background: theme.$main-middle-1;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+}

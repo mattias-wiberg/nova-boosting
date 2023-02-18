@@ -1,5 +1,19 @@
 @use "theme" as theme;
 
+.app {
+  display: flex;
+  background-color: theme.$main-dark-3;
+  height: 100vh;
+  width: 100vw;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+}
+
 .vl {
   width: 1px;
   background: theme.$main-dark-1;
