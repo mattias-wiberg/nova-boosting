@@ -67,17 +67,17 @@ const Team = () => {
   const leader = true;
 
   const expand = (e) => {
-    console.log("expand");
+    //console.log("expand");
     setExpanded(!expanded);
   };
 
   return (
     <div className="team-container">
-      <div className="team-head">
+      <div className={"team-head " + (expanded && "expanded")}>
         <Button
           color="red"
           button_icon={<RemoveIcon fontSize="inherit" />}
-          className={"remove-button " + (expanded && "expanded")}
+          className="remove-button"
         />
         <Button
           color="active"
@@ -90,7 +90,6 @@ const Team = () => {
           expanded={expanded}
           selection="Faze Clan"
           label="3/4"
-          className="select"
         />
       </div>
       {expanded && (

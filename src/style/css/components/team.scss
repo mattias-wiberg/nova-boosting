@@ -6,6 +6,12 @@
   flex-direction: column;
   align-items: flex-end;
   width: 374px;
+
+  .expanded {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
   .team-head {
     display: flex;
     flex-direction: row;
@@ -22,9 +28,6 @@
     .remove-button {
       border-radius: 5px 0 0 5px;
       border-right: 1px solid theme.$main-dark-1;
-    }
-
-    .expanded {
     }
 
     .select {
