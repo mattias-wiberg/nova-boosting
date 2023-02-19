@@ -10,6 +10,8 @@ const Button = ({
   clickHandler,
   swap,
   className,
+  holdOnHandler,
+  holdOffHandler,
 }) => {
   /*
     type: none, hold
@@ -40,6 +42,8 @@ const Button = ({
     if (type === "hold") {
       if (hover === color + "-hover") {
         setHover("");
+        holdOnHandler();
+        //console.log("hold on");
         if (swap) {
           setBackground(swap.color);
           setIcon(swap.button_icon);
@@ -50,6 +54,8 @@ const Button = ({
         if (activeClick) {
           // Button is default and being clicked but activeClick
           // is true since the mouse never left the button
+          //console.log("hold on");
+          holdOnHandler();
           if (swap) {
             setBackground(swap.color);
             setIcon(swap.button_icon);
@@ -59,6 +65,8 @@ const Button = ({
           setActiveClick(false);
         } else {
           //Button is active and being clicked
+          //console.log("hold off");
+          holdOffHandler();
           setIcon(button_icon);
           setBackground("default");
           setActiveClick(true);
