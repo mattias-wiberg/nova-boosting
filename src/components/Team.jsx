@@ -3,6 +3,7 @@ import Button from "./Button";
 import RemoveIcon from "@mui/icons-material/Remove";
 import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
+import AddIcon from "@mui/icons-material/Add";
 
 import "../style/style.scss";
 import "../style/css/components/team.scss";
@@ -75,16 +76,22 @@ const Team = () => {
       <div className="team-head">
         <Button
           color="red"
-          button_icon={<RemoveIcon fontSize="14px" />}
-          classes="remove-button"
+          button_icon={<RemoveIcon fontSize="inherit" />}
+          className={"remove-button " + (expanded && "expanded")}
         />
         <Button
           color="active"
           type="hold"
-          button_icon={<EditIcon fontSize="14px" />}
-          classes="edit-button"
+          button_icon={<EditIcon fontSize="inherit" />}
+          className="edit-button"
         />
-        <Select clickHandler={expand} selection="Faze Clan" label="3/4" />
+        <Select
+          clickHandler={expand}
+          expanded={expanded}
+          selection="Faze Clan"
+          label="3/4"
+          className="select"
+        />
       </div>
       {expanded && (
         <div className="dropdown">
@@ -123,9 +130,20 @@ const Team = () => {
                 <input
                   type="text"
                   placeholder="Name - Realm"
-                  className="input"
+                  className="input character"
                 />
-                <div className="roles"></div>
+                <div className="buttons">
+                  <div className="roles">
+                    <TankIcon className="role" />
+                    <HealerIcon className="role" />
+                    <DpsIcon className="role" />
+                  </div>
+                  <Button
+                    color="green"
+                    button_icon={<AddIcon fontSize="inherit" />}
+                    className="add"
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ const Button = ({
   type,
   clickHandler,
   swap,
-  classes,
+  className,
 }) => {
   /*
     type: none, hold
@@ -79,7 +79,7 @@ const Button = ({
 
   return (
     <div
-      className={`button ${background} ${hover} ${classes}`}
+      className={`button ${background} ${hover} ${className}`}
       onClick={handleClick}
       onMouseLeave={handleMouseLeave}
     >

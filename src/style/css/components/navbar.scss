@@ -15,7 +15,7 @@
   .head {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     width: 46px;
 
@@ -61,10 +61,10 @@
   .links {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     gap: 5px;
-    width: 100%;
+    flex-grow: 1;
   }
 
   .footer {

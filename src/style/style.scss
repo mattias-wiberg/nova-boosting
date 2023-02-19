@@ -26,6 +26,7 @@ input {
 
   &::placeholder {
     color: theme.$main-light-5;
+    font-weight: 500;
   }
   &::selection {
     background-color: theme.$main-dark-4;
