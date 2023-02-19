@@ -9,7 +9,7 @@ const Button = ({
   type,
   clickHandler,
   swap,
-  borderRadius = "5px",
+  classes,
 }) => {
   /*
     type: none, hold
@@ -79,10 +79,9 @@ const Button = ({
 
   return (
     <div
-      className={`button ${background} ${hover}`}
+      className={`button ${background} ${hover} ${classes}`}
       onClick={handleClick}
       onMouseLeave={handleMouseLeave}
-      style={{ borderRadius: borderRadius }}
     >
       {text && <span>{text}</span>}
       <div className="icon">{icon}</div>

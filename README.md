@@ -6,21 +6,35 @@ This is a website to make boosting for the "Nova Boosting Community" Easier
 
 ```
 User {
-    uid: string,
+    id: string,
+    name: string,
     characters: [
         Character {
+            id: string,
             name: string,
             realm: string,
             roles: [
-                ["tank", "dps", "healer"],
+                ["tank", "healer", "dps"],
             ],
-            armor: ["Leather", "Plate", "Cloth", "Mail"],
-            class: ["Death knight", "Demon hunter", "Druid", "Evoker", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"]],
-            rating: int,
-            main: bool
-        }
+            armor: ["leather", "plate", "cloth", mail"],
+            class: ["death-knight", "demon-hunter", "druid", "evoker", "hunter", "mage", "monk", "paladin", "priest", "rogue", "shaman", "warlock", "warrior"]],
+            ratings: [int] (tank, healer, dps),
+            rating_colors: [string]
+        }, ...
     ],
-    main_character: int
+    main_character: cid (payout char)
+    team_ids: [
+        string
+    ]
+}
+
+Team {
+    id: string,
+    name: string,
+    members: [
+        {id: uid, characters: [cid, ...]},
+    ]
+    leader: uid
 }
 
 MListing {
@@ -29,7 +43,7 @@ MListing {
             level: int,
             dungeon: int,
             timed: bool,
-            need_from: ["tank", "healer", "dps_left", "dps_right"],
+            need_key: bool,
         },
     ],
     note: string,
@@ -38,7 +52,7 @@ MListing {
     pot: int,
     boosters: [
         Role {
-            role: ["tank", "dps", "healer"],
+            role: ["tank", "dd", "healer"],
             armor: ["*", "Leather", "Plate", "Cloth", "Mail"],
             class: ["*", "Death knight", "Demon hunter", "Druid", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior", "Evoker"],
         },
@@ -60,7 +74,7 @@ MRun {
     pot: int,
     boosters: [
         Role {
-            role: ["tank", "dps", "healer"],
+            role: ["tank", "dd", "healer"],
             name: string,
             realm: string
         }

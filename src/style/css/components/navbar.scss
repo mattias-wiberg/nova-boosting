@@ -8,7 +8,8 @@
   justify-content: space-between;
   padding: 10px 0;
   background: theme.$main-dark-1;
-  position: sticky;
+  position: fixed;
+  height: calc(100vh - 20px);
   width: 46px;
 
   .head {
@@ -35,16 +36,26 @@
     width: 30px;
     height: 30px;
     border-radius: 5px;
+    cursor: pointer;
+    color: theme.$main-middle-1;
 
     .icon {
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 20px;
-      color: theme.$main-middle-1;
       width: 20px;
       height: 20px;
     }
+    &:hover {
+      background: theme.$main-middle-1;
+      color: theme.$main-dark-1;
+    }
+  }
+
+  .active {
+    background: theme.$main-middle-1 !important;
+    color: theme.$main-dark-1 !important;
   }
 
   .links {

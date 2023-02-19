@@ -1,16 +1,34 @@
 @use "theme" as theme;
+@use "colors" as colors;
 
 .app {
   display: flex;
-  background-color: theme.$main-dark-3;
-  height: 100vh;
-  width: 100vw;
 
   .wrapper {
+    background-color: theme.$main-dark-3;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100vw;
+    padding-top: 80px;
+    padding-left: 64px;
+    width: calc(100vw - 64px);
+  }
+}
+
+.input,
+input {
+  background-color: theme.$main-dark-2;
+  border: none;
+  outline: none;
+  caret-color: theme.$main-light-5;
+  color: theme.$main-light-3;
+  font-size: 12px;
+  padding-left: 4px;
+
+  &::placeholder {
+    color: theme.$main-light-5;
+  }
+  &::selection {
+    background-color: theme.$main-dark-4;
   }
 }
 
@@ -18,4 +36,81 @@
   width: 1px;
   background: theme.$main-dark-1;
   height: 24px;
+  overflow: visible;
+}
+
+.druid {
+  color: colors.$druid;
+}
+
+.paladin {
+  color: colors.$paladin;
+}
+
+.monk {
+  color: colors.$monk;
+}
+
+.evoker {
+  color: colors.$evoker;
+}
+
+.priest {
+  color: colors.$priest;
+}
+
+.shaman {
+  color: colors.$shaman;
+}
+
+.mage {
+  color: colors.$mage;
+}
+
+.rogue {
+  color: colors.$rogue;
+}
+
+.hunter {
+  color: colors.$hunter;
+}
+
+.warlock {
+  color: colors.$warlock;
+}
+
+.death-knight {
+  color: colors.$death-knight;
+}
+
+.demon-hunter {
+  color: colors.$demon-hunter;
+}
+
+.warrior {
+  color: colors.$warrior;
+}
+
+.prio-1 {
+  color: colors.$prio-1;
+}
+
+.prio-2 {
+  color: colors.$prio-2;
+}
+
+.prio-3 {
+  color: colors.$prio-3;
+}
+
+.prio-1-dark {
+  color: colors.$prio-1-dark;
+}
+
+.prio-2-dark {
+  color: colors.$prio-2-dark;
+}
+
+.prio-3-dark {
+  color: colors.$prio-3-dark;
 }

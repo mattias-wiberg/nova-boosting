@@ -19,6 +19,7 @@ const Home = () => {
       const url = `https://raider.io/api/v1/characters/profile?region=${region}&realm=${realm}&name=${name}&fields=mythic_plus_scores_by_season%3Acurrent`;
       const res = await fetch(url);
       const data = await res.json();
+      console.log(data);
       setCharInfo(data);
     };
     Object.values(data).map(
@@ -28,7 +29,7 @@ const Home = () => {
         ) // Check for items without classes
     );
 
-    getScore(region, name, realm);
+    //getScore(region, name, realm);
   }, [region, name, realm]);
   /*
   {false && (

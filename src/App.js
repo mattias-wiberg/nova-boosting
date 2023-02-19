@@ -24,6 +24,8 @@ function App() {
     return children
   }
 
+  console.log(currentUser)
+
   return (
     <div className="app">
       <BrowserRouter>
