@@ -4,6 +4,8 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
 import AddIcon from "@mui/icons-material/Add";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 import "../style/style.scss";
 import "../style/css/components/team.scss";
@@ -11,7 +13,6 @@ import { ReactComponent as CrownIcon } from "../img/icons/crown.svg";
 import { ReactComponent as DpsIcon } from "../img/icons/dps.svg";
 import { ReactComponent as HealerIcon } from "../img/icons/healer.svg";
 import { ReactComponent as TankIcon } from "../img/icons/tank.svg";
-import Select from "./Select";
 import { AuthContext } from "../context/AuthContext";
 
 const TeamMate = ({ character }) => {
@@ -85,12 +86,21 @@ const Team = () => {
           button_icon={<EditIcon fontSize="inherit" />}
           className="edit-button"
         />
-        <Select
-          clickHandler={expand}
-          expanded={expanded}
-          selection="Faze Clan"
-          label="3/4"
-        />
+        <div className="select" onClick={expand}>
+          <div className="left">
+            <span className="selected">Faze Clan</span>
+          </div>
+          <div className="right">
+            <span className="label">3/4</span>
+            <div className="arrow">
+              {expanded ? (
+                <ExpandLessIcon fontSize="inherit" />
+              ) : (
+                <ExpandMoreIcon fontSize="inherit" />
+              )}
+            </div>
+          </div>
+        </div>
       </div>
       {expanded && (
         <div className="dropdown">

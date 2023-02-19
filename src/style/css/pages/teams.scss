@@ -1,0 +1,21 @@
+.teams {
+  display: flex;
+  align-items: center;
+  width: max-content;
+
+  .teams-container {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .new-team-container {
+    width: 100%;
+    display: flex;
+    .team-name {
+    }
+    .select {
+      flex-grow: 1;
+    }
+  }
+}

@@ -31,7 +31,43 @@
     }
 
     .select {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 5px;
+      margin-right: 7px;
+      min-width: 120px;
+      font-size: 13px;
+      cursor: pointer;
       flex-grow: 1;
+
+      .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: colors.$active;
+      }
+
+      .right {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+
+        .label {
+          color: theme.$main-light-1;
+        }
+
+        .arrow {
+          width: 15px;
+          height: 15px;
+          font-size: 15px;
+          color: theme.$main-light-1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     }
   }
 }
