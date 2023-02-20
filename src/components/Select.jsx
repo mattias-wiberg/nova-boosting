@@ -19,7 +19,7 @@ const Select = ({ multiple, className }) => {
         name: "Drulu",
         realm: "Deathwing",
         class: "druid",
-        selected: false,
+        selected: true,
         key: "characters",
       },
       {

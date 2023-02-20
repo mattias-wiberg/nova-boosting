@@ -1,22 +1,33 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
 .teams {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 374px;
+  gap: 11px;
 
   .teams-container {
     display: flex;
     flex-direction: column;
-    gap: 11px;
   }
 
   .new-team-container {
-    width: 100%;
     display: flex;
+    width: 100%;
     .team-name {
       display: flex;
+      border-radius: 5px 0 0 5px;
+      border-right: 1px solid theme.$main-dark-1;
     }
     .select {
+      display: flex;
       flex-grow: 1;
+      border-right: 1px solid theme.$main-dark-1;
+    }
+    .add {
+      border-radius: 0 5px 5px 0;
     }
   }
 }
