@@ -1,33 +1,27 @@
 @use "../../theme" as theme;
 @use "../../colors" as colors;
-
 .select {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 5px;
-  margin-right: 7px;
-  min-width: 120px;
-  font-size: 13px;
-  cursor: pointer;
+  color: theme.$main-light-1;
+  font-size: 12px;
 
-  .left {
+  .header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: colors.$active;
-  }
-
-  .right {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 
-    .label {
-      color: theme.$main-light-1;
+    width: 203px;
+    font-size: 13px;
+    padding: 2px 7px;
+    cursor: pointer;
+    background-color: theme.$main-dark-2;
+
+    .selected {
+      color: colors.$active;
     }
-
+    .placeholder {
+      color: theme.$main-light-5;
+    }
     .arrow {
       width: 15px;
       height: 15px;
@@ -36,6 +30,25 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+  .items {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 1px;
+    background: theme.$main-dark-2;
+    border-radius: 0 0 5px 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .item {
+      padding: 3px 10px 4px 3px;
+      cursor: pointer;
+    }
+
+    .selected {
+      background: theme.$main-dark-1;
     }
   }
 }
