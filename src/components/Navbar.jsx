@@ -6,6 +6,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LoginIcon from "@mui/icons-material/Login";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const loggedIn = false;
@@ -28,7 +29,9 @@ const Navbar = () => {
         {loggedIn ? (
           <NavButton icon={<AccountCircleIcon fontSize="inherit" />} />
         ) : (
-          <NavButton icon={<LoginIcon fontSize="inherit" />} />
+          <Link to="/login" className="link">
+            <NavButton icon={<LoginIcon fontSize="inherit" />} />
+          </Link>
         )}
       </div>
     </div>
