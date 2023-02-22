@@ -1,0 +1,57 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.formContainer {
+  display: flex;
+  width: 202px;
+  align-content: center;
+  flex-direction: column;
+
+  .title {
+    color: theme.$main-light-1;
+    font-size: 16px;
+    padding-bottom: 65px;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 202px;
+    align-content: center;
+
+    input {
+      background: theme.$main-dark-2;
+      width: 100%;
+      height: 28px;
+      font-size: 14px;
+      box-sizing: border-box;
+      color: theme.$main-light-3;
+      border-radius: 5px;
+
+      &::placeholder {
+        font-size: 14px;
+        color: theme.$main-light-5;
+      }
+    }
+
+    .submit {
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  .footerText {
+    font-size: 10px;
+    color: theme.$main-dark-1;
+    text-align: center;
+    padding-top: 10px;
+
+    .link {
+      color: colors.$active;
+      text-decoration: none;
+    }
+  }
+}

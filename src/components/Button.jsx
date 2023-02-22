@@ -92,7 +92,7 @@ const Button = ({
       onMouseLeave={handleMouseLeave}
     >
       {text && <span>{text}</span>}
-      <div className="icon">{icon}</div>
+      {icon && <div className="icon">{icon}</div>}
     </div>
   );
 };
