@@ -1,0 +1,36 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.settings {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    color: theme.$main-light-1;
+    font-size: 16px;
+    padding-bottom: 11px;
+    text-align: center;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 19px;
+    justify-content: center;
+
+    .tab {
+      color: theme.$main-dark-1;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 1px 10px;
+    }
+
+    .active-tab {
+      background: theme.$main-dark-4;
+      border-radius: 9px;
+    }
+  }
+
+  .content {
+    padding-top: 11px;
+  }
+}

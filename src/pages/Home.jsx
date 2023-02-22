@@ -2,9 +2,7 @@ import { signOut } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { auth } from "../firebase";
-import Navbar from "../components/Navbar";
 import data from "../data/data.json";
-import Teams from "./Teams";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);

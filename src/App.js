@@ -11,7 +11,8 @@ import {
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import Navbar from './components/Navbar';
-import Teams from './pages/Teams';
+import Teams from './tabs/Teams';
+import Settings from './pages/Settings';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -34,7 +35,7 @@ function App() {
           <Routes>
             <Route path="/">
               <Route index element={<Home />} />
-              <Route path="teams" element={<Teams />} />
+              <Route path="settings" element={<Settings />} />
               {/*
           <Route index element={
             <ProtectedRoute>

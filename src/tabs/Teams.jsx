@@ -11,7 +11,6 @@ const Teams = () => {
 
   return (
     <div className="teams">
-      <h1>Teams</h1>
       <div className="teams-container">
         <Team />
       </div>
