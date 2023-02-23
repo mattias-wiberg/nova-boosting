@@ -4,7 +4,7 @@ import Select from "../components/Select";
 import Team from "../components/Team";
 import { AuthContext } from "../context/AuthContext";
 import AddIcon from "@mui/icons-material/Add";
-import "../style/css/pages/teams.scss";
+import "../style/css/tabs/teams.scss";
 
 const Teams = () => {
   const { currentUser } = useContext(AuthContext);
