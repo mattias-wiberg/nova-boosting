@@ -4,11 +4,11 @@
 .settings {
   display: flex;
   flex-direction: column;
+  gap: 11px;
 
   .title {
     color: theme.$main-light-1;
     font-size: 16px;
-    padding-bottom: 11px;
     text-align: center;
   }
 
@@ -31,6 +31,5 @@
   }
 
   .content {
-    padding-top: 11px;
   }
 }
