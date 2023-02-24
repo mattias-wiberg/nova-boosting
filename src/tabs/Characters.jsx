@@ -30,22 +30,23 @@ const Characters = () => {
             <Button
               color="active"
               button_icon={<EditIcon fontSize="inherit" />}
+              clickHandler={() => setMode("edit")}
             />
           )}
-          {mode === "edit" &&
-            !invalidEdit(
-              <Button
-                color="green"
-                button_icon={<CheckIcon fontSize="inherit" />}
-              />
-            )}
-          {mode === "edit" &&
-            invalidEdit(
-              <Button
-                color="red"
-                button_icon={<CloseIcon fontSize="inherit" />}
-              />
-            )}
+          {mode === "edit" && !invalidEdit && (
+            <Button
+              color="green"
+              button_icon={<CheckIcon fontSize="inherit" />}
+              clickHandler={() => setMode("view")}
+            />
+          )}
+          {mode === "edit" && invalidEdit && (
+            <Button
+              color="red"
+              button_icon={<CloseIcon fontSize="inherit" />}
+              clickHandler={() => setMode("view")}
+            />
+          )}
         </div>
       </div>
       <div className="characters">
