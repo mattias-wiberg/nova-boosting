@@ -1,0 +1,197 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.characters-container {
+  width: 368px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .labels {
+      display: flex;
+      gap: 41px;
+      font-size: 11px;
+      margin-left: 40px;
+      color: theme.$main-dark-1;
+    }
+
+    .mode-button {
+      margin-right: 2px;
+      margin-bottom: 5px;
+
+      .button {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .characters {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: theme.$main-light-1;
+    font-size: 12px;
+
+    .character {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 5px;
+
+      .character-prio {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+      }
+
+      .main {
+        fill: colors.$active;
+        padding-bottom: 1px;
+      }
+
+      .non-main {
+        stroke-width: 1px;
+        stroke: theme.$main-dark-2;
+        cursor: pointer;
+        padding-bottom: 1px;
+      }
+
+      .info {
+        display: flex;
+        align-content: baseline;
+        gap: 17px;
+        align-items: center;
+
+        .name {
+          width: 55px;
+        }
+        .realm {
+          width: 77px;
+        }
+
+        .score {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+
+          .value {
+            width: 30px;
+          }
+
+          .role-prio {
+            display: inline-flex;
+            justify-content: center;
+            gap: 3px;
+          }
+        }
+
+        .faction {
+          width: 16px;
+          display: flex;
+          align-content: center;
+
+          .alliance {
+            fill: colors.$blue;
+          }
+
+          .horde {
+            fill: colors.$red;
+          }
+        }
+
+        .delete {
+          width: 8px;
+          height: 8px;
+          font-size: 8px;
+
+          &:hover {
+            color: colors.$red;
+          }
+        }
+      }
+    }
+  }
+
+  .add-character {
+    display: flex;
+    gap: 18px;
+    padding-left: 15px;
+    padding-top: 6px;
+
+    .inputs {
+      display: flex;
+      height: 20px;
+
+      .add-button {
+        border-radius: 5px 0 0 5px;
+        width: 20px;
+        box-sizing: border-box;
+      }
+
+      .name {
+        border-left: 1px solid theme.$main-dark-1;
+        width: 73px;
+        box-sizing: border-box;
+      }
+      .realm {
+        border-left: 1px solid theme.$main-dark-1;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+
+    .roles {
+      display: flex;
+      gap: 35px;
+      padding-right: 45px;
+      align-items: center;
+
+      .role {
+        width: 13px;
+        display: inline-flex;
+        fill: theme.$main-light-1;
+      }
+    }
+  }
+
+  .prio-list {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    padding-right: 27px;
+    font-size: 10px;
+    gap: 7px;
+    padding-top: 3px;
+
+    .label {
+      color: theme.$main-dark-1;
+    }
+
+    .prio-item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      color: theme.$main-light-1;
+    }
+  }
+
+  .prio {
+    width: 4px;
+    height: 4px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .prio-locked {
+    pointer-events: none;
+  }
+}
