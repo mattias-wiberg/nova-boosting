@@ -93,25 +93,49 @@ input {
 }
 
 .prio-1 {
-  color: colors.$prio-1;
+  background-color: colors.$prio-1;
+
+  &:hover {
+    background-color: colors.$prio-1-dark;
+  }
 }
 
 .prio-2 {
-  color: colors.$prio-2;
+  background-color: colors.$prio-2;
+
+  &:hover {
+    background-color: colors.$prio-2-dark;
+  }
 }
 
 .prio-3 {
-  color: colors.$prio-3;
+  background-color: colors.$prio-3;
+
+  &:hover {
+    background-color: colors.$prio-3-dark;
+  }
 }
 
 .prio-1-dark {
-  color: colors.$prio-1-dark;
+  background-color: colors.$prio-1-dark;
+
+  &:hover {
+    background-color: colors.$prio-1;
+  }
 }
 
 .prio-2-dark {
-  color: colors.$prio-2-dark;
+  background-color: colors.$prio-2-dark;
+
+  &:hover {
+    background-color: colors.$prio-2;
+  }
 }
 
 .prio-3-dark {
-  color: colors.$prio-3-dark;
+  background-color: colors.$prio-3-dark;
+
+  &:hover {
+    background-color: colors.$prio-3;
+  }
 }
