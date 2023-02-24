@@ -16,6 +16,8 @@
     flex-grow: 1;
     cursor: pointer;
     background-color: theme.$main-dark-2;
+    height: 100%;
+    box-sizing: border-box;
 
     .selected {
       color: colors.$active;

@@ -81,7 +81,7 @@ const Select = ({ multiple, className }) => {
   };
 
   return (
-    <div className={"select" + className && " " + className}>
+    <div className={"select" + (className && " " + className)}>
       <div className="header" onClick={expand}>
         {state.characters.filter((item) => item.selected).length > 0 ? (
           multiple ? (
