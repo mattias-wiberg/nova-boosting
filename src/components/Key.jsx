@@ -1,5 +1,5 @@
 import React from "react";
-import CloseIcon from "@mui/icons-material/Close";
+import "../style/css/components/key.scss";
 import AA_BG from "../img/dungeons/background/AA.jpg";
 import CoS_BG from "../img/dungeons/background/CoS.jpg";
 import HoV_BG from "../img/dungeons/background/HoV.jpg";
@@ -9,7 +9,7 @@ import TJS_BG from "../img/dungeons/background/TJS.jpg";
 import AV_BG from "../img/dungeons/background/AV.jpg";
 import NO_BG from "../img/dungeons/background/NO.jpg";
 
-const KeyLi = ({ closeHandler }) => {
+const KeyLi = ({ name, level, inTime = false, className }) => {
   const bgs = {
     AA: AA_BG,
     CoS: CoS_BG,
@@ -21,27 +21,16 @@ const KeyLi = ({ closeHandler }) => {
     NO: NO_BG,
   };
   return (
-    <div className="keyLi">
-      <div className="key">
-        <div
-          className="listing"
-          style={
-            closeHandler
-              ? { borderRadius: "5px 0 0 5px" }
-              : { borderRadius: "5px" }
-          }
-        >
-          <img src={bgs["AA"]} alt="BG" />
-          <div className="info">
-            <span className="name">Algeth'ar Academy</span>
-            <span className="level">14</span>
-          </div>
+    <div className={"key" + (className ? " " + className : "")}>
+      <div className="background">
+        <img src={bgs["AA"]} alt="BG" />
+      </div>
+      <div className="info">
+        <div className="level">
+          <span className="value">{level}</span>
+          <span className={"plus" + (inTime ? " intime" : "")}>+</span>
         </div>
-        {closeHandler && (
-          <button onClick={closeHandler}>
-            <CloseIcon />
-          </button>
-        )}
+        <span className="name">{name}</span>
       </div>
     </div>
   );

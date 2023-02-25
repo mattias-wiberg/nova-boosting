@@ -1,6 +1,7 @@
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import ListMythic from './pages/ListMythic';
 import "./style/style.scss";
 import {
   Route,
@@ -34,16 +35,17 @@ function App() {
         <div className="wrapper">
           <Routes>
             <Route path="/">
-              <Route index element={<Home />} />
-              <Route path="settings" element={<Settings />} />
               {/*
           <Route index element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
           } />*/}
+              <Route index element={<Home />} />
+              <Route path="settings" element={<Settings />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
+              <Route path="list-mythic" element={<ListMythic />} />
             </Route>
           </Routes>
         </div>

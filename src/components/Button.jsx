@@ -87,7 +87,9 @@ const Button = ({
 
   return (
     <div
-      className={`button ${background} ${hover} ${className}`}
+      className={
+        `button ${background} ${hover}` + (className ? ` ${className}` : "")
+      }
       onClick={handleClick}
       onMouseLeave={handleMouseLeave}
     >
