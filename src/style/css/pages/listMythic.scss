@@ -1,0 +1,132 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.list-mythic {
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+
+  .title {
+    color: theme.$main-light-1;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .key-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+    color: theme.$main-dark-1;
+
+    .plus {
+      font-size: 12px;
+    }
+    .dungeon {
+      font-size: 11px;
+    }
+  }
+
+  .key-input {
+    display: flex;
+    height: 25px;
+    color: theme.$main-light-1;
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+      appearance: unset;
+    }
+
+    .key-input {
+      width: 29px;
+      font-size: 16px;
+      border-radius: 5px 0 0 5px;
+      box-sizing: border-box;
+      text-align: end;
+      padding-right: 5px;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+
+    .select-dungeon {
+      background-color: theme.$main-dark-2;
+      .header {
+        font-size: 16px;
+      }
+      flex-grow: 1;
+      border-left: 1px solid theme.$main-dark-1;
+      border-right: 1px solid theme.$main-dark-1;
+    }
+
+    .add-button {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  .keys {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+
+    .key-container {
+      display: flex;
+
+      .key-content {
+        display: flex;
+        flex-direction: column;
+
+        .key {
+          border-radius: 5px 0 0 0;
+        }
+
+        button {
+          background-color: theme.$main-dark-2;
+          border: 0;
+          border-radius: 0 0 0 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+
+          &:hover {
+            .icon {
+              color: colors.$active;
+            }
+          }
+
+          .icon {
+            color: theme.$main-light-1;
+          }
+        }
+
+        .bottom {
+          display: flex;
+
+          .item-select {
+            flex-grow: 1;
+            border-left: 1px solid theme.$main-dark-1;
+
+            .select,
+            .header {
+              border-radius: 0 0 5px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    border-radius: 0 5px 5px 0;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    .icon {
+      font-size: 19px;
+    }
+  }
+}
