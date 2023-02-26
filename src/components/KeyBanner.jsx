@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import "../style/css/components/key.scss";
-import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
-import CloseIcon from "@mui/icons-material/Close";
+import "../style/css/components/keybanner.scss";
 import AA_BG from "../img/dungeons/background/AA.jpg";
 import CoS_BG from "../img/dungeons/background/CoS.jpg";
 import HoV_BG from "../img/dungeons/background/HoV.jpg";
@@ -10,11 +8,8 @@ import SBG_BG from "../img/dungeons/background/SBG.jpg";
 import TJS_BG from "../img/dungeons/background/TJS.jpg";
 import AV_BG from "../img/dungeons/background/AV.jpg";
 import NO_BG from "../img/dungeons/background/NO.jpg";
-import Select from "./Select";
-import Button from "./Button";
-import KeyBanner from "./KeyBanner";
 
-const Key = ({ name, level, inTime = false, className }) => {
+const KeyBanner = ({ name, level, inTime = false, className }) => {
   const bgs = {
     AA: AA_BG,
     CoS: CoS_BG,
@@ -29,19 +24,19 @@ const Key = ({ name, level, inTime = false, className }) => {
   const [timed, setTimed] = useState(inTime);
 
   return (
-    <div className="key-container">
-      <div className="key-content">
-        <KeyBanner name={name} level={level} inTime={timed} />
-        <div className="bottom">
-          <button>
-            <HourglassEmptyIcon fontSize="inherit" className="icon" />
-          </button>
-          <Select className="item-select" />
-        </div>
+    <div className={"key" + (className ? " " + className : "")}>
+      <div className="background">
+        <img src={bgs["SBG"]} alt="BG" />
       </div>
-      <Button color="red" button_icon={<CloseIcon fontSize="inherit" />} />
+      <div className="info">
+        <div className="level" onClick={() => setTimed(!timed)}>
+          <span className="value">{level}</span>
+          <span className={"plus" + (timed ? " intime" : "")}>+</span>
+        </div>
+        <span className="name">{name}</span>
+      </div>
     </div>
   );
 };
 
-export default Key;
+export default KeyBanner;

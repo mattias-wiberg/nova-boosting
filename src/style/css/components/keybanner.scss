@@ -1,0 +1,53 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+.key {
+  width: 285px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  contain: content;
+  color: theme.$main-light-1;
+  font-size: 16px;
+
+  .background {
+    display: flex;
+    align-items: center;
+
+    img {
+      filter: brightness(69%);
+      width: 100%;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    padding: 0 4px;
+    box-sizing: border-box;
+
+    .level {
+      display: flex;
+      gap: 2px;
+      cursor: pointer;
+
+      .plus {
+        font-size: 12px;
+      }
+
+      &:hover .plus {
+        color: colors.$active;
+      }
+
+      .intime {
+        color: colors.$active;
+      }
+
+      &:hover .intime {
+        color: theme.$main-light-1;
+      }
+    }
+  }
+}

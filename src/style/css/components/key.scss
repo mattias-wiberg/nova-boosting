@@ -1,42 +1,49 @@
 @use "../../theme" as theme;
 @use "../../colors" as colors;
-
-.key {
-  width: 285px;
-  height: 25px;
+.key-container {
   display: flex;
-  align-items: center;
-  contain: content;
-  color: theme.$main-light-1;
-  font-size: 16px;
 
-  .background {
+  .key-content {
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
-    img {
-      filter: brightness(69%);
-      width: 100%;
+    .key {
+      border-radius: 5px 0 0 0;
     }
-  }
 
-  .info {
-    width: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 4px;
-    box-sizing: border-box;
-
-    .level {
+    button {
+      background-color: theme.$main-dark-2;
+      border: 0;
+      border-radius: 0 0 0 5px;
       display: flex;
-      gap: 2px;
-      .plus {
-        font-size: 12px;
+      justify-content: center;
+      align-items: center;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+
+      &:hover {
+        .icon {
+          color: colors.$active;
+        }
       }
 
-      .intime {
-        color: colors.$active;
+      .icon {
+        color: theme.$main-light-1;
+      }
+    }
+
+    .bottom {
+      display: flex;
+
+      .item-select {
+        flex-grow: 1;
+        border-left: 1px solid theme.$main-dark-1;
+
+        .select,
+        .header {
+          border-radius: 0 0 5px 0;
+        }
       }
     }
   }

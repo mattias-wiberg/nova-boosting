@@ -253,21 +253,7 @@ const List = () => {
           />
         </div>
         <div className="keys">
-          <div className="key-container">
-            <div className="key-content">
-              <Key level="14" name="Shadowmoon Burial Grounds" inTime={false} />
-              <div className="bottom">
-                <button>
-                  <HourglassEmptyIcon fontSize="inherit" className="icon" />
-                </button>
-                <Select className="item-select" />
-              </div>
-            </div>
-            <Button
-              color="red"
-              button_icon={<CloseIcon fontSize="inherit" />}
-            />
-          </div>
+          <Key level="14" name="Shadowmoon Burial Grounds" inTime={false} />
         </div>
       </div>
       <div className="gear-part-wrapper">

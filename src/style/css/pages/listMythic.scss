@@ -60,55 +60,6 @@
     margin-top: 12px;
     display: flex;
     gap: 8px;
-
-    .key-container {
-      display: flex;
-
-      .key-content {
-        display: flex;
-        flex-direction: column;
-
-        .key {
-          border-radius: 5px 0 0 0;
-        }
-
-        button {
-          background-color: theme.$main-dark-2;
-          border: 0;
-          border-radius: 0 0 0 5px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 25px;
-          height: 25px;
-          cursor: pointer;
-
-          &:hover {
-            .icon {
-              color: colors.$active;
-            }
-          }
-
-          .icon {
-            color: theme.$main-light-1;
-          }
-        }
-
-        .bottom {
-          display: flex;
-
-          .item-select {
-            flex-grow: 1;
-            border-left: 1px solid theme.$main-dark-1;
-
-            .select,
-            .header {
-              border-radius: 0 0 5px 0;
-            }
-          }
-        }
-      }
-    }
   }
 
   .gear-part-wrapper {
