@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   width: 310px;
+  gap: 20px;
 
   .title {
     color: theme.$main-light-1;
@@ -120,76 +121,152 @@
     }
   }
 
-  .tabs {
+  .gear-part-wrapper {
     display: flex;
-    gap: 19px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 11px;
 
-    .tab {
-      color: theme.$main-dark-1;
-      font-size: 12px;
-      cursor: pointer;
-      padding: 1px 10px;
-    }
-
-    .active-tab {
-      background: theme.$main-dark-4;
-      border-radius: 9px;
-    }
-  }
-
-  .checkbox-content {
-    display: flex;
-
-    .role {
-      width: 13px;
-      display: inline-flex;
-      fill: theme.$main-light-1;
-      cursor: pointer;
-    }
-    .active-role {
-      fill: colors.$active;
-    }
-
-    .gear {
+    .tabs {
       display: flex;
-      flex-direction: column;
-      gap: 1px;
-      padding: 0 6px;
+      gap: 19px;
+      justify-content: center;
 
-      .check-rows {
+      .tab {
+        color: theme.$main-dark-1;
+        font-size: 12px;
+        cursor: pointer;
+        padding: 1px 10px;
+      }
+
+      .active-tab {
+        background: theme.$main-dark-4;
+        border-radius: 9px;
+      }
+    }
+
+    .checkbox-content {
+      display: flex;
+
+      .role {
+        width: 13px;
+        display: inline-flex;
+        fill: theme.$main-light-1;
+        cursor: pointer;
+      }
+      .active-role {
+        fill: colors.$active;
+      }
+
+      .gear {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        .check-row {
+        gap: 1px;
+        padding: 0 6px;
+
+        .check-rows {
           display: flex;
-          align-items: center;
-          gap: 10px;
+          flex-direction: column;
+          gap: 5px;
+          .check-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
 
-          .empty-check {
-            width: 25px;
-            height: 25px;
+            .empty-check {
+              width: 25px;
+              height: 25px;
+            }
+
+            input {
+              border-radius: 5px;
+              width: 130px;
+            }
           }
+        }
 
-          input {
-            border-radius: 5px;
-            width: 130px;
+        .type-labels {
+          display: flex;
+          justify-content: flex-end;
+          gap: 79px;
+          font-size: 10px;
+          color: theme.$main-dark-2;
+          .left-labels {
+            display: flex;
+
+            .armor-label {
+              text-align: center;
+              width: 36px;
+            }
           }
         }
       }
 
-      .type-labels {
+      .class-wrapper {
         display: flex;
-        justify-content: flex-end;
-        gap: 79px;
-        font-size: 10px;
-        color: theme.$main-dark-2;
-        .left-labels {
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+        padding: 0 6px;
+        font-size: 11px;
+        width: 100%;
+        .class-container {
           display: flex;
+          .note {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
 
-          .armor-label {
-            text-align: center;
-            width: 36px;
+            .label {
+              color: theme.$main-dark-1;
+              writing-mode: vertical-rl;
+              rotate: 180deg;
+              cursor: pointer;
+            }
+            .recommended-dark {
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background-color: colors.$active-dark;
+            }
+          }
+          .class-content {
+            display: flex;
+            flex-direction: column;
+
+            .roles {
+              display: inline-flex;
+              margin-left: 6px;
+              gap: 21.5px;
+            }
+
+            .class-rows {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+
+              .class-row {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                .checks {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+
+                  .empty-check {
+                    width: 25px;
+                    height: 25px;
+                  }
+                }
+                .class-label {
+                  margin-bottom: 1px;
+                  text-transform: capitalize;
+                  cursor: pointer;
+                }
+              }
+            }
           }
         }
       }
