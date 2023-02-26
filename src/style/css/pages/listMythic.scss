@@ -32,11 +32,6 @@
     height: 25px;
     color: theme.$main-light-1;
 
-    input[type="number"] {
-      -moz-appearance: textfield;
-      appearance: unset;
-    }
-
     .key-input {
       width: 29px;
       font-size: 16px;
@@ -44,11 +39,6 @@
       box-sizing: border-box;
       text-align: end;
       padding-right: 5px;
-
-      &::-webkit-inner-spin-button,
-      &::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-      }
     }
 
     .select-dungeon {
@@ -271,6 +261,104 @@
         }
       }
     }
+  }
+  .footer-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    textarea {
+      background-color: theme.$main-dark-2;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      resize: none;
+      padding: 2px 4px;
+      caret-color: theme.$main-light-5;
+      color: theme.$main-light-3;
+
+      &::placeholder {
+        color: theme.$main-light-5;
+      }
+    }
+
+    .footer {
+      display: flex;
+      height: 23px;
+      gap: 11px;
+      box-sizing: border-box;
+
+      .realm-input {
+        flex-grow: 1;
+      }
+      .factions {
+        display: flex;
+        gap: 11px;
+        align-items: center;
+
+        .faction {
+          fill: theme.$main-light-1;
+          height: 19px;
+          cursor: pointer;
+        }
+        .horde {
+          fill: colors.$red;
+        }
+        .alliance {
+          fill: colors.$blue;
+        }
+      }
+
+      .pot {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .paid-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          padding: 1px;
+          background-color: theme.$main-light-1;
+          color: theme.$main-dark-3;
+          font-size: 13px;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:hover {
+            background-color: colors.$active;
+          }
+        }
+
+        input {
+          width: 70px;
+        }
+      }
+      input {
+        height: 100%;
+        box-sizing: border-box;
+        border-radius: 5px;
+      }
+    }
+    .create-button {
+      width: 100% !important;
+      border-radius: 5px !important;
+    }
+  }
+
+  input {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: unset;
   }
 
   .button {

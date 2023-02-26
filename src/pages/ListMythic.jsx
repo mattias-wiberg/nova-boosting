@@ -10,6 +10,8 @@ import Button from "../components/Button";
 import { ReactComponent as TankIcon } from "../img/icons/tank.svg";
 import { ReactComponent as HealerIcon } from "../img/icons/healer.svg";
 import { ReactComponent as DpsIcon } from "../img/icons/dps.svg";
+import { ReactComponent as HordeIcon } from "../img/icons/horde.svg";
+import { ReactComponent as AllianceIcon } from "../img/icons/alliance.svg";
 import "../style/css/pages/listMythic.scss";
 import Checkbox from "../components/Checkbox";
 
@@ -19,6 +21,7 @@ const List = () => {
   const [note, setNote] = useState("");
   const [pot, setPot] = useState(0);
   const [paid, setPaid] = useState(false);
+  const [faction, setFaction] = useState("alliance");
 
   const mythicPlusDungeons = {
     AA: "Algeth'ar Academy",
@@ -422,6 +425,40 @@ const List = () => {
             </div>
           )}
         </div>
+      </div>
+      <div className="footer-inputs">
+        <textarea
+          cols="30"
+          rows="3"
+          placeholder="Type your note here..."
+        ></textarea>
+        <div className="footer">
+          <input
+            type="text"
+            className="realm-input"
+            placeholder="Buyer's Realm"
+          />
+          <div className="factions">
+            <HordeIcon
+              className={`faction${faction === "horde" ? " horde" : ""}`}
+              onClick={() => setFaction("horde")}
+            />
+            <AllianceIcon
+              className={`faction${faction === "alliance" ? " alliance" : ""}`}
+              onClick={() => setFaction("alliance")}
+            />
+          </div>
+          <div className="pot">
+            <input type="number" placeholder="Amount" />
+            <div
+              className={`paid-button${paid ? " active-bg" : ""}`}
+              onClick={() => setPaid(!paid)}
+            >
+              $
+            </div>
+          </div>
+        </div>
+        <Button text="Create Listing" color="green" className="create-button" />
       </div>
     </div>
   );
