@@ -40,6 +40,70 @@ input {
   overflow: visible;
 }
 
+.default-bg {
+  background: theme.$main-dark-2 !important;
+}
+
+.default-bg-hover {
+  &:hover {
+    background: theme.$main-dark-2 !important;
+  }
+}
+
+.green-bg {
+  background: colors.$green !important;
+}
+
+.green-bg-hover {
+  &:hover {
+    background: colors.$green !important;
+  }
+}
+
+.blue-bg {
+  background: colors.$blue !important;
+}
+
+.blue-bg-hover {
+  &:hover {
+    background: colors.$blue !important;
+  }
+}
+
+.red-bg {
+  background: colors.$red !important;
+}
+
+.red-bg-hover {
+  &:hover {
+    background: colors.$red !important;
+  }
+}
+
+.gray-bg {
+  background: colors.$gray !important;
+}
+
+.gray-bg-hover {
+  &:hover {
+    background: colors.$gray !important;
+  }
+}
+
+.active {
+  color: colors.$active !important;
+}
+
+.active-bg {
+  background: colors.$active !important;
+}
+
+.active-bg-hover {
+  &:hover {
+    background: colors.$active !important;
+  }
+}
+
 .active-border {
   border-color: colors.$active !important;
 }
@@ -94,10 +158,6 @@ input {
 
 .warrior-border {
   border-color: colors.$warrior !important;
-}
-
-.active-bg {
-  background-color: colors.$active !important;
 }
 
 .druid-bg {

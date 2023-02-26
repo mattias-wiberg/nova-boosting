@@ -31,8 +31,8 @@ const Button = ({
   */
   // type: none, hold:
   //  Will change the background color of the button on click and
-  const [hover, setHover] = useState(color + "-hover");
-  const [background, setBackground] = useState("default");
+  const [hover, setHover] = useState(color + "-bg-hover");
+  const [background, setBackground] = useState("default-bg");
   const [activeClick, setActiveClick] = useState(false);
   const [icon, setIcon] = useState(button_icon);
 
