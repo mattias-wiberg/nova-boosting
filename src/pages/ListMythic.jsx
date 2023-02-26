@@ -7,7 +7,11 @@ import AddIcon from "@mui/icons-material/Add";
 import Key from "../components/Key";
 import Select from "../components/Select";
 import Button from "../components/Button";
+import { ReactComponent as TankIcon } from "../img/icons/tank.svg";
+import { ReactComponent as HealerIcon } from "../img/icons/healer.svg";
+import { ReactComponent as DpsIcon } from "../img/icons/dps.svg";
 import "../style/css/pages/listMythic.scss";
+import Checkbox from "../components/Checkbox";
 
 const List = () => {
   const shortNames = false;
@@ -31,44 +35,8 @@ const List = () => {
     e.preventDefault();
   };
 
-  // TODO: Add way to require possible item drop.
-  // gather data from wowhead to know what classes can get what drops
-  // https://www.wowhead.com/items/armor/trinkets?filter=220;6932;0
-  /*<div className="m-listing">
-        <input type="number" defaultValue={0} />
-        <select defaultValue={"*"}>
-          {Object.keys(mythicPlusDungeons).map((key) => (
-            <option key={key} value={key}>
-              {shortNames ? key : mythicPlusDungeons[key]}
-            </option>
-          ))}
-          <option value="ANY">*</option>
-        </select>
-        <button>
-          <AddIcon />
-        </button>
-      </div>
-      <div className="keys">
-        <KeyLi closeHandler={removeKey} />
-      </div>
-      <textarea
-        cols="40"
-        rows="3"
-        placeholder="Type your note here..."
-      ></textarea>
-      <div className="paid">
-        <input type="number" />
+  const [activeTab, setActiveTab] = React.useState("gear");
 
-        <button onClick={() => setPaid(!paid)}>
-          <img src={Gold} alt="Gold" />
-          {paid ? (
-            <CheckIcon className="mark green" />
-          ) : (
-            <CloseIcon className="mark red" />
-          )}
-        </button>
-      </div>
-    </div> */
   return (
     <div className="list-mythic">
       <span className="title">M+ Boost Listing</span>
@@ -87,7 +55,7 @@ const List = () => {
       <div className="keys">
         <div className="key-container">
           <div className="key-content">
-            <Key level="14" name="Shadowmoon Burial Grounds" inTime={true} />
+            <Key level="14" name="Shadowmoon Burial Grounds" inTime={false} />
             <div className="bottom">
               <button>
                 <HourglassEmptyIcon fontSize="inherit" className="icon" />
@@ -97,6 +65,95 @@ const List = () => {
           </div>
           <Button color="red" button_icon={<CloseIcon fontSize="inherit" />} />
         </div>
+      </div>
+      <div className="tabs">
+        <div
+          className={activeTab === "gear" ? "tab active-tab" : "tab"}
+          onClick={() => setActiveTab("gear")}
+        >
+          Gear Type / Premade
+        </div>
+        <div
+          className={activeTab === "class" ? "tab active-tab" : "tab"}
+          onClick={() => setActiveTab("class")}
+        >
+          Class Specific
+        </div>
+      </div>
+      <div className="checkbox-content">
+        {activeTab === "gear" ? (
+          <div className="gear">
+            <div className="check-rows">
+              <div className="check-row">
+                <TankIcon className="role active-role" />
+                <Checkbox recommended="0000" color="druid" />
+                <Checkbox recommended="0000" color="warrior" />
+                <div className="empty-check"></div>
+                <div className="empty-check"></div>
+                <input type="text" />
+              </div>
+              <div className="check-row">
+                <HealerIcon className="role active-role" />
+                <Checkbox recommended="0000" color="druid" />
+                <div className="empty-check"></div>
+                <Checkbox recommended="0000" color="priest" />
+                <Checkbox recommended="0000" color="shaman" />
+                <input type="text" />
+              </div>
+              <div className="check-row">
+                <DpsIcon className="role" />
+                <Checkbox
+                  defaultValue={false}
+                  recommended="0000"
+                  color="druid"
+                />
+                <Checkbox
+                  defaultValue={false}
+                  recommended="0000"
+                  color="warrior"
+                />
+                <Checkbox recommended="0000" color="priest" />
+                <Checkbox recommended="0000" tickType="semi" color="shaman" />
+                <input type="text" />
+              </div>
+              <div className="check-row">
+                <DpsIcon className="role" />
+                <Checkbox
+                  defaultValue={false}
+                  recommended="0000"
+                  color="druid"
+                />
+                <Checkbox
+                  defaultValue={false}
+                  recommended="0000"
+                  color="warrior"
+                />
+                <Checkbox recommended="0000" color="priest" />
+                <Checkbox recommended="0000" tickType="semi" color="shaman" />
+                <input type="text" />
+              </div>
+            </div>
+
+            <div className="type-labels">
+              <div className="left-labels">
+                <span className="armor-label">Leather</span>
+                <span className="armor-label">Plate</span>
+                <span className="armor-label">Cloth</span>
+                <span className="armor-label">Mail</span>
+              </div>
+              <div className="label">Name-Realm</div>
+            </div>
+          </div>
+        ) : (
+          <div className="class">
+            <div className="roles">
+              <TankIcon className="role" />
+              <HealerIcon className="role" />
+              <DpsIcon className="role" />
+              <DpsIcon className="role" />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

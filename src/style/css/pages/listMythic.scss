@@ -120,6 +120,82 @@
     }
   }
 
+  .tabs {
+    display: flex;
+    gap: 19px;
+    justify-content: center;
+
+    .tab {
+      color: theme.$main-dark-1;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 1px 10px;
+    }
+
+    .active-tab {
+      background: theme.$main-dark-4;
+      border-radius: 9px;
+    }
+  }
+
+  .checkbox-content {
+    display: flex;
+
+    .role {
+      width: 13px;
+      display: inline-flex;
+      fill: theme.$main-light-1;
+      cursor: pointer;
+    }
+    .active-role {
+      fill: colors.$active;
+    }
+
+    .gear {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      padding: 0 6px;
+
+      .check-rows {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .check-row {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .empty-check {
+            width: 25px;
+            height: 25px;
+          }
+
+          input {
+            border-radius: 5px;
+            width: 130px;
+          }
+        }
+      }
+
+      .type-labels {
+        display: flex;
+        justify-content: flex-end;
+        gap: 79px;
+        font-size: 10px;
+        color: theme.$main-dark-2;
+        .left-labels {
+          display: flex;
+
+          .armor-label {
+            text-align: center;
+            width: 36px;
+          }
+        }
+      }
+    }
+  }
+
   .button {
     border-radius: 0 5px 5px 0;
     box-sizing: border-box;
