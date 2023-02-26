@@ -1,0 +1,51 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  display: inline-flex;
+  gap: 3px;
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    justify-content: center;
+
+    .transparent {
+      background-color: transparent !important;
+    }
+
+    .recommended {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: colors.$active;
+    }
+    .box {
+      width: 11px;
+      height: 11px;
+      border: 1px solid theme.$main-light-1;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .tick {
+        width: 5px;
+        height: 5px;
+        position: absolute;
+      }
+
+      .semi-tick {
+        width: 7px;
+        height: 7px;
+        box-sizing: border-box;
+        position: absolute;
+        border: 2px solid;
+      }
+    }
+  }
+}

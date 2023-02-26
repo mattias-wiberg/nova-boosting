@@ -40,6 +40,118 @@ input {
   overflow: visible;
 }
 
+.active-border {
+  border-color: colors.$active !important;
+}
+
+.druid-border {
+  border-color: colors.$druid !important;
+}
+
+.paladin-border {
+  border-color: colors.$paladin !important;
+}
+
+.monk-border {
+  border-color: colors.$monk !important;
+}
+
+.evoker-border {
+  border-color: colors.$evoker !important;
+}
+
+.priest-border {
+  border-color: colors.$priest !important;
+}
+
+.shaman-border {
+  border-color: colors.$shaman !important;
+}
+
+.mage-border {
+  border-color: colors.$mage !important;
+}
+
+.rogue-border {
+  border-color: colors.$rogue !important;
+}
+
+.hunter-border {
+  border-color: colors.$hunter !important;
+}
+
+.warlock-border {
+  border-color: colors.$warlock !important;
+}
+
+.death-knight-border {
+  border-color: colors.$death-knight !important;
+}
+
+.demon-hunter-border {
+  border-color: colors.$demon-hunter !important;
+}
+
+.warrior-border {
+  border-color: colors.$warrior !important;
+}
+
+.active-bg {
+  background-color: colors.$active !important;
+}
+
+.druid-bg {
+  background-color: colors.$druid !important;
+}
+
+.paladin-bg {
+  background-color: colors.$paladin !important;
+}
+
+.monk-bg {
+  background-color: colors.$monk !important;
+}
+
+.evoker-bg {
+  background-color: colors.$evoker !important;
+}
+
+.priest-bg {
+  background-color: colors.$priest !important;
+}
+
+.shaman-bg {
+  background-color: colors.$shaman !important;
+}
+
+.mage-bg {
+  background-color: colors.$mage !important;
+}
+
+.rogue-bg {
+  background-color: colors.$rogue !important;
+}
+
+.hunter-bg {
+  background-color: colors.$hunter !important;
+}
+
+.warlock-bg {
+  background-color: colors.$warlock !important;
+}
+
+.death-knight-bg {
+  background-color: colors.$death-knight !important;
+}
+
+.demon-hunter-bg {
+  background-color: colors.$demon-hunter !important;
+}
+
+.warrior-bg {
+  background-color: colors.$warrior !important;
+}
+
 .druid {
   color: colors.$druid;
 }
