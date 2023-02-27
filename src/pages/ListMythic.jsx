@@ -242,7 +242,7 @@ const List = () => {
           />
         </div>
         <div className="keys">
-          <Key level="14" dungeon="SBG" inTime={false} />
+          <Key level="14" dungeon={"AA"} inTime={false} />
         </div>
       </div>
       <div className="gear-part-wrapper">
