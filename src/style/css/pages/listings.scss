@@ -1,0 +1,104 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.listing-card {
+  display: flex;
+  flex-direction: column;
+  width: 363px;
+
+  .first-key {
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+  }
+
+  .key {
+    width: inherit;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    background-color: theme.$main-dark-4;
+    padding: 14px 19px;
+    gap: 5px;
+    .selection {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      .select {
+        flex-grow: 1;
+        .header {
+          width: 100%;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    height: 26px;
+    background-color: theme.$main-dark-2;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    .button {
+      flex-grow: 1;
+      background: colors.$active !important;
+    }
+    .key-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      cursor: pointer;
+
+      .icon {
+        font-size: 13px;
+        rotate: -30deg;
+      }
+    }
+    .roles {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      padding: 0 6px;
+      border-left: 1px solid theme.$main-dark-1;
+      border-right: 1px solid theme.$main-dark-1;
+      .role {
+        width: 13px;
+        display: inline-flex;
+        fill: theme.$main-light-1;
+        cursor: pointer;
+      }
+
+      .active-role {
+        fill: colors.$active;
+      }
+    }
+    .pot {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 6px;
+      font-size: 13px;
+
+      span {
+        color: theme.$main-light-1;
+      }
+
+      .paid-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        padding: 1px;
+        background-color: theme.$main-light-1;
+        color: theme.$main-dark-3;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+}

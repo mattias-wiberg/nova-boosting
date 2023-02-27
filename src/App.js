@@ -14,6 +14,7 @@ import { AuthContext } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Teams from './tabs/Teams';
 import Settings from './pages/Settings';
+import Listings from './pages/Listings';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -46,6 +47,7 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="list-mythic" element={<ListMythic />} />
+              <Route path="listings" element={<Listings />} />
             </Route>
           </Routes>
         </div>
