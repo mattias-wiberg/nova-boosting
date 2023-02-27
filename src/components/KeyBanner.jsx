@@ -8,17 +8,24 @@ import SBG_BG from "../img/dungeons/background/SBG.jpg";
 import TJS_BG from "../img/dungeons/background/TJS.jpg";
 import AV_BG from "../img/dungeons/background/AV.jpg";
 import NO_BG from "../img/dungeons/background/NO.jpg";
+import HourglassEmpty from "@mui/icons-material/HourglassEmpty";
 
-const KeyBanner = ({ name, level, inTime = false, className }) => {
-  const bgs = {
-    AA: AA_BG,
-    CoS: CoS_BG,
-    HoV: HoV_BG,
-    RLP: RLP_BG,
-    SBG: SBG_BG,
-    TJS: TJS_BG,
-    AV: AV_BG,
-    NO: NO_BG,
+const KeyBanner = ({
+  dungeon,
+  level,
+  inTime = false,
+  className,
+  iconColor,
+}) => {
+  const dungeons = {
+    AA: { name: "Algeth'ar Academy", img: AA_BG },
+    CoS: { name: "Court of Stars", img: CoS_BG },
+    HoV: { name: "Halls of Valor", img: HoV_BG },
+    RLP: { name: "Ruby Life Pools", img: RLP_BG },
+    SBG: { name: "Shadowmoon Burial Grounds", img: SBG_BG },
+    TJS: { name: "Temple of the Jade Serpent", img: TJS_BG },
+    AV: { name: "The Azure Vault", img: AV_BG },
+    NO: { name: "The Nokhud Offensive", img: NO_BG },
   };
 
   const [timed, setTimed] = useState(inTime);
@@ -26,14 +33,17 @@ const KeyBanner = ({ name, level, inTime = false, className }) => {
   return (
     <div className={"key" + (className ? " " + className : "")}>
       <div className="background">
-        <img src={bgs["SBG"]} alt="BG" />
+        <img src={dungeons[dungeon].img} alt="BG" />
       </div>
       <div className="info">
         <div className="level" onClick={() => setTimed(!timed)}>
           <span className="value">{level}</span>
           <span className={"plus" + (timed ? " intime" : "")}>+</span>
         </div>
-        <span className="name">{name}</span>
+        <div className="name">
+          {iconColor && <HourglassEmpty className={`icon ${iconColor}`} />}
+          <span>{dungeons[dungeon].name}</span>
+        </div>
       </div>
     </div>
   );

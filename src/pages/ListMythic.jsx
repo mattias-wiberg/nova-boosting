@@ -23,17 +23,6 @@ const List = () => {
   const [paid, setPaid] = useState(false);
   const [faction, setFaction] = useState("alliance");
 
-  const mythicPlusDungeons = {
-    AA: "Algeth'ar Academy",
-    CoS: "Court of Stars",
-    HoV: "Halls of Valor",
-    RLP: "Ruby Life Pools",
-    SBG: "Shadowmoon Burial Grounds",
-    TJS: "Temple of the Jade Serpent",
-    AV: "The Azure Vault",
-    NO: "The Nokhud Offensive",
-  };
-
   const removeKey = (e) => {
     e.preventDefault();
   };
@@ -253,7 +242,7 @@ const List = () => {
           />
         </div>
         <div className="keys">
-          <Key level="14" name="Shadowmoon Burial Grounds" inTime={false} />
+          <Key level="14" dungeon="SBG" inTime={false} />
         </div>
       </div>
       <div className="gear-part-wrapper">
