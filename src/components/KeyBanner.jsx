@@ -27,8 +27,6 @@ const KeyBanner = ({
     AV: { name: "The Azure Vault", img: AV_BG },
     NO: { name: "The Nokhud Offensive", img: NO_BG },
   };
-  console.log(dungeons);
-  console.log(dungeon);
   const [timed, setTimed] = useState(inTime);
 
   return (
