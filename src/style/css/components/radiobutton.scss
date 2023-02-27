@@ -1,0 +1,20 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11px;
+  height: 11px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid theme.$main-light-1;
+  cursor: pointer;
+
+  .tick {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+}
