@@ -50,4 +50,14 @@
       }
     }
   }
+
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    .icon {
+      rotate: -30deg;
+      font-size: 12px;
+    }
+  }
 }
