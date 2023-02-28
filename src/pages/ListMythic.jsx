@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import Gold from "../img/gold.jpg";
-import CheckIcon from "@mui/icons-material/Check";
-import CloseIcon from "@mui/icons-material/Close";
-import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 import AddIcon from "@mui/icons-material/Add";
 import Key from "../components/Key";
 import Select from "../components/Select";
@@ -16,10 +12,6 @@ import "../style/css/pages/listMythic.scss";
 import Checkbox from "../components/Checkbox";
 
 const List = () => {
-  const shortNames = false;
-  const [keys, setKeys] = useState([]);
-  const [note, setNote] = useState("");
-  const [pot, setPot] = useState(0);
   const [paid, setPaid] = useState(false);
   const [faction, setFaction] = useState("alliance");
 
