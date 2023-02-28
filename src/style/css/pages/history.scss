@@ -1,0 +1,172 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.history-card {
+  display: flex;
+  flex-direction: column;
+  width: 363px;
+
+  .tab-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    .tab {
+      padding: 2px 8px;
+      border-radius: 5px 5px 0 0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .live {
+      color: theme.$main-light-1;
+      background-color: colors.$active;
+    }
+    .pending {
+      color: theme.$main-dark-1;
+      background-color: theme.$main-dark-4;
+    }
+    .completed {
+      color: theme.$main-light-1;
+      background-color: colors.$green;
+    }
+    .cancelled {
+      color: theme.$main-light-1;
+      background-color: colors.$red;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    background-color: theme.$main-dark-4;
+    padding: 14px 9px;
+    border-radius: 5px 5px 0 0;
+
+    .label {
+      font-size: 10px;
+      color: theme.$main-dark-1;
+    }
+    .role {
+      height: 10px;
+      fill: colors.$active;
+    }
+    .boosters-label {
+      padding-left: 15px;
+    }
+    .boosters {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      .booster {
+        display: flex;
+        justify-content: space-between;
+
+        .character-info {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          font-size: 12px;
+          color: theme.$main-light-1;
+        }
+        .faction {
+          height: 14px;
+        }
+        .horde {
+          fill: colors.$red;
+        }
+        .alliance {
+          fill: colors.$blue;
+        }
+      }
+    }
+    .labels {
+      padding-right: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .dungeon-info {
+      display: flex;
+      gap: 7px;
+      .dungeons {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        .key {
+          display: flex;
+          flex-grow: 1;
+          width: inherit;
+          font-size: 12px;
+          border-radius: 5px;
+          .level {
+            pointer-events: none;
+          }
+          .plus {
+            font-size: 10px;
+          }
+        }
+      }
+      .loot-specs {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .loot-specs-container {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          .spec {
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            font-weight: 600;
+            color: theme.$main-light-1;
+            gap: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    height: 26px;
+    background-color: theme.$main-dark-2;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    .button {
+      flex-grow: 1;
+      background: colors.$green !important;
+    }
+    .cut {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: colors.$active;
+      padding: 0 6px;
+      border-right: 1px solid theme.$main-dark-1;
+    }
+    .pot {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 6px;
+      font-size: 13px;
+
+      span {
+        color: theme.$main-light-1;
+      }
+
+      .paid-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        padding: 1px;
+        background-color: theme.$main-light-1;
+        color: theme.$main-dark-3;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+}
