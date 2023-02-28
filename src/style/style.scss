@@ -50,6 +50,10 @@ input {
   }
 }
 
+.green {
+  color: colors.$green !important;
+}
+
 .green-bg {
   background: colors.$green !important;
 }
@@ -68,6 +72,10 @@ input {
   &:hover {
     background: colors.$blue !important;
   }
+}
+
+.red {
+  color: colors.$red !important;
 }
 
 .red-bg {
