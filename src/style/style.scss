@@ -64,6 +64,10 @@ input {
   }
 }
 
+.blue {
+  color: colors.$blue !important;
+}
+
 .blue-bg {
   background: colors.$blue !important;
 }
