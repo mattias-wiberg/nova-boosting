@@ -1,0 +1,272 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.detailed-list-card {
+  display: flex;
+  flex-direction: column;
+  width: 363px;
+
+  .tab-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    .tab {
+      padding: 2px 8px;
+      border-radius: 5px 5px 0 0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .live {
+      color: theme.$main-light-1;
+      background-color: colors.$active;
+    }
+    .pending {
+      color: theme.$main-dark-1;
+      background-color: theme.$main-dark-4;
+    }
+    .completed {
+      color: theme.$main-light-1;
+      background-color: colors.$green;
+    }
+    .cancelled {
+      color: theme.$main-light-1;
+      background-color: colors.$red;
+    }
+  }
+
+  .first-key {
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+  }
+
+  .key {
+    width: inherit;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    background-color: theme.$main-dark-4;
+    padding: 14px 9px;
+
+    .label {
+      font-size: 10px;
+      color: theme.$main-dark-1;
+      .highlight {
+        font-weight: 600;
+        color: colors.$blue;
+      }
+    }
+    .first-label {
+      padding-left: 15px;
+    }
+
+    .applicants-labels {
+      display: flex;
+      justify-content: space-between;
+      .last-labels {
+        display: flex;
+        gap: 41px;
+      }
+    }
+
+    .roles {
+      display: flex;
+      justify-content: center;
+      gap: 3px;
+      width: 45px;
+    }
+
+    .role {
+      width: 13px;
+      display: inline-flex;
+    }
+
+    .active-role {
+      fill: colors.$active;
+    }
+    .prio-1-role {
+      fill: colors.$prio-1;
+    }
+    .prio-2-role {
+      fill: colors.$prio-2;
+    }
+    .prio-3-role {
+      fill: colors.$prio-3;
+    }
+
+    .applicants {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-top: 2px;
+      .applicant {
+        display: flex;
+        justify-content: space-between;
+
+        .character-info {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          font-size: 12px;
+          color: theme.$main-light-1;
+          .pick {
+            width: 4px;
+            height: 4px;
+            margin: 0 4.5px;
+            border-radius: 50%;
+            display: inline-flex;
+          }
+        }
+        .right {
+          display: flex;
+          align-items: center;
+          color: theme.$main-light-1;
+          font-size: 10px;
+          gap: 30px;
+          .faction {
+            height: 14px;
+          }
+          .horde {
+            fill: colors.$red;
+          }
+          .alliance {
+            fill: colors.$blue;
+          }
+        }
+      }
+    }
+    .dropdown-container {
+      display: flex;
+      justify-content: center;
+      .dropdown-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 23px;
+        height: 15px;
+        background-color: theme.$main-dark-3;
+        &:hover {
+          background-color: theme.$main-dark-2;
+        }
+        .arrow {
+          font-size: 15px;
+          color: theme.$main-light-1;
+        }
+      }
+    }
+
+    .boosters-labels {
+      display: flex;
+      justify-content: space-between;
+    }
+    .boosters {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-top: 2px;
+      .booster {
+        display: flex;
+        justify-content: space-between;
+
+        .character-info {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          font-size: 12px;
+          color: theme.$main-light-1;
+        }
+        .faction {
+          height: 14px;
+        }
+        .horde {
+          fill: colors.$red;
+        }
+        .alliance {
+          fill: colors.$blue;
+        }
+        .right {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          .key-container {
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .key {
+              font-size: 11px;
+              rotate: -30deg;
+            }
+          }
+
+          .faction {
+            height: 14px;
+          }
+          .horde {
+            fill: colors.$red;
+          }
+          .alliance {
+            fill: colors.$blue;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    height: 26px;
+    background-color: theme.$main-dark-2;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    .button {
+      flex-grow: 1;
+      background: colors.$green !important;
+    }
+    .cut {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      color: theme.$main-light-1;
+      gap: 4px;
+      padding: 0 6px;
+      border-right: 1px solid theme.$main-dark-1;
+      .faction {
+        height: 14px;
+      }
+      .horde {
+        fill: colors.$red;
+      }
+      .alliance {
+        fill: colors.$blue;
+      }
+    }
+    .pot {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 6px;
+      font-size: 13px;
+
+      span {
+        color: theme.$main-light-1;
+      }
+
+      .paid-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        padding: 1px;
+        background-color: theme.$main-light-1;
+        color: theme.$main-dark-3;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+}

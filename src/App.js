@@ -16,6 +16,7 @@ import Teams from './tabs/Teams';
 import Settings from './pages/Settings';
 import Listings from './pages/Listings';
 import History from './pages/History';
+import ListManager from './pages/ListManager';
 
 function App() {
   const { currentUser } = useContext(AuthContext)
@@ -50,6 +51,7 @@ function App() {
               <Route path="list-mythic" element={<ListMythic />} />
               <Route path="listings" element={<Listings />} />
               <Route path="history" element={<History />} />
+              <Route path="list-manager" element={<ListManager />} />
             </Route>
           </Routes>
         </div>
