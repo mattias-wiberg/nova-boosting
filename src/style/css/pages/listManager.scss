@@ -40,6 +40,9 @@
 
   .key {
     width: inherit;
+    .level {
+      pointer-events: none;
+    }
   }
 
   .content {
