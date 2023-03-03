@@ -12,7 +12,6 @@ import {
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import Navbar from './components/Navbar';
-import Teams from './tabs/Teams';
 import Settings from './pages/Settings';
 import Listings from './pages/Listings';
 import History from './pages/History';
