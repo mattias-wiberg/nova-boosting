@@ -28,7 +28,7 @@ function App() {
     return children
   }
 
-  console.log(currentUser)
+  //console.log(currentUser)
 
   return (
     <div className="app">
@@ -37,13 +37,11 @@ function App() {
         <div className="wrapper">
           <Routes>
             <Route path="/">
-              {/*
-          <Route index element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          } />*/}
-              <Route index element={<Home />} />
+              <Route index element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              } />
               <Route path="settings" element={<Settings />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />

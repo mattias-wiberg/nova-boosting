@@ -6,7 +6,7 @@ import Button from "../components/Button";
 import "../style/css/pages/auth.scss";
 
 const Login = () => {
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,7 +18,7 @@ const Login = () => {
       // TODO add wrong password error
       navigate("/");
     } catch (err) {
-      setError(true);
+      setError(err.message);
     }
   };
 
