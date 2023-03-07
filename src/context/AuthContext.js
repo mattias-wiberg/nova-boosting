@@ -5,13 +5,11 @@ import { auth } from "../firebase";
 export const AuthContext = createContext()
 
 export const AuthContextProvider = ({ children }) => {
-    // Dummy user for ui testing
     const [currentUser, setCurrentUser] = useState({})
-    // TODO: Remove this default value later
 
     useEffect(() => {
         const unsub = onAuthStateChanged(auth, (user) => {
-            setCurrentUser(user) // TODO: Uncomment this line when adding auth
+            setCurrentUser(user)
         })
 
         return () => {

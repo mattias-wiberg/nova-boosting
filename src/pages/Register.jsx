@@ -141,28 +141,12 @@ const Register = () => {
         displayName: name,
         characters: [character],
         main_character: character.id,
+        character_priority: [character.id],
         teams: [],
       });
       navigate("/");
     } catch (err) {
       setError(err.message);
-    }
-
-    try {
-      //const res = await createUserWithEmailAndPassword(auth, email, password);
-      /*await setDoc(doc(db, "users", res.user.uid), {
-        uid: res.user.uid,
-        displayName: name,
-        email: email,
-      });
-
-      navigate("/");*/
-      /*await updateProfile(res.user, {
-              displayName: name,
-              photoURL: downloadURL,
-            });*/
-    } catch (err) {
-      setError(true);
     }
   };
 

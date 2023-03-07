@@ -21,7 +21,6 @@
     }
 
     .mode-button {
-      margin-right: 2px;
       margin-bottom: 5px;
 
       .button {
@@ -93,7 +92,7 @@
         .faction {
           width: 16px;
           display: flex;
-          align-content: center;
+          justify-content: center;
 
           .alliance {
             fill: colors.$blue;
@@ -105,9 +104,7 @@
         }
 
         .delete {
-          width: 8px;
-          height: 8px;
-          font-size: 8px;
+          font-size: 13px;
           cursor: pointer;
 
           &:hover {
