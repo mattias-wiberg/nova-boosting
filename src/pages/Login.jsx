@@ -9,9 +9,9 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    const email = e.target[0].value;
-    const password = e.target[1].value;
+  const login = async () => {
+    const email = document.getElementById("mail").value;
+    const password = document.getElementById("password").value;
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -22,19 +22,15 @@ const Login = () => {
     }
   };
 
-  const submit = () => {
-    document.forms[0].submit();
-  };
-
   return (
     <div className="formContainer">
       <span className="title">Login</span>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="E-mail" />
-        <input type="password" placeholder="Password" />
+      <form>
+        <input type="text" placeholder="E-mail" id="mail" />
+        <input type="password" placeholder="Password" id="password" />
         <Button
           text={"Login"}
-          clickHandler={submit}
+          clickHandler={login}
           color="active"
           className="submit"
         ></Button>
