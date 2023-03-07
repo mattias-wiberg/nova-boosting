@@ -73,5 +73,37 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+
+    .account-dropdown {
+      position: absolute;
+      display: flex;
+      padding: 5px 15px 5px 5px;
+      background-color: theme.$main-dark-2;
+      left: 44px;
+      bottom: 10px;
+      border-radius: 5px;
+      clip: auto;
+      .dropdown-items {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        .link {
+          text-decoration: none;
+        }
+        .dropdown-item {
+          display: flex;
+          gap: 8px;
+          color: theme.$main-light-2;
+          font-size: 12px;
+          align-items: center;
+          cursor: pointer;
+          .item-icon {
+            color: theme.$main-middle-1;
+            font-size: 24px;
+          }
+        }
+      }
+    }
   }
 }
