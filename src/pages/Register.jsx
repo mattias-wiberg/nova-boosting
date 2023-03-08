@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, db, storage } from "../firebase.js";
-import { ref } from "firebase/storage";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../firebase.js";
 import {
   collection,
   doc,
-  getDoc,
   getDocs,
   query,
   setDoc,
@@ -88,6 +86,8 @@ const Register = () => {
       data.id = uuid();
       data.armor = armorMapping[characterClass];
       data.roles = roleMapping[characterClass];
+      // TODO: Add role prio according to scores. (e.g. tank > healer > dps)
+      //data.roles_prios = ["tank", "healer", "dps"];
       return data;
     } catch (err) {
       setError(
