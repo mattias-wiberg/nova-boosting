@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase.js";
 import { ref } from "firebase/storage";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  setDoc,
+  where,
+} from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import Button from "../components/Button";
@@ -90,13 +98,13 @@ const Register = () => {
   };
 
   const handleSubmit = async () => {
-    const name = document.getElementById("name").value;
+    const name = document.getElementById("name").value.toLowerCase();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confPassword = document.getElementById("conf-password").value;
     const character = await getCharacter();
-    console.log(character);
-    console.log(name, email, password, confPassword);
+    //console.log(character);
+    //console.log(name, email, password, confPassword);
 
     // Check if all fields are filled in
     if (name === "") {
@@ -126,9 +134,10 @@ const Register = () => {
     }
 
     // Check if username is already taken
-    const userRef = doc(db, "users", name);
-    const userDoc = await getDoc(userRef);
-    if (userDoc.exists()) {
+    const userDoc = await getDocs(
+      query(collection(db, "users"), where("name", "==", name))
+    );
+    if (!userDoc.empty) {
       setError("Username is already taken");
       return;
     }
@@ -138,7 +147,7 @@ const Register = () => {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       await setDoc(doc(db, "users", res.user.uid), {
         uid: res.user.uid,
-        displayName: name,
+        name: name,
         characters: [character],
         main_character: character.id,
         character_priority: [character.id],
