@@ -8,7 +8,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import LoginIcon from "@mui/icons-material/Login";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
@@ -16,6 +16,8 @@ import { auth } from "../firebase";
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
   const [userDropdown, setUserDropdown] = useState(false);
+  const location = useLocation();
+
   useEffect(() => {
     setTimeout(() => {
       if (userDropdown) {
@@ -42,12 +44,16 @@ const Navbar = () => {
 
         <div className="links">
           <Link to="/">
-            <NavButton icon={<HomeIcon fontSize="inherit" />} active={true} />
+            <NavButton
+              icon={<HomeIcon fontSize="inherit" />}
+              active={location.pathname === "/" ? true : false}
+            />
           </Link>
           <Link to="/listings">
             <NavButton
               rotate={"-30deg"}
               icon={<HourglassEmptyIcon fontSize="inherit" />}
+              active={location.pathname === "/listings" ? true : false}
             />
           </Link>
         </div>
@@ -57,10 +63,18 @@ const Navbar = () => {
           <NavButton
             icon={<AccountCircleIcon fontSize="inherit" />}
             onClick={() => setUserDropdown(!userDropdown)}
+            active={
+              ["/history", "/settings"].includes(location.pathname)
+                ? true
+                : false
+            }
           />
         ) : (
           <Link to="/login">
-            <NavButton icon={<LoginIcon fontSize="inherit" />} />
+            <NavButton
+              icon={<LoginIcon fontSize="inherit" />}
+              active={location.pathname === "/login" ? true : false}
+            />
           </Link>
         )}
         {userDropdown && (
