@@ -22,11 +22,14 @@
       font-size: 12px;
       cursor: pointer;
       padding: 1px 10px;
+      border-radius: 9px;
+      &:hover {
+        background: theme.$main-dark-4;
+      }
     }
 
     .active-tab {
       background: theme.$main-dark-4;
-      border-radius: 9px;
     }
   }
 
