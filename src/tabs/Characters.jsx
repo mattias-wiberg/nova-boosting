@@ -15,27 +15,16 @@ import { ReactComponent as DpsIcon } from "../img/icons/dps.svg";
 import { AuthContext } from "../context/AuthContext";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import { UserContext } from "../context/UserContext";
 
 const Characters = () => {
   const [mode, setMode] = React.useState("view"); // view, edit
   const [invalidEdit, setInvalidEdit] = React.useState(false);
   const faction = "alliance";
   const { userAuth } = useContext(AuthContext);
-  const [userInfo, setUserInfo] = React.useState(null);
+  const { user } = useContext(UserContext);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const docSnap = await getDoc(doc(db, "users", userAuth.uid));
-      setUserInfo(docSnap.data());
-    };
-
-    fetchUser();
-    return () => {
-      setUserInfo(null);
-    };
-  }, [setUserInfo, userAuth.uid]);
-
-  console.log(userInfo);
+  console.log(user);
   return (
     <div className="characters-container">
       <div className="header">
@@ -68,7 +57,7 @@ const Characters = () => {
         </div>
       </div>
       <div className="characters">
-        {userInfo?.characters.map((character) => (
+        {user?.characters.map((character) => (
           <div className="character" key={character.id}>
             <div className="character-prio">
               <button className="prio prio-1 prio-locked"></button>
