@@ -7,7 +7,7 @@ import AddIcon from "@mui/icons-material/Add";
 import "../style/css/tabs/teams.scss";
 
 const Teams = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { userAuth } = useContext(AuthContext);
 
   return (
     <div className="teams">

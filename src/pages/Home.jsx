@@ -3,7 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import data from "../data/data.json";
 
 const Home = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { userAuth } = useContext(AuthContext);
 
   useEffect(() => {
     Object.values(data).map(

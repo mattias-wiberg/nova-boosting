@@ -85,9 +85,18 @@ const Register = () => {
       // UUID for character
       data.id = uuid();
       data.armor = armorMapping[characterClass];
-      data.roles = roleMapping[characterClass];
-      // TODO: Add role prio according to scores. (e.g. tank > healer > dps)
-      //data.roles_prios = ["tank", "healer", "dps"];
+
+      // Set role priorities by rio score
+      const roles = roleMapping[characterClass];
+      const scoresData = data.mythic_plus_scores_by_season[0].scores;
+      const scores = Object.keys(scoresData)
+        .filter((role) => roles.includes(role)) // Only get roles that the character can play
+        .map((role) => ({
+          role: role,
+          score: scoresData[role],
+        }));
+      scores.sort((a, b) => b.score - a.score);
+      data.roles = scores.map((score) => score.role);
       return data;
     } catch (err) {
       setError(
@@ -106,6 +115,10 @@ const Register = () => {
     //console.log(character);
     //console.log(name, email, password, confPassword);
 
+    // Check if character is valid
+    if (character === undefined) {
+      return;
+    }
     // Check if all fields are filled in
     if (name === "") {
       setError("Please enter a username");
@@ -126,10 +139,6 @@ const Register = () => {
     // Check if passwords match
     if (password !== confPassword) {
       setError("Passwords do not match");
-      return;
-    }
-    // Check if character is valid
-    if (character === undefined) {
       return;
     }
 
@@ -169,7 +178,7 @@ const Register = () => {
           </>
         )}
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="on">
         <input type="text" placeholder="Username" id="name" required />
         <input type="text" placeholder="E-mail" id="email" required />
         <input type="password" placeholder="Password" id="password" required />

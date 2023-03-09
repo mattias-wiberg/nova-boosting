@@ -64,7 +64,7 @@ const TeamMate = ({ character }) => {
 const Team = () => {
   const [editing, setEditing] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const { currentUser } = useContext(AuthContext);
+  const { userAuth } = useContext(AuthContext);
   const leader = true;
 
   const expand = (e) => {
@@ -118,11 +118,11 @@ const Team = () => {
                   <span className="name">You</span>
                 </div>
                 <div className="characters">
-                  {currentUser.characters.map((c) => {
+                  {userAuth.characters.map((c) => {
                     return (
                       <TeamMate
                         character={c}
-                        key={currentUser.name + c.name + c.realm}
+                        key={userAuth.name + c.name + c.realm}
                       />
                     );
                   })}

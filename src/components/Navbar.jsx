@@ -14,7 +14,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
 const Navbar = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { userAuth } = useContext(AuthContext);
   const [userDropdown, setUserDropdown] = useState(false);
   const location = useLocation();
 
@@ -59,7 +59,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="footer">
-        {currentUser ? (
+        {userAuth ? (
           <NavButton
             icon={<AccountCircleIcon fontSize="inherit" />}
             onClick={() => setUserDropdown(!userDropdown)}

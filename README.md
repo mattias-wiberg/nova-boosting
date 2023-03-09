@@ -8,18 +8,15 @@ This is a website to make boosting for the "Nova Boosting Community" Easier
 User {
     id: string,
     name: string,
+    character_priority: [cid, ...] // Length [1-]
     characters: [
         Character {
             id: string,
-            name: string,
-            realm: string,
             roles: [
                 ["tank", "healer", "dps"],
-            ],
+            ], # Ordered in priority with index 0 being the highest priority
             armor: ["leather", "plate", "cloth", mail"],
-            class: ["death-knight", "demon-hunter", "druid", "evoker", "hunter", "mage", "monk", "paladin", "priest", "rogue", "shaman", "warlock", "warrior"]],
-            ratings: [int] (tank, healer, dps),
-            rating_colors: [string]
+            ...rio_character_obj,
         }, ...
     ],
     main_character: cid (payout char)
@@ -52,7 +49,7 @@ MListing {
     pot: int,
     boosters: [
         Role {
-            role: ["tank", "dd", "healer"],
+            role: ["tank", "dps", "healer"],
             armor: ["*", "Leather", "Plate", "Cloth", "Mail"],
             class: ["*", "Death knight", "Demon hunter", "Druid", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior", "Evoker"],
         },
@@ -74,9 +71,8 @@ MRun {
     pot: int,
     boosters: [
         Role {
-            role: ["tank", "dd", "healer"],
-            name: string,
-            realm: string
+            role: ["tank", "dps", "healer"],
+            id: cid
         }
     ],
     paid: bool,

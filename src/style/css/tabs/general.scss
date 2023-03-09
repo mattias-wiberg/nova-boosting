@@ -1,0 +1,18 @@
+@use "../../theme" as theme;
+@use "../../colors" as colors;
+
+.general-container {
+  width: 368px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  .button {
+    border-radius: 5px;
+  }
+  .error-box {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: theme.$main-light-3;
+  }
+}
