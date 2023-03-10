@@ -2,8 +2,12 @@ import { onAuthStateChanged } from "firebase/auth";
 import {
   arrayRemove,
   arrayUnion,
+  collection,
+  deleteDoc,
   doc,
   getDoc,
+  getDocs,
+  setDoc,
   updateDoc,
 } from "firebase/firestore";
 import { createContext, useEffect, useState } from "react";
@@ -14,6 +18,7 @@ export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [characters, setCharacters] = useState([]);
 
   const addCharacter = async (setError, characterText) => {
     console.log("Add character");
@@ -28,23 +33,33 @@ export const UserContextProvider = ({ children }) => {
       setUser((prevUser) => {
         return {
           ...prevUser,
-          characters: [...prevUser.characters, character],
           character_priority: [...prevUser.character_priority, character.id],
         };
       });
+      // Update characters context
+      setCharacters((prevCharacters) => {
+        return {
+          ...prevCharacters,
+          [character.id]: character,
+        };
+      });
+
       // Update user in firestore
       const userRef = doc(db, "users", user.uid);
       await updateDoc(userRef, {
-        characters: arrayUnion(character),
         character_priority: arrayUnion(character.id),
+      });
+      // Add character in firestore
+      await setDoc(doc(db, "users", user.uid, "characters", character.id), {
+        ...character,
       });
     } catch (err) {
       setError(err.message);
     }
   };
 
-  const removeCharacter = async (character, setError) => {
-    console.log("Remove character with id:", character.id);
+  const removeCharacter = async (cid, setError) => {
+    console.log("Remove character with id:", cid);
 
     // Remove character from user
     try {
@@ -52,17 +67,73 @@ export const UserContextProvider = ({ children }) => {
       setUser((prevUser) => {
         return {
           ...prevUser,
-          characters: prevUser.characters.filter((c) => c.id !== character.id),
           character_priority: prevUser.character_priority.filter(
-            (c) => c.id !== character.id
+            (id) => id !== cid
           ),
+        };
+      });
+      // Update characters context
+      setCharacters((prevCharacters) => {
+        const newCharacters = { ...prevCharacters };
+        delete newCharacters[cid];
+        return newCharacters;
+      });
+
+      // Update user in firestore
+      const userRef = doc(db, "users", user.uid);
+      await updateDoc(userRef, {
+        character_priority: arrayRemove(cid),
+      });
+      // Remove character in firestore
+      await deleteDoc(doc(db, "users", user.uid, "characters", cid));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const setMain = async (cid, setError) => {
+    console.log("Change main to character with id:", cid);
+    // Update user with new character
+    try {
+      // Update user context
+      setUser((prevUser) => {
+        return {
+          ...prevUser,
+          main_character: cid,
         };
       });
       // Update user in firestore
       const userRef = doc(db, "users", user.uid);
       await updateDoc(userRef, {
-        characters: arrayRemove(character),
-        character_priority: arrayRemove(character.id),
+        main_character: cid,
+      });
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const setRolePriority = async (cid, role, priority, setError) => {
+    console.log("Change priority for role:", role, "to:", priority);
+    const newRoles = [...characters[cid].roles];
+    newRoles[newRoles.indexOf(role)] = newRoles[priority];
+    newRoles[priority] = role;
+
+    // Swap the positions of the characters roles so role is at index of priority
+    try {
+      // Update characters context
+      setCharacters((prevCharacters) => {
+        return {
+          ...prevCharacters,
+          [cid]: {
+            ...prevCharacters[cid],
+            roles: newRoles,
+          },
+        };
+      });
+      // Update characters in firestore
+      const characterRef = doc(db, "users", user.uid, "characters", cid);
+      await updateDoc(characterRef, {
+        roles: newRoles,
       });
     } catch (err) {
       setError(err.message);
@@ -72,9 +143,18 @@ export const UserContextProvider = ({ children }) => {
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in or has just signed up.
+        // User is signed in and has just signed up.
         // get user data from firestore
         const fetchUser = async () => {
+          const characters = await getDocs(
+            collection(db, "users", user.uid, "characters")
+          );
+          var characterData = {};
+          characters.forEach((doc) => {
+            characterData = { ...characterData, [doc.id]: doc.data() };
+          });
+          setCharacters(characterData);
+
           const docSnap = await getDoc(doc(db, "users", user.uid));
           setUser(docSnap.data());
         };
@@ -91,7 +171,16 @@ export const UserContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, removeCharacter, addCharacter }}>
+    <UserContext.Provider
+      value={{
+        user,
+        characters,
+        removeCharacter,
+        addCharacter,
+        setMain,
+        setRolePriority,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

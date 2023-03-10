@@ -71,10 +71,12 @@ const Register = () => {
       await setDoc(doc(db, "users", res.user.uid), {
         uid: res.user.uid,
         name: name,
-        characters: [character],
         main_character: character.id,
         character_priority: [character.id],
         teams: [],
+      });
+      await setDoc(doc(db, "users", res.user.uid, "characters", character.id), {
+        ...character,
       });
       navigate("/");
     } catch (err) {

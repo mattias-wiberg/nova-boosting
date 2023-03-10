@@ -5,7 +5,7 @@ import { deleteUser } from "firebase/auth";
 import { AuthContext } from "../context/AuthContext";
 import { DeleteOutline } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-import { deleteDoc, doc } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 const General = () => {
@@ -16,8 +16,19 @@ const General = () => {
   const removeUser = async () => {
     deleteUser(userAuth)
       .then(async () => {
+        // Remove characters from database
+        const characters = await getDocs(
+          collection(db, "users", userAuth.uid, "characters")
+        );
+        characters.forEach(async (character) => {
+          await deleteDoc(
+            doc(db, "users", userAuth.uid, "characters", character.id)
+          );
+        });
+
         // Remove user from database
         await deleteDoc(doc(db, "users", userAuth.uid));
+
         navigate("/");
       })
       .catch((error) => {
