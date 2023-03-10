@@ -45,7 +45,28 @@
       .character-prio {
         display: flex;
         flex-direction: column;
-        gap: 1px;
+        width: 12px;
+        height: 100%;
+        .arrow {
+          width: 12px;
+          height: 12px;
+          fill: theme.$main-light-1;
+          cursor: pointer;
+          &:hover {
+            fill: colors.$active;
+          }
+        }
+        .double_arrow {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .up {
+            margin-bottom: -2px;
+          }
+          .down {
+            margin-top: -2px;
+          }
+        }
       }
 
       .main {
@@ -80,6 +101,7 @@
 
           .value {
             width: 30px;
+            color: theme.$main-dark-2;
           }
 
           .role-prio {
@@ -157,26 +179,36 @@
       }
     }
   }
-
-  .prio-list {
+  .footer {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    align-self: flex-end;
-    padding-right: 27px;
-    font-size: 10px;
-    gap: 7px;
-    padding-top: 3px;
+    width: 100%;
 
-    .label {
-      color: theme.$main-dark-1;
+    .error {
+      font-size: 10px;
+      color: theme.$main-light-3;
     }
 
-    .prio-item {
+    .prio-list {
       display: flex;
-      flex-direction: column;
-      text-align: center;
       align-items: center;
-      color: theme.$main-light-1;
+      padding-right: 27px;
+      font-size: 10px;
+      gap: 7px;
+      padding-top: 3px;
+
+      .label {
+        color: theme.$main-dark-1;
+      }
+
+      .prio-item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        color: theme.$main-light-1;
+      }
     }
   }
 

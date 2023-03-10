@@ -140,6 +140,31 @@ export const UserContextProvider = ({ children }) => {
     }
   };
 
+  const setCharacterPriority = async (cid, priority, setError) => {
+    console.log("Change priority for character with id:", cid, "to:", priority);
+    const newPriority = [...user.character_priority];
+    newPriority[newPriority.indexOf(cid)] = newPriority[priority];
+    newPriority[priority] = cid;
+
+    // Swap the positions of the characters roles so role is at index of priority
+    try {
+      // Update user context
+      setUser((prevUser) => {
+        return {
+          ...prevUser,
+          character_priority: newPriority,
+        };
+      });
+      // Update user in firestore
+      const userRef = doc(db, "users", user.uid);
+      await updateDoc(userRef, {
+        character_priority: newPriority,
+      });
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -179,6 +204,7 @@ export const UserContextProvider = ({ children }) => {
         addCharacter,
         setMain,
         setRolePriority,
+        setCharacterPriority,
       }}
     >
       {children}
