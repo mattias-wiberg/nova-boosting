@@ -15,7 +15,6 @@ const Login = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // TODO add wrong password error
       navigate("/");
     } catch (err) {
       setError(err.message);
@@ -25,6 +24,13 @@ const Login = () => {
   return (
     <div className="formContainer">
       <span className="title">Login</span>
+      <div className="error-box">
+        {error !== "" && (
+          <>
+            <span className="red">Error: </span> {" " + error}
+          </>
+        )}
+      </div>
       <form>
         <input type="text" placeholder="E-mail" id="mail" />
         <input type="password" placeholder="Password" id="password" />
@@ -35,7 +41,6 @@ const Login = () => {
           className="submit"
         ></Button>
       </form>
-      {error && <span>Something went wrong</span>}
       <p className="footerText">
         Don't have an account?{" "}
         <Link to="/register" className="link">
