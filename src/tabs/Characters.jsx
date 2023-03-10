@@ -70,15 +70,18 @@ const Characters = () => {
           return (
             <div className="character" key={cid}>
               <div className="character-prio">
-                {mode === "edit" && i === 0 && (
-                  <KeyboardArrowDown
-                    className="arrow"
-                    fontSize="inherit"
-                    onClick={() => setCharacterPriority(cid, i + 1)}
-                  />
-                )}
                 {mode === "edit" &&
-                  i === user.character_priority.length - 1 && (
+                  i === 0 &&
+                  user.character_priority.length > 1 && (
+                    <KeyboardArrowDown
+                      className="arrow"
+                      fontSize="inherit"
+                      onClick={() => setCharacterPriority(cid, i + 1)}
+                    />
+                  )}
+                {mode === "edit" &&
+                  i === user.character_priority.length - 1 &&
+                  user.character_priority.length > 1 && (
                     <KeyboardArrowUp
                       className="arrow"
                       fontSize="inherit"
