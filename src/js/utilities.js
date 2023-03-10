@@ -1,9 +1,9 @@
 import { classArmor, classRole } from "./maps.js";
 import { v4 as uuid } from "uuid";
 
-export const getCharacter = async (setError) => {
+export const getCharacter = async (setError, characterText) => {
   const region = "eu";
-  const character = document.getElementById("character").value.split("-");
+  const character = characterText.value.split("-");
 
   if (character.length !== 2) {
     if (character.length === 1) {

@@ -23,7 +23,9 @@ const Register = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confPassword = document.getElementById("conf-password").value;
-    const character = await getCharacter(setError);
+
+    const characterInput = document.getElementById("character");
+    const character = await getCharacter(setError, characterInput);
     //console.log(character);
     //console.log(name, email, password, confPassword);
 
