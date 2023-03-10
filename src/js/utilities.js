@@ -3,7 +3,8 @@ import { v4 as uuid } from "uuid";
 
 export const getCharacter = async (setError, characterText) => {
   const region = "eu";
-  const character = characterText.value.split("-");
+  console.log(characterText);
+  const character = characterText.split("-");
 
   if (character.length !== 2) {
     if (character.length === 1) {
