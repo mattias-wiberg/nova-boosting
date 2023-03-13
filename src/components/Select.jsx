@@ -3,35 +3,80 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import "../style/css/components/select.scss";
 
-const Select = ({ multiple, className }) => {
-  const [state, setState] = useState({
-    characters: [
-      {
-        id: 0,
-        name: "Mathew",
-        realm: "Deathwing",
-        class: "warrior",
-        selected: false,
-        key: "characters",
-      },
-      {
-        id: 1,
-        name: "Drulu",
-        realm: "Deathwing",
-        class: "druid",
-        selected: true,
-        key: "characters",
-      },
-      {
-        id: 2,
-        name: "Thrallin",
-        realm: "Deathwing",
-        class: "demon-hunter",
-        selected: false,
-        key: "characters",
-      },
-    ],
-  });
+const CharacterHeader = ({ character }) => {
+  return (
+    <div>
+      <span className={character.class.toLowerCase().replace(" ", "-")}>
+        {character.name}
+      </span>
+      {" - " + character.realm}
+    </div>
+  );
+};
+
+const CharacterItem = ({ character, selected, selectItem }) => {
+  return (
+    <div
+      className={"item" + (selected ? " selected" : "")}
+      onClick={() => selectItem(character.id)}
+    >
+      <span className={character.class.toLowerCase().replace(" ", "-")}>
+        {character.name}
+      </span>
+      {" - " + character.realm}
+    </div>
+  );
+};
+
+const ItemItem = ({ item, selected, selectItem }) => {
+  return (
+    <div
+      className={"item" + (selected ? " selected" : "")}
+      onClick={() => selectItem(item.id)}
+    >
+      <img
+        src={require(`../img/dungeons/items/${item.image_name}`)}
+        alt="item icon"
+      />
+      <span className="name">{item.name}</span>
+    </div>
+  );
+};
+
+const Item = ({ item, selected, selectItem }) => {
+  return (
+    <div
+      className={"item" + (selected ? " selected" : "")}
+      onClick={() => selectItem(item.id)}
+    >
+      <span className={item.class}>{item.name}</span>
+    </div>
+  );
+};
+
+const ItemItemHeader = ({ item }) => {
+  return (
+    <div className="item-header">
+      <img
+        src={require(`../img/dungeons/items/${item.image_name}`)}
+        alt="item icon"
+      />
+      <span>{item.name}</span>
+    </div>
+  );
+};
+
+const Select = ({
+  items,
+  onSelected = (ids) => {
+    console.log(ids);
+  },
+  className = "",
+  multiple = false,
+  defaultSelected = [],
+  type = "", // character, item or none
+}) => {
+  const [selected, setSelected] = useState(defaultSelected); // Selected character(s)
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
@@ -42,65 +87,56 @@ const Select = ({ multiple, className }) => {
         window.removeEventListener("click", close);
       }
     }, 0);
+    onSelected(selected); // Call parent function with selected characters when selected changes
 
     return () => {
       window.removeEventListener("click", close);
     };
-  }, [expanded]);
+  }, [expanded, selected, onSelected]);
+
+  const selectItem = (id) => {
+    if (multiple) {
+      toggleItem(id);
+    } else {
+      setSelected([id]);
+      close();
+    }
+  };
+
+  const toggleItem = (id) => {
+    if (selected.includes(id)) {
+      setSelected(selected.filter((item) => item !== id)); // Remove item from array
+    } else {
+      setSelected([...selected, id]); // Add item to array
+    }
+  };
 
   const expand = (e) => {
     e.preventDefault();
     setExpanded(!expanded);
   };
 
-  const resetThenSet = (id, key) => {
-    const temp = [...state[key]];
-
-    temp.forEach((item) => (item.selected = false));
-    temp[id].selected = true;
-
-    setState({
-      [key]: temp,
-    });
-    setExpanded(false);
-    console.log(state);
-  };
-
-  const toggleItem = (id, key) => {
-    const temp = [...state[key]];
-
-    temp[id].selected = !temp[id].selected;
-
-    setState({
-      [key]: temp,
-    });
-  };
-
   const close = () => {
     setExpanded(false);
   };
 
+  if (!items || items.length === 0) {
+    return null;
+  }
   return (
-    <div className={"select" + (className ? " " + className : "")}>
+    <div className={`select ${className}`}>
       <div className="header" onClick={expand}>
-        {state.characters.filter((item) => item.selected).length > 0 ? (
-          multiple ? (
-            <span className="selected">
-              {"Selected " +
-                state.characters.filter((item) => item.selected).length}
-            </span>
+        {selected.length > 0 ? (
+          selected.length > 1 && multiple ? (
+            <span className="selected">{`Selected ${selected.length} ${
+              type + "s"
+            }`}</span>
+          ) : type === "item" ? (
+            <ItemItemHeader item={items[selected[0]]} />
+          ) : type === "character" ? (
+            <CharacterHeader character={items[selected[0]]} />
           ) : (
-            <div>
-              <span
-                className={
-                  state.characters.filter((item) => item.selected)[0].class
-                }
-              >
-                {state.characters.filter((item) => item.selected)[0].name}
-              </span>
-              {" - " +
-                state.characters.filter((item) => item.selected)[0].realm}
-            </div>
+            <span className="selected">{items[selected[0]].name}</span>
           )
         ) : (
           <span className="placeholder">Select</span>
@@ -115,20 +151,25 @@ const Select = ({ multiple, className }) => {
       </div>
       {expanded && (
         <div className="items">
-          {state.characters.map((item) => (
-            <div
-              className={`item ${item.selected && "selected"}`}
-              key={item.id}
-              onClick={() =>
-                multiple
-                  ? toggleItem(item.id, item.key)
-                  : resetThenSet(item.id, item.key)
-              }
-            >
-              <span className={item.class}>{item.name}</span>
-              {" - " + item.realm}
-            </div>
-          ))}
+          {type === "character"
+            ? Object.values(items).map((item) => (
+                <CharacterItem
+                  character={item}
+                  selected={selected.includes(item.id)}
+                  selectItem={selectItem}
+                  key={item.id}
+                />
+              ))
+            : type === "item"
+            ? Object.values(items).map((item) => (
+                <ItemItem
+                  item={item}
+                  selected={selected.includes(item.id)}
+                  selectItem={selectItem}
+                  key={item.id}
+                />
+              ))
+            : items.map((item) => <Item item={item} selectItem={selectItem} />)}
         </div>
       )}
     </div>
