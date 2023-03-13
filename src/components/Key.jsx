@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../style/css/components/key.scss";
+import data from "../data/data.json";
 import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 import CloseIcon from "@mui/icons-material/Close";
 import Select from "./Select";
@@ -16,8 +17,14 @@ const Key = ({ dungeon, level, inTime = false, className }) => {
         <div className="bottom">
           <button>
             <HourglassEmptyIcon fontSize="inherit" className="icon" />
-          </button>
-          <Select className="item-select" />
+          </button>{" "}
+          <Select
+            className="item-select"
+            type="item"
+            items={Object.fromEntries(
+              data[dungeon].items.map((item, i) => [i, { id: i, ...item }])
+            )}
+          />
         </div>
       </div>
       <Button color="red" button_icon={<CloseIcon fontSize="inherit" />} />
