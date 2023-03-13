@@ -227,14 +227,14 @@ const List = () => {
         </div>
         <div className="key-input">
           <input type="number" defaultValue={0} className="key-input" />
-          <Select className="select-dungeon" />
+          <Select className="select-dungeon" type="item" />
           <Button
             button_icon={<AddIcon fontSize="inherit" />}
             className="add-button"
           />
         </div>
         <div className="keys">
-          <Key level="14" dungeon={"AA"} inTime={false} />
+          <Key level="14" dungeon={"SBG"} inTime={false} />
         </div>
       </div>
       <div className="gear-part-wrapper">
