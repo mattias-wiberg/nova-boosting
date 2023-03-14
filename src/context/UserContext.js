@@ -165,6 +165,46 @@ export const UserContextProvider = ({ children }) => {
     }
   };
 
+  const addTeam = async (team_id, setError) => {
+    console.log("Add team");
+    try {
+      // Update user context
+      setUser((prevUser) => {
+        return {
+          ...prevUser,
+          teams: [...prevUser.teams, team_id],
+        };
+      });
+      // Update user in firestore
+      const userRef = doc(db, "users", user.uid);
+      await updateDoc(userRef, {
+        teams: arrayUnion(team_id),
+      });
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const removeTeam = async (team_id, setError) => {
+    console.log("Remove team");
+    try {
+      // Update user context
+      setUser((prevUser) => {
+        return {
+          ...prevUser,
+          teams: prevUser.teams.filter((id) => id !== team_id),
+        };
+      });
+      // Update user in firestore
+      const userRef = doc(db, "users", user.uid);
+      await updateDoc(userRef, {
+        teams: arrayRemove(team_id),
+      });
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -205,6 +245,8 @@ export const UserContextProvider = ({ children }) => {
         setMain,
         setRolePriority,
         setCharacterPriority,
+        addTeam,
+        removeTeam,
       }}
     >
       {children}
