@@ -77,18 +77,18 @@
     .account-dropdown {
       position: absolute;
       display: flex;
-      padding: 5px 15px 5px 5px;
       background-color: theme.$main-dark-2;
       left: 44px;
       bottom: 10px;
       border-radius: 5px;
-      clip: auto;
+      overflow: hidden;
+
       .dropdown-items {
         display: flex;
         flex-direction: column;
-        gap: 7px;
 
         .link {
+          padding: 5px 15px 5px 5px;
           text-decoration: none;
         }
         .dropdown-item {
@@ -101,6 +101,13 @@
           .item-icon {
             color: theme.$main-middle-1;
             font-size: 24px;
+
+            .active {
+              color: theme.$main-dark-1 !important;
+            }
+          }
+          .active {
+            background: theme.$main-middle-1 !important;
           }
         }
       }

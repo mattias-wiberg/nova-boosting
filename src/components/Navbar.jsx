@@ -80,21 +80,73 @@ const Navbar = () => {
         {userDropdown && (
           <div className="account-dropdown">
             <div className="dropdown-items">
-              <Link to="/history" className="link">
-                <div className="dropdown-item">
-                  <AccountCircleIcon className="item-icon" />
+              <Link
+                to="/history"
+                className={
+                  location.pathname === "/history" ? "link active" : "link"
+                }
+              >
+                <div
+                  className={
+                    location.pathname === "/history"
+                      ? "dropdown-item active"
+                      : "dropdown-item"
+                  }
+                >
+                  <AccountCircleIcon
+                    className={
+                      location.pathname === "/history"
+                        ? "item-icon active"
+                        : "item-icon"
+                    }
+                  />
                   Profile
                 </div>
               </Link>
-              <Link to="/settings" className="link">
-                <div className="dropdown-item">
-                  <SettingsOutlinedIcon className="item-icon" />
+              <Link
+                to="/settings"
+                className={
+                  location.pathname === "/settings" ? "link active" : "link"
+                }
+              >
+                <div
+                  className={
+                    location.pathname === "/settings"
+                      ? "dropdown-item active"
+                      : "dropdown-item"
+                  }
+                >
+                  <SettingsOutlinedIcon
+                    className={
+                      location.pathname === "/settings"
+                        ? "item-icon active"
+                        : "item-icon"
+                    }
+                  />
                   Settings
                 </div>
               </Link>
-              <Link to="/login" className="link" onClick={() => signOut(auth)}>
-                <div className="dropdown-item">
-                  <LogoutOutlinedIcon className="item-icon" />
+              <Link
+                to="/login"
+                className={
+                  location.pathname === "/login" ? "link active" : "link"
+                }
+                onClick={() => signOut(auth)}
+              >
+                <div
+                  className={
+                    location.pathname === "/login"
+                      ? "dropdown-item active"
+                      : "dropdown-item"
+                  }
+                >
+                  <LogoutOutlinedIcon
+                    className={
+                      location.pathname === "/login"
+                        ? "item-icon active"
+                        : "item-icon"
+                    }
+                  />
                   Logout
                 </div>
               </Link>
