@@ -19,7 +19,8 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    const name = document.getElementById("name").value.toLowerCase();
+    const n = document.getElementById("name").value.toLowerCase();
+    const name = n.charAt(0).toUpperCase() + n.slice(1); // Capitalize first letter
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confPassword = document.getElementById("conf-password").value;
