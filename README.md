@@ -5,11 +5,11 @@ This is a website to make boosting for the "Nova Boosting Community" Easier
 ## Data structure
 
 ```
-User {
+(User) id: {
     id: string,
     name: string,
     character_priority: [cid, ...] // Length [1-]
-    characters: [
+    Collection(characters): [
         Character {
             id: string,
             roles: [
@@ -19,19 +19,26 @@ User {
             ...rio_character_obj,
         }, ...
     ],
-    main_character: cid (payout char)
-    team_ids: [
-        string
-    ]
+    main_character: (Character) id    # payout char
+    team_ids: [(Team) id, ...]
 }
 
-Team {
+(Team) id: {
     id: string,
     name: string,
-    members: [
-        {id: uid, characters: [cid, ...]},
-    ]
-    leader: uid
+    Collection(members): {
+        (User) id: {
+            id: (User) id,
+            characters: {
+                (Character) id: {
+                    id: (Character) id,
+                    roles: ["tank", "healer", "dps"]
+                },
+                ...
+            }
+        },
+    }
+    leader: (User) id
 }
 
 MListing {
