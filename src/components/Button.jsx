@@ -40,15 +40,15 @@ const Button = ({
     e.preventDefault();
 
     if (type === "hold") {
-      if (hover === color + "-hover") {
+      if (hover === color + "-bg-hover") {
         setHover("");
         holdOnHandler && holdOnHandler();
-        //console.log("hold on");
+        console.log("hold on");
         if (swap) {
           setBackground(swap.color);
           setIcon(swap.button_icon);
         } else {
-          setBackground(color);
+          setBackground(color + "-bg");
         }
       } else if (hover === "") {
         if (activeClick) {
@@ -60,7 +60,7 @@ const Button = ({
             setBackground(swap.color);
             setIcon(swap.button_icon);
           } else {
-            setBackground(color);
+            setBackground(color + "-bg");
           }
           setActiveClick(false);
         } else {
@@ -79,7 +79,7 @@ const Button = ({
   const handleMouseLeave = () => {
     if (type === "hold") {
       if (activeClick) {
-        setHover(color + "-hover");
+        setHover(color + "-bg-hover");
         setActiveClick(false);
       }
     }
