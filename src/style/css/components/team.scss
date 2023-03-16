@@ -15,9 +15,10 @@
   .team-head {
     display: flex;
     flex-direction: row;
-
+    overflow: hidden;
     width: 100%;
     border-radius: 5px;
+    height: 24px;
     background: theme.$main-dark-2;
 
     .edit-button {
@@ -26,7 +27,6 @@
     }
 
     .remove-button {
-      border-radius: 5px 0 0 5px;
       border-right: 1px solid theme.$main-dark-1;
     }
 
@@ -111,6 +111,7 @@
             .edit {
               fill: none;
               stroke: theme.$main-dark-2;
+              cursor: pointer;
             }
 
             .leader {
@@ -121,7 +122,24 @@
             font-size: 12px;
             color: colors.$active;
             font-weight: 600;
+            text-transform: capitalize;
           }
+        }
+
+        .active-blc {
+          border-left-color: colors.$active !important;
+        }
+
+        .blue-blc {
+          border-left-color: colors.$blue !important;
+        }
+
+        .red-blc {
+          border-left-color: colors.$red !important;
+        }
+
+        .green-blc {
+          border-left-color: colors.$green !important;
         }
 
         .characters {
@@ -149,10 +167,12 @@
                 height: 8px;
                 justify-content: center;
                 align-items: center;
-                cursor: pointer;
 
                 &:hover {
                   color: colors.$red;
+                }
+                .remove-character {
+                  cursor: pointer;
                 }
               }
             }
@@ -218,6 +238,12 @@
         &:hover {
           fill: colors.$active;
         }
+      }
+      .active {
+        fill: colors.$active;
+      }
+      .inactive {
+        cursor: default;
       }
     }
   }
