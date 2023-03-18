@@ -144,12 +144,21 @@ const Team = ({ team, setError }) => {
         // Add character to team in firestore
         if (teamMembers[userInfo.uid]) {
           // If user already exists in team members
-          await updateDoc(doc(db, "teams", team.id, "members", userInfo.uid), {
-            characters: arrayUnion({
+          await setDoc(
+            doc(
+              db,
+              "teams",
+              team.id,
+              "members",
+              userInfo.uid,
+              "characters",
+              characterInfo.id
+            ),
+            {
               id: characterInfo.id,
               roles: characterInfo.roles,
-            }),
-          });
+            }
+          );
         } else {
           // If user does not exist in team members
           await setDoc(doc(db, "teams", team.id, "members", userInfo.uid), {
@@ -205,9 +214,6 @@ const Team = ({ team, setError }) => {
         setCharacter("");
         //console.log("Character Info", characterInfo);
       });
-      // Add character to team
-      // Add character to user
-      // Add character to team members
     });
   };
 
@@ -221,7 +227,7 @@ const Team = ({ team, setError }) => {
       const teamMembers = {};
       // Fetch team members
       Object.values(team.members).forEach(async (member) => {
-        teamMembers[member.id] = { id: member.id, characters: [] };
+        teamMembers[member.id] = { id: member.id, characters: {} };
         try {
           // Fetch user
           await getDoc(doc(db, "users", member.id)).then(async (userDoc) => {
@@ -230,13 +236,33 @@ const Team = ({ team, setError }) => {
             teamMembers[member.id].name = userInfo.name;
 
             // Fetch characters
-            member.characters.forEach(async (character) => {
-              await getDoc(
-                doc(db, "users", member.id, "characters", character.id)
-              ).then((characterDoc) => {
-                const characterInfo = characterDoc.data();
-                characterInfo.activeRoles = character.roles;
-                teamMembers[member.id].characters.push(characterInfo);
+            await getDocs(
+              query(
+                collection(
+                  db,
+                  "teams",
+                  team.id,
+                  "members",
+                  member.id,
+                  "characters"
+                )
+              )
+            ).then(async (charactersSnapshot) => {
+              charactersSnapshot.forEach(async (characterSnapshot) => {
+                await getDoc(
+                  doc(
+                    db,
+                    "users",
+                    member.id,
+                    "characters",
+                    characterSnapshot.id
+                  )
+                ).then((characterDoc) => {
+                  const characterInfo = characterDoc.data();
+                  characterInfo.activeRoles = characterSnapshot.data().roles;
+                  teamMembers[member.id].characters[characterInfo.id] =
+                    characterInfo;
+                });
               });
             });
           });
@@ -248,7 +274,7 @@ const Team = ({ team, setError }) => {
       setTeamMembers(teamMembers);
     };
     fetchTeamMembersCharacters();
-  }, [team.members, setError]);
+  }, [team.id, team.members, setError]);
 
   const handleDeleteTeam = async (teamId) => {
     try {
@@ -259,6 +285,14 @@ const Team = ({ team, setError }) => {
       const membersQuery = query(collection(db, "teams", teamId, "members"));
       const membersDocs = await getDocs(membersQuery);
       membersDocs.forEach(async (memberDoc) => {
+        // Delete all characters of the team
+        const charactersQuery = query(
+          collection(db, "teams", teamId, "members", memberDoc.id, "characters")
+        );
+        const charactersDocs = await getDocs(charactersQuery);
+        charactersDocs.forEach(async (characterDoc) => {
+          await deleteDoc(characterDoc.ref);
+        });
         // Delete team from members
         await updateDoc(doc(db, "users", memberDoc.id), {
           teams: arrayRemove(teamId),
@@ -349,7 +383,7 @@ const Team = ({ team, setError }) => {
                           : memberColors[i] + "-blc")
                       }
                     >
-                      {member.characters.map((character) => {
+                      {Object.values(member.characters).map((character) => {
                         return (
                           <div className="team-mate" key={character.id}>
                             <div className="text">

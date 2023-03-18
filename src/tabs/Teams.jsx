@@ -102,13 +102,26 @@ const Teams = () => {
       name: teamName,
       leader: userAuth.uid,
     });
-    // Add characters to team collection
+    // Add user to team members
     await setDoc(doc(db, "teams", teamId, "members", userAuth.uid), {
       id: userAuth.uid,
-      characters: [
-        { id: newTeamCharacter[0], roles: characterDoc.data().roles },
-      ],
     });
+    // Add characters to member
+    await setDoc(
+      doc(
+        db,
+        "teams",
+        teamId,
+        "members",
+        userAuth.uid,
+        "characters",
+        characterDoc.id
+      ),
+      {
+        id: characterDoc.id,
+        roles: characterDoc.data().roles,
+      }
+    );
     // Add team to user and context
     addTeam(teamId, setError);
 
