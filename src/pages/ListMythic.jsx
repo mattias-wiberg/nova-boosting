@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Key from "../components/Key";
 import Select from "../components/Select";
@@ -10,16 +10,76 @@ import { ReactComponent as HordeIcon } from "../img/icons/horde.svg";
 import { ReactComponent as AllianceIcon } from "../img/icons/alliance.svg";
 import "../style/css/pages/listMythic.scss";
 import Checkbox from "../components/Checkbox";
+import { DUNGEONS } from "../js/utilities.js";
+import { v4 as uuid } from "uuid";
 
 const List = () => {
   const [paid, setPaid] = useState(false);
-  const [faction, setFaction] = useState("alliance");
+  const [activeTab, setActiveTab] = React.useState("gear");
+  const [listing, setListing] = useState({
+    dungeons: [],
+    boosters: [],
+    note: "",
+    realm: "",
+    faction: "horde",
+    pot: 0,
+    paid: false,
+    started: false,
+  });
 
-  const removeKey = (e) => {
-    e.preventDefault();
+  const selectedDungeon = useRef({
+    id: "",
+    name: "",
+    level: 0,
+    inTime: true,
+    needKey: false,
+  });
+
+  const selectDungeon = (dungeonId) => {
+    if (dungeonId.length === 0) return;
+    selectedDungeon.current.id = dungeonId[0];
+    selectedDungeon.current.name = DUNGEONS[dungeonId[0]].name;
   };
 
-  const [activeTab, setActiveTab] = React.useState("gear");
+  const setDungeonLevel = (e) => {
+    selectedDungeon.current.level = parseInt(e.target.value);
+  };
+
+  const addDungeon = () => {
+    setListing({
+      ...listing,
+      dungeons: [...listing.dungeons, { ...selectedDungeon.current }],
+    });
+  };
+
+  const removeDungeon = (index) => {
+    setListing({
+      ...listing,
+      dungeons: listing.dungeons.filter((_, i) => i !== index),
+    });
+  };
+
+  const toggleTimed = (index) => {
+    setListing({
+      ...listing,
+      dungeons: listing.dungeons.map((dungeon, i) =>
+        i === index ? { ...dungeon, inTime: !dungeon.inTime } : dungeon
+      ),
+    });
+  };
+
+  const toggleNeedKey = (index) => {
+    setListing({
+      ...listing,
+      dungeons: listing.dungeons.map((dungeon, i) =>
+        i === index ? { ...dungeon, needKey: !dungeon.needKey } : dungeon
+      ),
+    });
+  };
+
+  const setFaction = (faction) => {
+    setListing({ ...listing, faction });
+  };
 
   const classes = {
     druid: {
@@ -215,7 +275,7 @@ const List = () => {
     },
   };
 
-  console.log(classes);
+  console.log(listing);
 
   return (
     <div className="list-mythic">
@@ -226,15 +286,43 @@ const List = () => {
           <span className="dungeon">Dungeon</span>
         </div>
         <div className="key-input">
-          <input type="number" defaultValue={0} className="key-input" />
-          <Select className="select-dungeon" type="item" />
+          <input
+            type="number"
+            defaultValue={0}
+            className="key-input"
+            onChange={setDungeonLevel}
+          />
+          <Select
+            className="select-dungeon"
+            items={Object.fromEntries([
+              ...Object.entries(DUNGEONS).map((v) => [
+                v[0],
+                { id: v[0], ...v[1] },
+              ]),
+              ["ANY", { id: "ANY", name: "Any" }],
+            ])}
+            onSelected={selectDungeon}
+            defaultSelected={["ANY"]}
+          />
           <Button
             button_icon={<AddIcon fontSize="inherit" />}
             className="add-button"
+            clickHandler={addDungeon}
           />
         </div>
         <div className="keys">
-          <Key level="14" dungeon={"SBG"} inTime={false} />
+          {listing.dungeons.map((dungeon, index) => (
+            <Key
+              level={dungeon.level}
+              dungeon={dungeon.id}
+              inTime={dungeon.inTime}
+              needKey={dungeon.needKey}
+              remove={() => removeDungeon(index)}
+              toggleTimed={() => toggleTimed(index)}
+              toggleNeedKey={() => toggleNeedKey(index)}
+              key={index}
+            />
+          ))}
         </div>
       </div>
       <div className="gear-part-wrapper">
@@ -407,11 +495,15 @@ const List = () => {
           />
           <div className="factions">
             <HordeIcon
-              className={`faction${faction === "horde" ? " horde" : ""}`}
+              className={`faction${
+                listing.faction === "horde" ? " horde" : ""
+              }`}
               onClick={() => setFaction("horde")}
             />
             <AllianceIcon
-              className={`faction${faction === "alliance" ? " alliance" : ""}`}
+              className={`faction${
+                listing.faction === "alliance" ? " alliance" : ""
+              }`}
               onClick={() => setFaction("alliance")}
             />
           </div>

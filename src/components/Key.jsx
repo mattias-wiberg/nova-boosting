@@ -7,27 +7,56 @@ import Select from "./Select";
 import Button from "./Button";
 import KeyBanner from "./KeyBanner";
 
-const Key = ({ dungeon, level, inTime = false, className }) => {
-  const [timed, setTimed] = useState(inTime);
-
+const Key = ({
+  dungeon,
+  level,
+  inTime = false,
+  needKey = false,
+  remove,
+  toggleTimed,
+  toggleNeedKey,
+  className,
+}) => {
   return (
     <div className="key-container">
       <div className="key-content">
-        <KeyBanner dungeon={dungeon} level={level} inTime={timed} />
+        <KeyBanner
+          dungeon={dungeon}
+          level={level}
+          inTime={inTime}
+          toggleTimed={toggleTimed}
+        />
         <div className="bottom">
-          <button>
-            <HourglassEmptyIcon fontSize="inherit" className="icon" />
-          </button>{" "}
-          <Select
-            className="item-select"
-            type="item"
-            items={Object.fromEntries(
-              data[dungeon].items.map((item, i) => [i, { id: i, ...item }])
-            )}
-          />
+          {level > 0 && (
+            <button
+              onClick={toggleNeedKey}
+              style={dungeon === "ANY" ? { borderRadius: "0 0 5px 5px" } : {}}
+              className={dungeon !== "ANY" ? "right-border" : ""}
+            >
+              <HourglassEmptyIcon
+                fontSize="inherit"
+                className={"icon" + (needKey ? " active" : "")}
+              />
+            </button>
+          )}{" "}
+          {dungeon !== "ANY" && (
+            <Select
+              className={
+                level === 0 ? "level-round item-select" : "item-select"
+              }
+              type="item"
+              items={Object.fromEntries(
+                data[dungeon].items.map((item, i) => [i, { id: i, ...item }])
+              )}
+            />
+          )}
         </div>
       </div>
-      <Button color="red" button_icon={<CloseIcon fontSize="inherit" />} />
+      <Button
+        color="red"
+        button_icon={<CloseIcon fontSize="inherit" />}
+        clickHandler={remove}
+      />
     </div>
   );
 };

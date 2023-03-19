@@ -37,16 +37,8 @@
         font-size: 12px;
       }
 
-      &:hover .plus {
-        color: colors.$active;
-      }
-
       .intime {
         color: colors.$active;
-      }
-
-      &:hover .intime {
-        color: theme.$main-light-1;
       }
     }
   }

@@ -8,8 +8,6 @@ const Settings = () => {
   const [activeTab, setActiveTab] = React.useState("General");
 
   const handleTabClick = (tab) => {
-    console.log(tab.target.innerText);
-
     setActiveTab(tab.target.innerText);
   };
 

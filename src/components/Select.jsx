@@ -69,7 +69,7 @@ const ItemItemHeader = ({ item }) => {
 const Select = ({
   items,
   onSelected = (ids) => {
-    console.log(ids);
+    //console.log(ids);
   },
   className = "",
   multiple = false,
