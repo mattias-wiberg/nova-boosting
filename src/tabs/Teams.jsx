@@ -143,7 +143,12 @@ const Teams = () => {
       <div className="teams-container">
         {Object.values(teams).length > 0 &&
           Object.values(teams)?.map((team) => (
-            <Team team={team} key={team.id} setError={setError} />
+            <Team
+              team={team}
+              key={team.id}
+              setError={setError}
+              setTeams={setTeams}
+            />
           ))}
       </div>
       {Object.entries(characters).length > 0 && (

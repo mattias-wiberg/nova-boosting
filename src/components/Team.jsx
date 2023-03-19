@@ -30,7 +30,7 @@ import {
 import { db } from "../firebase";
 import { UserContext } from "../context/UserContext";
 
-const Team = ({ team, setError }) => {
+const Team = ({ team, setError, setTeams }) => {
   const [editing, setEditing] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [teamMembers, setTeamMembers] = useState({});
@@ -125,9 +125,7 @@ const Team = ({ team, setError }) => {
         // Check if character is already in team
         if (
           teamMembers[userInfo.uid] &&
-          teamMembers[userInfo.uid].characters.filter(
-            (character) => character.id === characterInfo.id
-          ).length > 0
+          teamMembers[userInfo.uid].characters[character.id]
         ) {
           setError(
             'Character "' +
@@ -141,55 +139,29 @@ const Team = ({ team, setError }) => {
           return;
         }
 
-        // Add character to team in firestore
-        if (teamMembers[userInfo.uid]) {
-          // If user already exists in team members
-          await setDoc(
-            doc(
-              db,
-              "teams",
-              team.id,
-              "members",
-              userInfo.uid,
-              "characters",
-              characterInfo.id
-            ),
-            {
-              id: characterInfo.id,
-              roles: characterInfo.roles,
-            }
-          );
-        } else {
-          // If user does not exist in team members
+        if (!team.members[userInfo.uid]) {
+          // If user does not exist in team
+          // Add team member to team in firestore
           await setDoc(doc(db, "teams", team.id, "members", userInfo.uid), {
             id: userInfo.uid,
-            characters: [
-              {
-                id: characterInfo.id,
-                roles: characterInfo.roles,
-              },
-            ],
           });
         }
-        // Add team to user in firestore
-        await updateDoc(doc(db, "users", userInfo.uid), {
-          teams: arrayUnion(team.id),
-        });
 
         // Add character to team members in state
         setTeamMembers((prev) => {
           if (prev[userInfo.uid]) {
+            // If user already exists in state
             return {
               ...prev,
               [userInfo.uid]: {
                 ...prev[userInfo.uid],
-                characters: [
+                characters: {
                   ...prev[userInfo.uid].characters,
-                  {
+                  [characterInfo.id]: {
                     ...characterInfo,
                     activeRoles: characterInfo.roles,
-                  }, // Have all possible roles as active as standard
-                ],
+                  },
+                }, // Have all possible roles as active as standard
               },
             };
           } else {
@@ -198,15 +170,36 @@ const Team = ({ team, setError }) => {
               [userInfo.uid]: {
                 id: userInfo.uid,
                 name: username,
-                characters: [
-                  {
+                characters: {
+                  [characterInfo.id]: {
                     ...characterInfo,
                     activeRoles: characterInfo.roles,
                   },
-                ], // Have all possible roles as active as standard
+                }, // Have all possible roles as active as standard
               },
             };
           }
+        });
+
+        // Add character to team member in firestore
+        await setDoc(
+          doc(
+            db,
+            "teams",
+            team.id,
+            "members",
+            userInfo.uid,
+            "characters",
+            characterInfo.id
+          ),
+          {
+            id: characterInfo.id,
+            roles: characterInfo.roles,
+          }
+        );
+        // Add team to user in firestore
+        await updateDoc(doc(db, "users", userInfo.uid), {
+          teams: arrayUnion(team.id),
         });
 
         setError("");
@@ -217,10 +210,99 @@ const Team = ({ team, setError }) => {
     });
   };
 
-  const removeCharacter = async (e, characterId) => {
-    e.preventDefault();
-    // Remove character from team in firestore
+  const removeCharacter = async (userId, characterId) => {
+    // Check if it is the last character in the team for the member
+    if (Object.keys(teamMembers[userId].characters).length === 1) {
+      // Remove team from user in firestore
+      await updateDoc(doc(db, "users", userId), {
+        teams: arrayRemove(team.id),
+      });
+      // Remove character from team in firestore
+      await deleteDoc(
+        doc(db, "teams", team.id, "members", userId, "characters", characterId)
+      );
+      // Remove member from team in firestore
+      await deleteDoc(doc(db, "teams", team.id, "members", userId));
+      // Remove member from team in state
+      setTeamMembers((prev) => {
+        const newTeamMembers = { ...prev };
+        delete newTeamMembers[userId];
+        return newTeamMembers;
+      });
+    } else {
+      // Remove character from team in firestore
+      await deleteDoc(
+        doc(db, "teams", team.id, "members", userId, "characters", characterId)
+      );
+      // Remove character from team in state
+      setTeamMembers((prev) => {
+        const newTeamMembers = { ...prev };
+        delete newTeamMembers[userId].characters[characterId];
+        return newTeamMembers;
+      });
+    }
   };
+
+  const toggleRole = (userId, characterId, role) => {
+    if (
+      !teamMembers[userId].characters[characterId].activeRoles.includes(role)
+    ) {
+      // Add role to character in firestore
+      updateDoc(
+        doc(db, "teams", team.id, "members", userId, "characters", characterId),
+        {
+          roles: arrayUnion(role),
+        }
+      );
+    } else {
+      // Remove role from character in firestore
+      updateDoc(
+        doc(db, "teams", team.id, "members", userId, "characters", characterId),
+        {
+          roles: arrayRemove(role),
+        }
+      );
+    }
+    setTeamMembers((prev) => {
+      return {
+        ...prev,
+        [userId]: {
+          ...prev[userId],
+          characters: {
+            ...prev[userId].characters,
+            [characterId]: {
+              ...prev[userId].characters[characterId],
+              activeRoles: prev[userId].characters[
+                characterId
+              ].activeRoles.includes(role)
+                ? prev[userId].characters[characterId].activeRoles.filter(
+                    (activeRole) => activeRole !== role
+                  )
+                : [...prev[userId].characters[characterId].activeRoles, role],
+            },
+          },
+        },
+      };
+    });
+  };
+
+  const changeLeader = (userId) => {
+    setEditing(false);
+    setTeams((prev) => {
+      return {
+        ...prev,
+        [team.id]: {
+          ...prev[team.id],
+          leader: userId,
+        },
+      };
+    });
+    updateDoc(doc(db, "teams", team.id), {
+      leader: userId,
+    });
+  };
+
+  console.log("Team Members", teamMembers);
 
   useEffect(() => {
     const fetchTeamMembersCharacters = async () => {
@@ -353,149 +435,182 @@ const Team = ({ team, setError }) => {
         <div className="dropdown">
           <div className="dropdown-content">
             <div className="rows">
-              {Object.values(teamMembers).map((member, i) => {
-                return (
-                  <div className="row" key={member.id}>
-                    <div className="user">
-                      <div className="crown">
-                        {member.id === team.leader ? (
-                          <CrownIcon className="leader" />
-                        ) : editing ? (
-                          <CrownIcon className="edit" />
-                        ) : null}
+              {Object.values(teamMembers)
+                .sort((a, b) => (b.name < a.name ? 1 : 0))
+                .map((member, i) => {
+                  return (
+                    <div className="row" key={member.id}>
+                      <div className="user">
+                        <div className="crown">
+                          {member.id === team.leader ? (
+                            <CrownIcon className="leader" />
+                          ) : editing ? (
+                            <CrownIcon
+                              className="edit"
+                              onClick={() => changeLeader(member.id)}
+                            />
+                          ) : null}
+                        </div>
+                        <span
+                          className={
+                            "name " +
+                            (member.id === team.leader
+                              ? "active"
+                              : memberColors[i])
+                          }
+                        >
+                          {member.name}
+                        </span>
                       </div>
-                      <span
+                      <div
                         className={
-                          "name " +
+                          "characters " +
                           (member.id === team.leader
-                            ? "active"
-                            : memberColors[i])
+                            ? "active-blc"
+                            : memberColors[i] + "-blc")
                         }
                       >
-                        {member.name}
-                      </span>
-                    </div>
-                    <div
-                      className={
-                        "characters " +
-                        (member.id === team.leader
-                          ? "active-blc"
-                          : memberColors[i] + "-blc")
-                      }
-                    >
-                      {Object.values(member.characters).map((character) => {
-                        return (
-                          <div className="team-mate" key={character.id}>
-                            <div className="text">
-                              <span
-                                className={character.class
-                                  .toLowerCase()
-                                  .replace(" ", "-")}
-                              >
-                                {character.name}
-                              </span>
-                              {" - "}
-                              {character.realm}
-                            </div>
-                            <div className="icons">
-                              <div className="roles">
-                                {editing
-                                  ? character.roles.map((r) => {
-                                      switch (r) {
-                                        case "tank":
-                                          return (
-                                            <TankIcon
-                                              className={
-                                                "role" +
-                                                (character.activeRoles.includes(
-                                                  r
-                                                )
-                                                  ? " active"
-                                                  : "")
-                                              }
-                                              key={r}
-                                            />
-                                          );
-                                        case "healer":
-                                          return (
-                                            <HealerIcon
-                                              className={
-                                                "role" +
-                                                (character.activeRoles.includes(
-                                                  r
-                                                )
-                                                  ? " active"
-                                                  : "")
-                                              }
-                                              key={r}
-                                            />
-                                          );
-                                        case "dps":
-                                          return (
-                                            <DpsIcon
-                                              className={
-                                                "role" +
-                                                (character.activeRoles.includes(
-                                                  r
-                                                )
-                                                  ? " active"
-                                                  : "")
-                                              }
-                                              key={r}
-                                            />
-                                          );
-                                        default:
-                                          return null;
-                                      }
-                                    })
-                                  : character.activeRoles.map((r) => {
-                                      switch (r) {
-                                        case "tank":
-                                          return (
-                                            <TankIcon
-                                              className="role active inactive"
-                                              key={r}
-                                            />
-                                          );
-                                        case "healer":
-                                          return (
-                                            <HealerIcon
-                                              className="role active inactive"
-                                              key={r}
-                                            />
-                                          );
-                                        case "dps":
-                                          return (
-                                            <DpsIcon
-                                              className="role active inactive"
-                                              key={r}
-                                            />
-                                          );
-                                        default:
-                                          return null;
-                                      }
-                                    })}
+                        {Object.values(member.characters).map((character) => {
+                          return (
+                            <div className="team-mate" key={character.id}>
+                              <div className="text">
+                                <span
+                                  className={character.class
+                                    .toLowerCase()
+                                    .replace(" ", "-")}
+                                >
+                                  {character.name}
+                                </span>
+                                {" - "}
+                                {character.realm}
                               </div>
-                              {userAuth.uid === team.leader && (
-                                <div className="cross">
-                                  {editing &&
-                                    (member.id !== team.leader ||
-                                      member.characters.length > 1) && (
-                                      <CloseIcon
-                                        fontSize="inherit"
-                                        className="remove-character"
-                                      />
-                                    )}
+                              <div className="icons">
+                                <div className="roles">
+                                  {editing
+                                    ? character.roles.sort().map((r) => {
+                                        switch (r) {
+                                          case "tank":
+                                            return (
+                                              <TankIcon
+                                                className={
+                                                  "role" +
+                                                  (character.activeRoles.includes(
+                                                    r
+                                                  )
+                                                    ? " active"
+                                                    : "")
+                                                }
+                                                onClick={() =>
+                                                  toggleRole(
+                                                    member.id,
+                                                    character.id,
+                                                    r
+                                                  )
+                                                }
+                                                key={r}
+                                              />
+                                            );
+                                          case "healer":
+                                            return (
+                                              <HealerIcon
+                                                className={
+                                                  "role" +
+                                                  (character.activeRoles.includes(
+                                                    r
+                                                  )
+                                                    ? " active"
+                                                    : "")
+                                                }
+                                                onClick={() =>
+                                                  toggleRole(
+                                                    member.id,
+                                                    character.id,
+                                                    r
+                                                  )
+                                                }
+                                                key={r}
+                                              />
+                                            );
+                                          case "dps":
+                                            return (
+                                              <DpsIcon
+                                                className={
+                                                  "role" +
+                                                  (character.activeRoles.includes(
+                                                    r
+                                                  )
+                                                    ? " active"
+                                                    : "")
+                                                }
+                                                onClick={() =>
+                                                  toggleRole(
+                                                    member.id,
+                                                    character.id,
+                                                    r
+                                                  )
+                                                }
+                                                key={r}
+                                              />
+                                            );
+                                          default:
+                                            return null;
+                                        }
+                                      })
+                                    : character.activeRoles.sort().map((r) => {
+                                        switch (r) {
+                                          case "tank":
+                                            return (
+                                              <TankIcon
+                                                className="role active inactive"
+                                                key={r}
+                                              />
+                                            );
+                                          case "healer":
+                                            return (
+                                              <HealerIcon
+                                                className="role active inactive"
+                                                key={r}
+                                              />
+                                            );
+                                          case "dps":
+                                            return (
+                                              <DpsIcon
+                                                className="role active inactive"
+                                                key={r}
+                                              />
+                                            );
+                                          default:
+                                            return null;
+                                        }
+                                      })}
                                 </div>
-                              )}
+                                {userAuth.uid === team.leader && (
+                                  <div className="cross">
+                                    {editing &&
+                                      (member.id !== team.leader ||
+                                        Object.keys(member.characters).length >
+                                          1) && (
+                                        <CloseIcon
+                                          fontSize="inherit"
+                                          className="remove-character"
+                                          onClick={() =>
+                                            removeCharacter(
+                                              member.id,
+                                              character.id
+                                            )
+                                          }
+                                        />
+                                      )}
+                                  </div>
+                                )}
+                              </div>
                             </div>
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
             {userAuth.uid === team.leader && (
               <div className="add-panel">
@@ -519,11 +634,6 @@ const Team = ({ team, setError }) => {
                     }}
                   />
                   <div className="buttons">
-                    {/*<div className="roles">
-                    <TankIcon className="role" />
-                    <HealerIcon className="role" />
-                    <DpsIcon className="role" />
-                  </div>*/}
                     <Button
                       color="green"
                       button_icon={<AddIcon fontSize="inherit" />}

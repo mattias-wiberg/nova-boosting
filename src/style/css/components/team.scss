@@ -234,10 +234,6 @@
         height: 12px;
         fill: theme.$main-light-1;
         cursor: pointer;
-
-        &:hover {
-          fill: colors.$active;
-        }
       }
       .active {
         fill: colors.$active;
