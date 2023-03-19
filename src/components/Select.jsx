@@ -49,7 +49,7 @@ const Item = ({ item, selected, selectItem }) => {
       className={"item" + (selected ? " selected" : "")}
       onClick={() => selectItem(item.id)}
     >
-      <span className={item.class}>{item.name}</span>
+      <span className="name">{item.name}</span>
     </div>
   );
 };
@@ -151,25 +151,25 @@ const Select = ({
       </div>
       {expanded && (
         <div className="items">
-          {type === "character"
-            ? Object.values(items).map((item) => (
-                <CharacterItem
-                  character={item}
-                  selected={selected.includes(item.id)}
-                  selectItem={selectItem}
-                  key={item.id}
-                />
-              ))
-            : type === "item"
-            ? Object.values(items).map((item) => (
-                <ItemItem
-                  item={item}
-                  selected={selected.includes(item.id)}
-                  selectItem={selectItem}
-                  key={item.id}
-                />
-              ))
-            : items.map((item) => <Item item={item} selectItem={selectItem} />)}
+          {Object.values(items).map((item) =>
+            type === "character" ? (
+              <CharacterItem
+                character={item}
+                selected={selected.includes(item.id)}
+                selectItem={selectItem}
+                key={item.id}
+              />
+            ) : type === "item" ? (
+              <ItemItem
+                item={item}
+                selected={selected.includes(item.id)}
+                selectItem={selectItem}
+                key={item.id}
+              />
+            ) : (
+              <Item key={item.id} item={item} selectItem={selectItem} />
+            )
+          )}
         </div>
       )}
     </div>
