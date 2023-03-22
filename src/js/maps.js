@@ -39,6 +39,22 @@ export const classRole = {
   druid: ["tank", "healer", "dps"],
 };
 
+export const classes = [
+  "death-knight",
+  "warrior",
+  "paladin",
+  "hunter",
+  "shaman",
+  "evoker",
+  "priest",
+  "warlock",
+  "mage",
+  "demon-hunter",
+  "rogue",
+  "monk",
+  "druid",
+];
+
 export const roleClass = {
   tank: ["death-knight", "warrior", "paladin", "demon-hunter", "monk", "druid"],
   healer: ["paladin", "shaman", "evoker", "priest", "monk", "druid"],
