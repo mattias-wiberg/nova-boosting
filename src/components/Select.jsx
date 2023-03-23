@@ -69,12 +69,13 @@ const ItemItemHeader = ({ item }) => {
 const Select = ({
   items,
   onSelected = (ids) => {
-    //console.log(ids);
+    console.log(ids);
   },
   className = "",
   multiple = false,
   defaultSelected = [],
   type = "", // character, item or none
+  allowClear = false,
 }) => {
   const [selected, setSelected] = useState(defaultSelected); // Selected character(s)
   const [expanded, setExpanded] = useState(false);
@@ -87,28 +88,37 @@ const Select = ({
         window.removeEventListener("click", close);
       }
     }, 0);
-    onSelected(selected); // Call parent function with selected characters when selected changes
-
     return () => {
       window.removeEventListener("click", close);
     };
-  }, [expanded, selected, onSelected]);
+  }, [expanded]);
 
   const selectItem = (id) => {
     if (multiple) {
       toggleItem(id);
     } else {
       setSelected([id]);
+      onSelected([id]);
       close();
     }
   };
 
   const toggleItem = (id) => {
     if (selected.includes(id)) {
-      setSelected(selected.filter((item) => item !== id)); // Remove item from array
+      const newSelected = selected.filter((item) => item !== id);
+      onSelected(newSelected);
+      setSelected(newSelected); // Remove item from array
     } else {
-      setSelected([...selected, id]); // Add item to array
+      const newSelected = [...selected, id];
+      onSelected(newSelected);
+      setSelected(newSelected); // Add item to array
     }
+  };
+
+  const clear = () => {
+    setSelected([]);
+    setExpanded(false);
+    onSelected([]);
   };
 
   const expand = (e) => {
@@ -151,6 +161,7 @@ const Select = ({
       </div>
       {expanded && (
         <div className="items">
+          {allowClear && <Item item={{ name: "Select" }} selectItem={clear} />}
           {Object.values(items).map((item) =>
             type === "character" ? (
               <CharacterItem
