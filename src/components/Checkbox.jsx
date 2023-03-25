@@ -4,11 +4,10 @@ import "../style/css/components/checkbox.scss";
 const Checkbox = ({
   tickType = "tick",
   recommended = "0010", // 4 digit string, 0 = transparent, 1 = visible (top, right, bottom, left)
-  defaultValue = true,
+  ticked = true,
+  toggle = () => {},
   color = "active",
 }) => {
-  const [checked, setChecked] = React.useState(defaultValue);
-
   return (
     <div className="checkbox">
       <div className="row">
@@ -24,11 +23,11 @@ const Checkbox = ({
             "recommended" + (recommended[3] === "0" ? " transparent" : "")
           }
         ></div>
-        <div className="box" onClick={() => setChecked(!checked)}>
-          {tickType === "tick" && checked && (
+        <div className="box" onClick={toggle}>
+          {tickType === "tick" && ticked && (
             <div className={`tick ${color}-bg`}></div>
           )}
-          {tickType === "semi" && checked && (
+          {tickType === "semi" && ticked && (
             <div className={`semi-tick ${color}-border`}></div>
           )}
         </div>
