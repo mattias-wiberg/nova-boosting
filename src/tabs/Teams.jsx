@@ -1,4 +1,5 @@
 import "../style/css/tabs/teams.scss";
+import "../style/animation.scss";
 
 import React, { useContext, useEffect } from "react";
 
@@ -7,6 +8,7 @@ import Select from "../components/Select";
 import Team from "../components/Team";
 
 import AddIcon from "@mui/icons-material/Add";
+import Icon from "../img/icon.png";
 
 import { AuthContext } from "../context/AuthContext";
 import { UserContext } from "../context/UserContext";
@@ -28,6 +30,7 @@ const Teams = () => {
   const { user, characters, addTeam } = useContext(UserContext);
   const [error, setError] = React.useState("");
   const [teams, setTeams] = React.useState({});
+  const [loading, setLoading] = React.useState(true);
   const [newTeamCharacter, setNewTeamCharacters] = React.useState([]);
 
   useEffect(() => {
@@ -56,6 +59,7 @@ const Teams = () => {
         })
       ).then((teams) => Object.assign({}, ...teams));
       setTeams(fetchedTeam);
+      setLoading(false);
     };
 
     fetchTeams();
@@ -151,6 +155,7 @@ const Teams = () => {
             />
           ))}
       </div>
+      {loading && <img src={Icon} alt="" className="rotate-center" />}
       {Object.entries(characters).length > 0 && (
         <div className="new-team-container">
           <input
