@@ -17,10 +17,10 @@ export const classArmor = {
 };
 
 export const armorClass = {
-  plate: ["death-knight", "warrior", "paladin"],
-  mail: ["hunter", "shaman", "evoker"],
-  cloth: ["priest", "warlock", "mage"],
   leather: ["demon-hunter", "rogue", "monk", "druid"],
+  plate: ["death-knight", "warrior", "paladin"],
+  cloth: ["priest", "warlock", "mage"],
+  mail: ["hunter", "shaman", "evoker"],
 };
 
 export const classRole = {
