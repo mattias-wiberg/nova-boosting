@@ -3,12 +3,15 @@ import {
   arrayRemove,
   arrayUnion,
   collection,
+  collectionGroup,
   deleteDoc,
   doc,
   getDoc,
   getDocs,
+  query,
   setDoc,
   updateDoc,
+  where,
 } from "firebase/firestore";
 import { createContext, useEffect, useState } from "react";
 import { auth, db } from "../firebase";
@@ -25,6 +28,18 @@ export const UserContextProvider = ({ children }) => {
     const character = await getCharacter(setError, characterText);
     // Check if character is valid
     if (character === undefined) {
+      return;
+    }
+    // Check if character already exists
+    const characterQuery = query(
+      collectionGroup(db, "characters"),
+      where("name", "==", character.name),
+      where("realm", "==", character.realm)
+    );
+    const characterSnapshot = await getDocs(characterQuery);
+
+    if (!characterSnapshot.empty) {
+      setError("Character already registered!");
       return;
     }
     // Update user with new character
