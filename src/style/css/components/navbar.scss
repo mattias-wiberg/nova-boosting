@@ -65,6 +65,44 @@
     align-items: center;
     gap: 5px;
     flex-grow: 1;
+    .key-dropdown {
+      position: absolute;
+      display: flex;
+      background-color: theme.$main-dark-2;
+      left: 44px;
+      top: 98px;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .dropdown-items {
+        display: flex;
+        flex-direction: column;
+
+        .link {
+          padding: 5px 15px 5px 5px;
+          text-decoration: none;
+        }
+        .dropdown-item {
+          display: flex;
+          gap: 8px;
+          color: theme.$main-light-2;
+          font-size: 12px;
+          align-items: center;
+          cursor: pointer;
+          .item-icon {
+            color: theme.$main-middle-1;
+            font-size: 24px;
+
+            .active {
+              color: theme.$main-dark-1 !important;
+            }
+          }
+          .active {
+            background: theme.$main-middle-1 !important;
+          }
+        }
+      }
+    }
   }
 
   .footer {
@@ -74,7 +112,7 @@
     align-items: center;
     width: 100%;
 
-    .account-dropdown {
+    .user-dropdown {
       position: absolute;
       display: flex;
       background-color: theme.$main-dark-2;

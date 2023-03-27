@@ -16,11 +16,12 @@ import { auth } from "../firebase";
 const Navbar = () => {
   const { userAuth } = useContext(AuthContext);
   const [userDropdown, setUserDropdown] = useState(false);
+  const [keyDropdown, setKeyDropdown] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setTimeout(() => {
-      if (userDropdown) {
+      if (userDropdown || keyDropdown) {
         window.addEventListener("click", close);
       } else {
         window.removeEventListener("click", close);
@@ -30,10 +31,18 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("click", close);
     };
-  }, [userDropdown]);
+  }, [userDropdown, keyDropdown]);
 
   const close = () => {
     setUserDropdown(false);
+    setKeyDropdown(false);
+  };
+
+  const closeUser = () => {
+    setUserDropdown(false);
+  };
+  const closeKey = () => {
+    setKeyDropdown(false);
   };
 
   return (
@@ -49,13 +58,97 @@ const Navbar = () => {
               active={location.pathname === "/" ? true : false}
             />
           </Link>
-          <Link to="/listings">
-            <NavButton
-              rotate={"-30deg"}
-              icon={<HourglassEmptyIcon fontSize="inherit" />}
-              active={location.pathname === "/listings" ? true : false}
-            />
-          </Link>
+          <NavButton
+            rotate={"-30deg"}
+            icon={<HourglassEmptyIcon fontSize="inherit" />}
+            active={
+              ["/listings", "/list-mythic", "/list-manager"].includes(
+                location.pathname
+              )
+                ? true
+                : false
+            }
+            onClick={() => setKeyDropdown(!keyDropdown)}
+          />
+          {keyDropdown && (
+            <div className="key-dropdown">
+              <div className="dropdown-items">
+                <Link
+                  to="/listings"
+                  className={
+                    location.pathname === "/listings" ? "link active" : "link"
+                  }
+                >
+                  <div
+                    className={
+                      location.pathname === "/listings"
+                        ? "dropdown-item active"
+                        : "dropdown-item"
+                    }
+                  >
+                    <AccountCircleIcon
+                      className={
+                        location.pathname === "/listings"
+                          ? "item-icon active"
+                          : "item-icon"
+                      }
+                    />
+                    Listings
+                  </div>
+                </Link>
+                <Link
+                  to="/list-mythic"
+                  className={
+                    location.pathname === "/list-mythic"
+                      ? "link active"
+                      : "link"
+                  }
+                >
+                  <div
+                    className={
+                      location.pathname === "/list-mythic"
+                        ? "dropdown-item active"
+                        : "dropdown-item"
+                    }
+                  >
+                    <SettingsOutlinedIcon
+                      className={
+                        location.pathname === "/list-mythic"
+                          ? "item-icon active"
+                          : "item-icon"
+                      }
+                    />
+                    List Mythic
+                  </div>
+                </Link>
+                <Link
+                  to="/list-manager"
+                  className={
+                    location.pathname === "/list-manager"
+                      ? "link active"
+                      : "link"
+                  }
+                >
+                  <div
+                    className={
+                      location.pathname === "/list-manager"
+                        ? "dropdown-item active"
+                        : "dropdown-item"
+                    }
+                  >
+                    <LogoutOutlinedIcon
+                      className={
+                        location.pathname === "/list-manager"
+                          ? "item-icon active"
+                          : "item-icon"
+                      }
+                    />
+                    List Manager
+                  </div>
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <div className="footer">
@@ -78,7 +171,7 @@ const Navbar = () => {
           </Link>
         )}
         {userDropdown && (
-          <div className="account-dropdown">
+          <div className="user-dropdown">
             <div className="dropdown-items">
               <Link
                 to="/history"
