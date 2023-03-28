@@ -10,26 +10,33 @@ import KeyBanner from "./KeyBanner";
 const Key = ({
   dungeon,
   level,
+  index,
   inTime = false,
   needKey = false,
   remove,
   toggleTimed,
   toggleNeedKey,
+  setItem,
   className,
 }) => {
+  const setItemIndex = (indices) => {
+    setItem(index, dungeon, indices[0]);
+  };
+
   return (
     <div className="key-container">
       <div className="key-content">
         <KeyBanner
           dungeon={dungeon}
           level={level}
+          index={index}
           inTime={inTime}
           toggleTimed={toggleTimed}
         />
         <div className="bottom">
           {level > 0 && (
             <button
-              onClick={toggleNeedKey}
+              onClick={() => toggleNeedKey(index)}
               style={dungeon === "ANY" ? { borderRadius: "0 0 5px 5px" } : {}}
               className={dungeon !== "ANY" ? "right-border" : ""}
             >
@@ -48,6 +55,8 @@ const Key = ({
               items={Object.fromEntries(
                 data[dungeon].items.map((item, i) => [i, { id: i, ...item }])
               )}
+              onSelected={setItemIndex}
+              allowClear={true}
             />
           )}
         </div>
@@ -55,7 +64,7 @@ const Key = ({
       <Button
         color="red"
         button_icon={<CloseIcon fontSize="inherit" />}
-        clickHandler={remove}
+        clickHandler={() => remove(index)}
       />
     </div>
   );
