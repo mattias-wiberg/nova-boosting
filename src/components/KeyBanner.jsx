@@ -6,6 +6,7 @@ import HourglassEmpty from "@mui/icons-material/HourglassEmpty";
 const KeyBanner = ({
   dungeon,
   level,
+  index,
   inTime = false,
   className,
   iconColor,
@@ -22,7 +23,7 @@ const KeyBanner = ({
         <img src={DUNGEONS[dungeon].img} alt="BG" />
       </div>
       <div className="info">
-        <div className="level" onClick={toggleTimed}>
+        <div className="level" onClick={() => toggleTimed(index)}>
           <span className="value">{level}</span>
           <span className={"plus" + (inTime ? " intime" : "")}>+</span>
         </div>
