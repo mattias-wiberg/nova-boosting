@@ -42,6 +42,8 @@ This is a website to make boosting for the "Nova Boosting Community" Easier
 }
 
 MListing {
+    id: string,
+    timestamp: (ServerTimestamp)
     keys: [
         Key {
             level: int,
@@ -52,15 +54,14 @@ MListing {
     ],
     note: string,
     realm: string,
-    faction: ["H", "A"],
+    faction: ["horde", "alliance"],
     pot: int,
-    boosters: [
-        Role {
-            role: ["tank", "dps", "healer"],
-            armor: ["*", "Leather", "Plate", "Cloth", "Mail"],
-            class: ["*", "Death knight", "Demon hunter", "Druid", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior", "Evoker"],
-        },
-    ],
+    roles_to_find: {
+        ["tank", "healer", "dps_1", "dps_2"]: ["Death knight", "Demon hunter", "Druid", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior", "Evoker"],
+    }
+    boosters: {
+        ["tank", "healer", "dps_1", "dps_2"]: (Character) id
+    },
     paid: bool,
     started: bool
 }
