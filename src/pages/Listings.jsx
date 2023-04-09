@@ -1,14 +1,4 @@
-import Button from "../components/Button";
-import React, { useEffect, useContext } from "react";
-import KeyBanner from "../components/KeyBanner";
-import RadioButton from "../components/RadioButton";
-import Select from "../components/Select";
-import "../style/css/pages/listings.scss";
 import { HourglassEmptyOutlined } from "@mui/icons-material";
-import { ReactComponent as TankIcon } from "../img/icons/tank.svg";
-import { ReactComponent as HealerIcon } from "../img/icons/healer.svg";
-import { ReactComponent as DpsIcon } from "../img/icons/dps.svg";
-import { UserContext } from "../context/UserContext";
 import {
   collection,
   doc,
@@ -17,32 +7,65 @@ import {
   onSnapshot,
   query,
   runTransaction,
-  where,
+  where
 } from "firebase/firestore";
-import { db } from "../firebase";
 import { ref } from "firebase/storage";
+import React, { useContext, useEffect } from "react";
+import Button from "../components/Button";
+import KeyBanner from "../components/KeyBanner";
+import RadioButton from "../components/RadioButton";
+import Select from "../components/Select";
+import { UserContext } from "../context/UserContext";
+import { db } from "../firebase";
+import { ReactComponent as DpsIcon } from "../img/icons/dps.svg";
+import { ReactComponent as HealerIcon } from "../img/icons/healer.svg";
+import { ReactComponent as TankIcon } from "../img/icons/tank.svg";
+import "../style/css/pages/listings.scss";
 
 const Listings = () => {
+  const { user, characters } = useContext(UserContext);
   const [listings, setListings] = React.useState([]);
   const [teams, setTeams] = React.useState({});
+  const [team, setTeam] = React.useState([]);
+  const [character, setCharacter] = React.useState([]);
   const [radio, setRadio] = React.useState("character"); // character or team
-  const { user, characters } = useContext(UserContext);
+  const [selectedRoles, setSelectedRoles] = React.useState("")
 
-  function togglePaid(uid = "d18c8c38-5e09-4234-9776-714854da928c") {
-    const postRef = ref(db, `/mplus-listings/${uid}`);
-
-    runTransaction(postRef, (post) => {
-      if (post) {
-        if (post.paid) {
-          console.log("paid = false");
-          post.paid = false;
-        } else {
-          console.log("post was already set to false");
-        }
+  async function joinListing(uid) {
+    const postRef = doc(db, "mplus-listings", uid);
+    
+    await runTransaction(db, async (transaction) => {
+      const post = await transaction.get(postRef);
+      
+      if (!post.exists()) {
+        console.log("post does not exist");
       }
-      return post;
+
+      const postData = post.data();
+      
+      if (postData.paid) {
+        console.log("paid = false");
+        transaction.update(postRef, { paid: false });
+      } else {
+        console.log("post was already set to false");
+      }
     });
   }
+
+  const setCharacters = (characters) => {
+    setSelectedRoles("");
+    setCharacter(characters);
+  }
+
+  const toggleSelectedRoles = (role) => {
+    setSelectedRoles((prev) => {
+      if (prev.includes(role)) {
+        return prev.filter((r) => r !== role);
+      } else {
+        return [...prev, role];
+      }
+    });
+  } 
 
   useEffect(() => {
     const q = query(
@@ -52,7 +75,8 @@ const Listings = () => {
     const unSub = onSnapshot(q, (querySnapshot) => {
       const listings = [];
       querySnapshot.forEach((doc) => {
-        listings.push(doc.data());
+        const listing = doc.data();
+        listings.push(listing);
       });
       setListings(listings);
     });
@@ -95,6 +119,15 @@ const Listings = () => {
   return (
     <div className="listings">
       {listings.map((listing) => {
+        const potentialCharacters = Object.keys(characters).filter((char) => {
+          Object.values(listing.rolesToFind).forEach((classes) => {
+            if (classes.includes(characters[char].class)) {
+              return true;
+            }
+          });
+          return false;
+        });
+
         return (
           <div className="listing-card" key={listing.id}>
             {listing.keys.map((key, i) => {
@@ -110,11 +143,15 @@ const Listings = () => {
               );
             })}
             <div className="content">
-              {listing.note}
+              {listing.note && 
+                <div className="note">
+                  Note: {listing.note}
+                </div>
+              }
               <div className="selection">
                 <Select
-                  items={characters}
-                  defaultSelected={[Object.keys(characters)[0]]}
+                  items={potentialCharacters}
+                  onSelected={setCharacters}
                   type="character"
                 />
                 <RadioButton
@@ -123,7 +160,10 @@ const Listings = () => {
                 />
               </div>
               <div className="selection">
-                <Select items={teams} />
+                <Select 
+                  items={teams}
+                  onSelected={setTeam} 
+                />
                 <RadioButton
                   ticked={radio === "team"}
                   onClick={(ticked) => setRadio("team")}
@@ -131,16 +171,33 @@ const Listings = () => {
               </div>
             </div>
             <div className="footer">
-              <Button text="Join" color="active" />
+              <Button text="Join" color="active" clickHandler={() => joinListing(listing.id)}/>
               <div className="key-button">
                 <HourglassEmptyOutlined className="icon active" />
               </div>
+              {characters[character[0]] && radio === "character" && 
               <div className="roles">
-                <TankIcon className="role active-role" />
-                <HealerIcon className="role" />
-                <DpsIcon className="role" />
-              </div>
-              <div className="pot" onClick={togglePaid}>
+                {
+                  characters[character[0]].roles.map((role) => {
+                    let classNames = "role";
+                    if (selectedRoles.includes(role)) {
+                      classNames += " active-role"
+                    }
+                  
+                    switch(role) {
+                      case "tank":
+                        return <TankIcon className={classNames} key={role} onClick={() => toggleSelectedRoles("tank")}/>
+                      case "healer":
+                        return <HealerIcon className={classNames} key={role} onClick={() => toggleSelectedRoles("healer")}/>
+                      case "dps":
+                        return <DpsIcon className={classNames} key={role} onClick={() => toggleSelectedRoles("dps")}/>
+                      default:
+                        return null
+                    }
+                  })
+                }
+              </div>}
+              <div className="pot">
                 <span>{listing.pot}</span>
                 <div
                   className={`paid-button${listing.paid ? " active-bg" : ""}`}

@@ -24,6 +24,13 @@
     background-color: theme.$main-dark-4;
     padding: 14px 19px;
     gap: 5px;
+
+    .note {
+      font-size: 10px;
+      text-align: center;
+      color: theme.$main-light-1
+    }
+
     .selection {
       display: flex;
       align-items: center;
