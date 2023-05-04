@@ -7,9 +7,9 @@ import {
   onSnapshot,
   query,
   runTransaction,
-  where
+  where,
 } from "firebase/firestore";
-import { ref } from "firebase/storage";
+import { list, ref } from "firebase/storage";
 import React, { useContext, useEffect } from "react";
 import Button from "../components/Button";
 import KeyBanner from "../components/KeyBanner";
@@ -29,20 +29,20 @@ const Listings = () => {
   const [team, setTeam] = React.useState([]);
   const [character, setCharacter] = React.useState([]);
   const [radio, setRadio] = React.useState("character"); // character or team
-  const [selectedRoles, setSelectedRoles] = React.useState("")
+  const [selectedRoles, setSelectedRoles] = React.useState("");
 
   async function joinListing(uid) {
     const postRef = doc(db, "mplus-listings", uid);
-    
+
     await runTransaction(db, async (transaction) => {
       const post = await transaction.get(postRef);
-      
+
       if (!post.exists()) {
         console.log("post does not exist");
       }
 
       const postData = post.data();
-      
+
       if (postData.paid) {
         console.log("paid = false");
         transaction.update(postRef, { paid: false });
@@ -55,7 +55,7 @@ const Listings = () => {
   const setCharacters = (characters) => {
     setSelectedRoles("");
     setCharacter(characters);
-  }
+  };
 
   const toggleSelectedRoles = (role) => {
     setSelectedRoles((prev) => {
@@ -65,7 +65,7 @@ const Listings = () => {
         return [...prev, role];
       }
     });
-  } 
+  };
 
   useEffect(() => {
     const q = query(
@@ -106,7 +106,7 @@ const Listings = () => {
         })
       ).then((teams) => Object.assign({}, ...teams));
       setTeams(fetchedTeam);
-      console.log(fetchedTeam);
+      //console.log(fetchedTeam);
     };
     fetchTeams();
 
@@ -119,14 +119,22 @@ const Listings = () => {
   return (
     <div className="listings">
       {listings.map((listing) => {
-        const potentialCharacters = Object.keys(characters).filter((char) => {
-          Object.values(listing.rolesToFind).forEach((classes) => {
-            if (classes.includes(characters[char].class)) {
-              return true;
-            }
-          });
-          return false;
-        });
+        console.log(characters);
+        const potentialCharacters = Object.fromEntries(
+          Object.entries(characters).filter((entry) => {
+            //const cid = entry[0];
+            const character = entry[1];
+            const characterClass = character.class
+              .toLowerCase()
+              .replace(" ", "-");
+
+            // Character must have at least one of the roles
+            return Object.values(listing.rolesToFind).some((classes) =>
+              classes.includes(characterClass)
+            );
+          })
+        );
+        console.log(potentialCharacters);
 
         return (
           <div className="listing-card" key={listing.id}>
@@ -143,11 +151,7 @@ const Listings = () => {
               );
             })}
             <div className="content">
-              {listing.note && 
-                <div className="note">
-                  Note: {listing.note}
-                </div>
-              }
+              {listing.note && <div className="note">Note: {listing.note}</div>}
               <div className="selection">
                 <Select
                   items={potentialCharacters}
@@ -160,10 +164,7 @@ const Listings = () => {
                 />
               </div>
               <div className="selection">
-                <Select 
-                  items={teams}
-                  onSelected={setTeam} 
-                />
+                <Select items={teams} onSelected={setTeam} />
                 <RadioButton
                   ticked={radio === "team"}
                   onClick={(ticked) => setRadio("team")}
@@ -171,32 +172,53 @@ const Listings = () => {
               </div>
             </div>
             <div className="footer">
-              <Button text="Join" color="active" clickHandler={() => joinListing(listing.id)}/>
+              <Button
+                text="Join"
+                color="active"
+                clickHandler={() => joinListing(listing.id)}
+              />
               <div className="key-button">
                 <HourglassEmptyOutlined className="icon active" />
               </div>
-              {characters[character[0]] && radio === "character" && 
-              <div className="roles">
-                {
-                  characters[character[0]].roles.map((role) => {
+              {characters[character[0]] && radio === "character" && (
+                <div className="roles">
+                  {characters[character[0]].roles.map((role) => {
                     let classNames = "role";
                     if (selectedRoles.includes(role)) {
-                      classNames += " active-role"
+                      classNames += " active-role";
                     }
-                  
-                    switch(role) {
+
+                    switch (role) {
                       case "tank":
-                        return <TankIcon className={classNames} key={role} onClick={() => toggleSelectedRoles("tank")}/>
+                        return (
+                          <TankIcon
+                            className={classNames}
+                            key={role}
+                            onClick={() => toggleSelectedRoles("tank")}
+                          />
+                        );
                       case "healer":
-                        return <HealerIcon className={classNames} key={role} onClick={() => toggleSelectedRoles("healer")}/>
+                        return (
+                          <HealerIcon
+                            className={classNames}
+                            key={role}
+                            onClick={() => toggleSelectedRoles("healer")}
+                          />
+                        );
                       case "dps":
-                        return <DpsIcon className={classNames} key={role} onClick={() => toggleSelectedRoles("dps")}/>
+                        return (
+                          <DpsIcon
+                            className={classNames}
+                            key={role}
+                            onClick={() => toggleSelectedRoles("dps")}
+                          />
+                        );
                       default:
-                        return null
+                        return null;
                     }
-                  })
-                }
-              </div>}
+                  })}
+                </div>
+              )}
               <div className="pot">
                 <span>{listing.pot}</span>
                 <div
