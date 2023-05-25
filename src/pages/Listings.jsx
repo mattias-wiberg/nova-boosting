@@ -29,27 +29,55 @@ const Listings = () => {
   const [team, setTeam] = React.useState([]);
   const [character, setCharacter] = React.useState([]);
   const [radio, setRadio] = React.useState("character"); // character or team
-  const [selectedRoles, setSelectedRoles] = React.useState("");
+  const [selectedRoles, setSelectedRoles] = React.useState([]);
 
   async function joinListing(uid) {
+    if (selectedRoles.length === 0) {
+      alert("Please select a role!");
+      return;
+    }
+
     const postRef = doc(db, "mplus-listings", uid);
 
+    let tried_roles = [];
     await runTransaction(db, async (transaction) => {
       const post = await transaction.get(postRef);
 
       if (!post.exists()) {
-        console.log("post does not exist");
+        return Promise.reject("post does not exist");
       }
 
       const postData = post.data();
 
-      if (postData.paid) {
-        console.log("paid = false");
-        transaction.update(postRef, { paid: false });
-      } else {
-        console.log("post was already set to false");
+      for (const role of selectedRoles) {
+        if (postData.boosters[role] === "" && !tried_roles.includes(role)) {
+          console.log("Trying role:", role);
+          tried_roles.push(role);
+          // Add character to role
+          transaction.update(postRef, {
+            [`boosters.${role}`]: character[0],
+          });
+          break;
+        }
       }
     });
+
+    const docSnap = await getDoc(postRef);
+    if (docSnap.exists()) {
+      // if last tried role is empty, then the transaction was successful
+      if (
+        docSnap.data().boosters[tried_roles[tried_roles.length - 1]] ===
+        character[0]
+      ) {
+        console.log("SUCCESS: Transaction successfully committed!");
+      } else {
+        console.log(docSnap.data());
+        console.log("FAILURE: Did not get any role!");
+      }
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("ERROR: Could not find mythic plus posting!");
+    }
   }
 
   const setCharacters = (characters) => {
@@ -65,6 +93,7 @@ const Listings = () => {
         return [...prev, role];
       }
     });
+    console.log("Selected roles:", selectedRoles);
   };
 
   useEffect(() => {

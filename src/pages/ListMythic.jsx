@@ -394,7 +394,12 @@ const List = () => {
 
   const createListing = async () => {
     //console.log(listing, inputRef.current, ticks);
-    let boosters = {}; // Already determined boosters
+    let boosters = {
+      tank: "",
+      healer: "",
+      dps_1: "",
+      dps_2: "",
+    }; // Already determined boosters
     let rolesToFind = {}; // Boosters to find
     for (const key of Object.keys(inputRef.current.boosters)) {
       if (inputRef.current.boosters[key] !== "") {
