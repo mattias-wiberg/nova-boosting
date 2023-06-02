@@ -1,6 +1,11 @@
 @use "../../theme" as theme;
 @use "../../colors" as colors;
 
+.listings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .listing-card {
   display: flex;
   flex-direction: column;
@@ -28,7 +33,7 @@
     .note {
       font-size: 10px;
       text-align: center;
-      color: theme.$main-light-1
+      color: theme.$main-light-1;
     }
 
     .selection {
