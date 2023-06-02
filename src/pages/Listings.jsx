@@ -8,8 +8,9 @@ import {
   query,
   runTransaction,
   where,
+  setDoc,
+  serverTimestamp,
 } from "firebase/firestore";
-import { list, ref } from "firebase/storage";
 import React, { useContext, useEffect } from "react";
 import Button from "../components/Button";
 import KeyBanner from "../components/KeyBanner";
@@ -38,6 +39,12 @@ const Listings = () => {
     }
 
     const postRef = doc(db, "mplus-listings", uid);
+    // Add character to applicants collection
+    await setDoc(doc(db, "mplus-listings", uid, "applicants", character[0]), {
+      id: character[0],
+      roles: selectedRoles,
+      created: serverTimestamp(),
+    });
 
     let tried_roles = [];
     await runTransaction(db, async (transaction) => {
