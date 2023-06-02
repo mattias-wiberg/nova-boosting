@@ -44,7 +44,7 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
       }
     );
 
-    let triedRoles = [];
+    let lastRole = "";
     let rolesToTry = [];
     for (const role of selectedRoles) {
       if (role === "dps") {
@@ -68,7 +68,7 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
 
         if (postData.boosters[role] === "") {
           console.log("Trying role:", role);
-          triedRoles.push(role);
+          lastRole = role;
           // Add character to role
           transaction.update(postRef, {
             [`boosters.${role}`]: character[0],
@@ -81,10 +81,7 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
     const docSnap = await getDoc(postRef);
     if (docSnap.exists()) {
       // if last tried role is empty, then the transaction was successful
-      if (
-        docSnap.data().boosters[triedRoles[triedRoles.length - 1]] ===
-        character[0]
-      ) {
+      if (docSnap.data().boosters[lastRole] === character[0]) {
         console.log("SUCCESS: Transaction successfully committed!");
       } else {
         console.log(docSnap.data());
