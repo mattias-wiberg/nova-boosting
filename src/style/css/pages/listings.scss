@@ -66,10 +66,19 @@
       justify-content: center;
       width: 26px;
       cursor: pointer;
+      border-right: 1px solid theme.$main-dark-1;
 
       .icon {
         font-size: 13px;
         rotate: -30deg;
+      }
+
+      .disabled {
+        fill: theme.$main-dark-1;
+      }
+
+      .inactive {
+        fill: theme.$main-dark-3;
       }
     }
     .roles {
@@ -77,7 +86,6 @@
       align-items: center;
       gap: 3px;
       padding: 0 6px;
-      border-left: 1px solid theme.$main-dark-1;
       border-right: 1px solid theme.$main-dark-1;
       .role {
         width: 13px;

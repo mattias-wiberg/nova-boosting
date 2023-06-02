@@ -26,6 +26,8 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
   const [character, setCharacter] = React.useState([]);
   const [team, setTeam] = React.useState([]);
   const [radio, setRadio] = React.useState("character"); // character or team
+  const [applyWithKey, setApplyWithKey] = React.useState(false); // character or team
+  const haveKey = true;
 
   async function joinListing() {
     if (selectedRoles.length === 0) {
@@ -41,6 +43,7 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
         id: character[0],
         roles: selectedRoles,
         created: serverTimestamp(),
+        key: applyWithKey,
       }
     );
 
@@ -145,9 +148,17 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
       </div>
       <div className="footer">
         <Button text="Join" color="active" clickHandler={joinListing} />
-        <div className="key-button">
-          <HourglassEmptyOutlined className="icon active" />
-        </div>
+        {haveKey && (
+          <div
+            className="key-button"
+            onClick={() => setApplyWithKey(!applyWithKey)}
+          >
+            <HourglassEmptyOutlined
+              className={applyWithKey ? "icon active" : "icon inactive"}
+            />
+          </div>
+        )}
+
         {characters[character[0]] && radio === "character" && (
           <div className="roles">
             {characters[character[0]].roles.map((role) => {
