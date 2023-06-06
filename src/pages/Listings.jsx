@@ -71,6 +71,10 @@ const Listings = () => {
   return (
     <div className="listings">
       {listings.map((listing) => {
+        // Potential characters have to consider the following:
+        // - Must be of class that some of the roles require
+        // - If applying with key character must have a key that meets the requirements and is higher than the listing key
+
         const potentialCharacters = Object.fromEntries(
           Object.entries(characters).filter((entry) => {
             //const cid = entry[0];
@@ -86,11 +90,16 @@ const Listings = () => {
           })
         );
 
+        // Potential teams have to consider the following:
+        // - There must be a combination of characters between different users that can fill all the roles required by the listing
+        // - This combination of characters have to meet the key requirements of the listing
+        const potentialTeams = teams;
+
         return (
           <Listing
             listing={listing}
             potentialCharacters={potentialCharacters}
-            teams={teams}
+            teams={potentialTeams}
             key={listing.id}
           />
         );
