@@ -21,7 +21,7 @@ import { ReactComponent as TankIcon } from "../img/icons/tank.svg";
 
 // TODO: Change teams to potentialTeams similar to potentialCharacters but considering all members in the team
 const Listing = ({ listing, potentialCharacters, teams }) => {
-  const { characters } = useContext(UserContext);
+  const { user, characters } = useContext(UserContext);
   const [selectedRoles, setSelectedRoles] = React.useState([]);
   const [character, setCharacter] = React.useState([]);
   const [team, setTeam] = React.useState([]);
@@ -30,6 +30,29 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
   const haveKey = true;
 
   async function joinListing() {
+    /*
+    Matching algorithm
+    When adding character to boosters try to match preferred roles first
+
+    if team application and any key > 16:
+      add team to boosters 
+
+    for each applied role:
+      if role is available:
+        add character to role in boosters
+        break
+      else: 
+        if character has key required key that is not met:
+          if character to replace is not premade:
+            replace character in role in boosters
+          break
+        else:
+          continue to next role
+
+    if all listing key requirements are met:
+      mark listing as started
+      notify all boosters
+    */
     if (selectedRoles.length === 0) {
       alert("Please select a role!");
       return;
@@ -53,8 +76,9 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
       if (role === "dps") {
         rolesToTry.push("dps_1");
         rolesToTry.push("dps_2");
+      } else {
+        rolesToTry.push(role);
       }
-      rolesToTry.push(role);
     }
 
     await runTransaction(db, async (transaction) => {
@@ -69,12 +93,17 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
       while (rolesToTry.length > 0) {
         const role = rolesToTry.pop();
 
-        if (postData.boosters[role] === "") {
+        if (
+          postData.boosters[role].cid === "" &&
+          postData.boosters[role].uid === "" &&
+          postData.boosters[role].premade === false
+        ) {
           console.log("Trying role:", role);
           lastRole = role;
           // Add character to role
           transaction.update(postRef, {
-            [`boosters.${role}`]: character[0],
+            [`boosters.${role}.cid`]: character[0],
+            [`boosters.${role}.uid`]: user.uid,
           });
           break;
         }
@@ -84,7 +113,7 @@ const Listing = ({ listing, potentialCharacters, teams }) => {
     const docSnap = await getDoc(postRef);
     if (docSnap.exists()) {
       // if last tried role is empty, then the transaction was successful
-      if (docSnap.data().boosters[lastRole] === character[0]) {
+      if (docSnap.data().boosters[lastRole].cid === character[0]) {
         console.log("SUCCESS: Transaction successfully committed!");
       } else {
         console.log(docSnap.data());

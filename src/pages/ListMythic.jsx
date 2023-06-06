@@ -395,11 +395,28 @@ const List = () => {
   const createListing = async () => {
     //console.log(listing, inputRef.current, ticks);
     let boosters = {
-      tank: "",
-      healer: "",
-      dps_1: "",
-      dps_2: "",
-    }; // Already determined boosters
+      tank: {
+        uid: "",
+        cid: "",
+        premade: false,
+      },
+      healer: {
+        uid: "",
+        cid: "",
+        premade: false,
+      },
+      dps_1: {
+        uid: "",
+        cid: "",
+        premade: false,
+      },
+      dps_2: {
+        uid: "",
+        cid: "",
+        premade: false,
+      },
+    }; // Empty boosters object
+
     let rolesToFind = {}; // Boosters to find
     for (const key of Object.keys(inputRef.current.boosters)) {
       if (inputRef.current.boosters[key] !== "") {
@@ -421,7 +438,11 @@ const List = () => {
         const characterSnapshot = await getDocs(character);
 
         if (!characterSnapshot.empty) {
-          console.log("Found character!");
+          // console.log("Found character!");
+          // console.log(characterSnapshot.docs[0]);
+          // console.log(characterSnapshot.docs[0].id);
+          // console.log(characterSnapshot.docs[0].data());
+          // console.log(characterSnapshot.docs[0].ref.path);
         } else {
           setError(
             "Character '" +
@@ -436,7 +457,11 @@ const List = () => {
         }
 
         characterSnapshot.forEach((doc) => {
-          boosters[key] = doc.id;
+          boosters[key].cid = doc.id; // id of the character
+          // id of the user that the character belongs to
+          // doc.ref.parent = characters, doc.ref.parent.parent = user id
+          boosters[key].uid = doc.ref.parent.parent.id; // id of the user
+          boosters[key].premade = true;
         });
       } else {
         rolesToFind[key] = Object.entries(ticks)
